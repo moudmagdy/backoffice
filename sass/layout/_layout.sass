@@ -1,0 +1,119 @@
+main
+    position: relative
+    height: 100vh
+    overflow: hidden
+    transition: padding-inline-start 0.3s cubic-bezier(0.9, 0.4, 0.2, 1.17)
+
+    @media (min-width: 1024px)
+        --main-menu-width: #{rem(70px)}
+        +var(padding-inline-start, main-menu-width)
+
+        .main-menu--opened &
+            --main-menu-width: #{rem(200px)}
+
+    header
+        .main-menu__toggle
+            display: none
+
+            svg
+                +var(fill, color-text-primary)
+
+            @media (max-width: 1024px)
+                display: flex
+
+.page-container
+    display: grid
+    // flex-direction: column
+    // align-items: flex-start
+    // align-content: flex-start
+    // flex-wrap: wrap
+    gap: rem(20px)
+    height: 100vh
+    padding: rem(15px) rem(20px)
+
+    @media (min-width: 768px)
+        padding: rem(20px) rem(60px) 0
+
+    @media (max-width: 768px)
+        overflow-y: auto
+        +scroll-bar
+
+    .page-content
+        display: flex
+        gap: rem(20px)
+
+        @media (min-width: 768px)
+            overflow: hidden
+
+        @media (max-width: 768px)
+            flex-direction: column
+
+        & > *
+            @media (min-width: 768px)
+                padding-bottom: rem(20px)
+
+        section
+            flex: 1 1
+            display: flex
+            flex-wrap: wrap
+            align-items: flex-start
+            align-content: flex-start
+            gap: rem(20px)
+            overflow-y: auto
+            +scroll-bar-hidden
+            scroll-behavior: smooth
+
+            @media (max-width: 768px)
+                flex-wrap: wrap
+                flex: 1 0 auto
+
+        aside
+            display: flex
+            flex-direction: column
+            flex: 0 1 40%
+            max-width: 400px
+
+            @media (max-width: 768px)
+                flex-wrap: wrap
+                flex: 1 0 auto
+                max-width: none
+                margin-bottom: rem(20px)
+
+.single-column-layout
+    display: flex
+    flex-direction: column
+    align-content: flex-start
+    height: 100%
+    padding: rem(20px) rem(60px)
+
+    header
+        display: flex
+        flex-wrap: wrap
+        align-items: center
+        gap: rem(15px)
+        background-color: $color-white
+        border-radius: rem(12px) rem(12px) 0 0
+        padding: rem(12px) rem(22px)
+
+        h1
+            font-size: rem(18px)
+            margin-bottom: 0
+
+            [dir="rtl"] &
+                font-family: 'NotoSansArabic_Medium', sans-serif
+
+            [dir="ltr"] &
+                font-family: 'NotoSans_Medium', sans-serif
+
+        .page-filters-container
+            flex: 1 1 100%
+
+    section
+        background-color: $color-white
+        padding: rem(12px) rem(22px)
+
+.scrollable-content
+    height: 100%
+    overflow-y: auto
+    +scroll-bar
+    scroll-behavior: smooth
