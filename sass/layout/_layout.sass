@@ -108,6 +108,18 @@ main
         .page-filters-container
             flex: 1 1 100%
 
+            .page-filters
+                display: flex
+                flex-wrap: wrap
+                gap: rem(15px)
+
+                .form-select
+                    flex: 1 1 100%
+                    padding: 0.475rem 0.95rem
+
+                    @media (min-width: 576px)
+                        flex: 1 1 calc(25% - 45px)
+
     section
         background-color: $color-white
         padding: rem(12px) rem(22px)
