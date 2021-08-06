@@ -618,6 +618,7 @@ button:focus,
   inset-inline-start: 0.95rem;
   width: 20px;
   height: 20px;
+  pointer-events: none;
 }
 .input-with-icon .form-control,
 .input-with-icon .form-select {
