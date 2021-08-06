@@ -1,23 +1,21 @@
 .search__input
     display: flex
     align-items: center
-    flex: 1 1 100%
+    flex: 1 1 25%
     height: rem(40px)
-    max-width: 100%
+    min-height: rem(40px)
+    max-width: rem(300px)
     background-color: #fff
     border: 2px solid #CBD0D6
     border-radius: rem(20px)
     padding: 0 rem(18px)
-
-    @media (min-width: 576px)
-        max-width: rem(350px)
 
     svg
         pointer-events: none
         fill: #A3AAB2
 
     input[type="search"]
-        flex: 1 1 100%
+        flex: 1 1 auto
         height: 100%
         font-size: rem(12px)
         background-color: transparent
@@ -33,3 +31,132 @@
         &::-webkit-search-cancel-button,
         &::-webkit-search-cancel-button
             display: none !important
+
+.page-filters-container
+    flex: 1 1 100%
+    max-height: 0
+    overflow: hidden
+    opacity: 0
+    transition: all 0.3s ease-in-out
+
+    .page-filters
+        display: flex
+        flex-wrap: wrap
+        gap: rem(15px)
+        margin-top: rem(15px)
+
+        .form-select
+            flex: 1 1 100%
+            padding: 0.475rem 0.95rem
+
+            &:focus
+                box-shadow: none
+
+            @media (min-width: 576px)
+                flex: 1 1 calc(25% - 45px)
+
+    .filters-shown &
+        max-height: rem(55px)
+        opacity: 1
+
+.filters-open
+    display: flex
+    align-items: center
+    height: rem(40px)
+    background-color: #F5F5F5
+    color: #878A90
+    border-radius: rem(12px)
+    cursor: pointer
+    padding: 0 rem(10px)
+    transition: all 0.3s ease-in-out
+
+    & > svg
+        width: rem(18px)
+        fill: #CBD0D6
+        transition: fill 0.3s ease-in-out
+        margin-inline-end: rem(8px)
+
+    span
+        position: relative
+        font-size: rem(14px)
+        z-index: 2
+
+    &:hover
+        background-color: darken(#F5F5F5, 2%)
+        color: darken(#878A90, 10%)
+
+    .filters-close
+        position: relative
+        +flex-center
+        width: rem(34px)
+        height: rem(34px)
+        background-color: #9CB6EC
+        border-radius: 50%
+        margin-inline-start: rem(-34px)
+        opacity: 0
+        pointer-events: none
+        z-index: 1
+        transition: all 0.3s ease-in-out
+
+        svg
+            width: rem(12px)
+            fill: $color-white
+
+    .filters-shown &
+        background-color: #93AEE6
+        color: $color-white
+        cursor: default
+        pointer-events: none
+
+        & > svg
+            fill: $color-white
+
+        .filters-close
+            margin-inline-start: rem(8px)
+            opacity: 1
+            pointer-events: auto
+
+.need-help-cta
+    display: flex
+    align-items: center
+    gap: rem(5px)
+    font-size: rem(14px)
+    color: #93AEE6
+    text-decoration: none
+    transition: color 0.3s ease-in-out
+
+    svg
+        width: rem(18px)
+        fill: #93AEE6
+        transition: fill 0.3s ease-in-out
+
+    &:hover
+        color: darken(#93AEE6, 20%)
+
+        svg
+            fill: darken(#93AEE6, 20%)
+
+.back-btn
+    display: flex
+    align-items: center
+    gap: rem(5px)
+    font-size: rem(14px)
+    text-decoration: none
+    color: #65676B
+    background-color: transparent
+    border-radius: rem(12px)
+    padding: 0.6rem 0.8rem
+    margin: rem(12.5) 0
+    transition: all 0.3s ease-in-out
+
+    svg
+        width: rem(16px)
+        fill: #65676B
+        transition: fill 0.3s ease-in-out
+
+    &:hover
+        color: darken(#65676B, 20%)
+        background-color: #f3f2f7
+
+        svg
+            fill: darken(#65676B, 20%)

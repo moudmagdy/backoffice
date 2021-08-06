@@ -23,7 +23,7 @@
                 </a>
             </div>
             <nav>
-                <a href="home.html" class="home__page">
+                <a href="index.html" class="home__page">
                     <svg width="34" height="34" viewBox="0 0 34 34">
                         <path d="M27.8,32.8H6.2c-0.9,0-1.6-0.7-1.5-1.6V16.7H0L16,1.6C16.5,1,17.5,1,18,1.6l16,15.1h-4.6v14.5 C29.4,32.1,28.7,32.8,27.8,32.8z M7.7,29.6h18.5V13.7L17,5l-9.3,8.8V29.6z M17,23.2c-2.2,0.1-4.1-1.6-4.2-3.9 c-0.1-2.2,1.6-4.1,3.9-4.2c2.2-0.1,4.1,1.6,4.2,3.9c0,0.1,0,0.1,0,0.2C20.9,21.3,19.2,23.1,17,23.2z"></path>
                     </svg>
@@ -105,27 +105,44 @@
                     </svg>
                     <input type="search" name="search" placeholder="ابحث بالإسم او الباركود">
                 </div>
+                <div href="#" class="filters-open">
+                    <svg width="22" height="18" viewBox="0 0 22 18">
+                        <path d="M20,15v3h-2v-3h-2v-2h6v2H20z M4,15v3H2v-3H0v-2h6v2H4z M10,3V0h2v3h2v2H8V3H10z M10,7h2v11h-2V7z M2,11V0h2v11 H2z M18,11V0h2v11H18z"></path>
+                    </svg>
+                    <span>إظهار الفلاتر</span>
+                    <a href="#" class="filters-close">
+                        <svg width="18" height="18" viewBox="0 0 18 18">
+                            <path d="M9.7,9l8.3,8.3L17.3,18L9,9.7L0.7,18L0,17.3L8.3,9L0,0.7L0.7,0L9,8.3L17.3,0L18,0.7L9.7,9z"></path>
+                        </svg>
+                    </a>
+                </div>
+                <a href="" class="need-help-cta">
+                    <svg width="20" height="20" viewBox="0 0 20 20">
+                        <path d="M10,20C4.5,20,0,15.5,0,10S4.5,0,10,0s10,4.5,10,10S15.5,20,10,20z M10,18c4.4,0,8-3.6,8-8s-3.6-8-8-8 s-8,3.6-8,8S5.6,18,10,18z M9,13h2v2H9V13z M11,11.4V12H9v-1.5c0-0.6,0.4-1,1-1c0.8,0,1.5-0.7,1.5-1.5c0-0.8-0.7-1.5-1.5-1.5 C9.3,6.5,8.7,7,8.5,7.7l-2-0.4c0.4-1.9,2.2-3.1,4.1-2.7c1.9,0.4,3.1,2.2,2.7,4.1C13.2,10,12.2,11,11,11.4z"></path>
+                    </svg>
+                    <span>تريـد مساعدة؟</span>
+                </a>
                 <div class="page-filters-container">
                     <form action="">
                         <div class="page-filters">
                             <select class="form-select">
-                                <option selected>الفرع</option>
+                                <option selected disabled>الفرع</option>
                                 <option value="1">كل الفروع</option>
                                 <option value="2">فرع الدقي</option>
                                 <option value="3">فرع الجيزة</option>
                                 <option value="4">فرع المنيل</option>
                             </select>
                             <select class="form-select">
-                                <option selected>البراند</option>
+                                <option selected disabled>البراند</option>
                                 <option value="1">بيبسي</option>
                                 <option value="2">شيبسي</option>
                             </select>
                             <select class="form-select">
-                                <option selected>فـئة</option>
+                                <option selected disabled>فـئة</option>
                                 <option value="1">كل الفئات</option>
                             </select>
                             <select class="form-select">
-                                <option selected>فئة فرعية</option>
+                                <option selected disabled>فئة فرعية</option>
                                 <option value="1">كل الفئات</option>
                             </select>
                         </div>
@@ -133,67 +150,70 @@
                 </div>
             </header>
             <section>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>المنتج</th>
-                            <th>الباركود</th>
-                            <th>سعر البيع</th>
-                            <th>سعر التكلفة</th>
-                            <th>الكمية</th>
-                            <th>إجمالي المبيعات</th>
-                            <th>هامش الربح</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>
-                                <a href="product.html"><span class="fw-bold">شيبسي/ملح (كيس)</span></a>
-                            </td>
-                            <td>125847788522</td>
-                            <td>4.50</td>
-                            <td>4.50</td>
-                            <td>150</td>
-                            <td>450.00</td>
-                            <td><span class="fw-bold">1.50</span></td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <a href="product.html"><span class="fw-bold">شيبسي/ملح (كيس)</span></a>
-                            </td>
-                            <td>125847788522</td>
-                            <td>4.50</td>
-                            <td>4.50</td>
-                            <td>150</td>
-                            <td>450.00</td>
-                            <td><span class="fw-bold">1.50</span></td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <a href="product.html"><span class="fw-bold">شيبسي/ملح (كيس)</span></a>
-                            </td>
-                            <td>125847788522</td>
-                            <td>4.50</td>
-                            <td>4.50</td>
-                            <td>150</td>
-                            <td>450.00</td>
-                            <td><span class="fw-bold">1.50</span></td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <a href="product.html"><span class="fw-bold">شيبسي/ملح (كيس)</span></a>
-                            </td>
-                            <td>125847788522</td>
-                            <td>4.50</td>
-                            <td>4.50</td>
-                            <td>150</td>
-                            <td>450.00</td>
-                            <td><span class="fw-bold">1.50</span></td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div class="scrollable-content">
+                    <div class="table__container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>المنتج</th>
+                                    <th>الباركود</th>
+                                    <th>سعر البيع</th>
+                                    <th>سعر التكلفة</th>
+                                    <th>الكمية</th>
+                                    <th>إجمالي المبيعات</th>
+                                    <th>هامش الربح</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <a href="product.html"><span class="fw-bold">شيبسي/ملح (كيس)</span></a>
+                                    </td>
+                                    <td>125847788522</td>
+                                    <td>4.50</td>
+                                    <td>4.50</td>
+                                    <td>150</td>
+                                    <td>450.00</td>
+                                    <td><span class="fw-bold">1.50</span></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <a href="product.html"><span class="fw-bold">شيبسي/ملح (كيس)</span></a>
+                                    </td>
+                                    <td>125847788522</td>
+                                    <td>4.50</td>
+                                    <td>4.50</td>
+                                    <td>150</td>
+                                    <td>450.00</td>
+                                    <td><span class="fw-bold">1.50</span></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <a href="product.html"><span class="fw-bold">شيبسي/ملح (كيس)</span></a>
+                                    </td>
+                                    <td>125847788522</td>
+                                    <td>4.50</td>
+                                    <td>4.50</td>
+                                    <td>150</td>
+                                    <td>450.00</td>
+                                    <td><span class="fw-bold">1.50</span></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <a href="product.html"><span class="fw-bold">شيبسي/ملح (كيس)</span></a>
+                                    </td>
+                                    <td>125847788522</td>
+                                    <td>4.50</td>
+                                    <td>4.50</td>
+                                    <td>150</td>
+                                    <td>450.00</td>
+                                    <td><span class="fw-bold">1.50</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
             </section>
-            <footer></footer>
         </div>
     </main>
     <div class="page-preloader">
@@ -211,6 +231,7 @@
     <script src="js/bootstrap.min.js" defer></script>
     <script src="js/main.js" defer></script>
     <script src="js/components/main-menu.module.js" type="module"></script>
+    <script src="js/components/filters.module.js" type="module"></script>
 </body>
 
 </html>
