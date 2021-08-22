@@ -970,31 +970,52 @@ main header .main-menu__toggle svg {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  overflow-y: hidden;
-  overflow-y: clip;
-  overflow-x: visible;
 }
-.main-menu nav a {
+.main-menu nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.main-menu nav ul li a {
   position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   color: rgba(255, 255, 255, 0.7);
-  -webkit-transition: background-color 0.3s;
-  -o-transition: background-color 0.3s;
-  transition: background-color 0.3s;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
 }
-.main-menu nav a::after {
+.main-menu nav ul li a::before {
   content: "";
+  background-color: rgba(255, 255, 255, 0.4);
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.main-menu nav ul li a:hover {
+  color: #fff;
+  background-color: rgba(255, 255, 255, 0.08);
+}
+.main-menu nav ul li a.active {
+  color: #fff;
+}
+.main-menu nav ul li a.active::before {
+  background-color: #fff;
+}
+.main-menu nav > ul > li > a::before {
   position: absolute;
   top: 0;
-  bottom: 0;
   inset-inline-start: 0;
   width: 0.25rem;
+  height: 100%;
   background-color: rgba(255, 255, 255, 0.4);
   opacity: 0;
-  -webkit-transition: opacity 0.3s;
-  -o-transition: opacity 0.3s;
-  transition: opacity 0.3s;
 }
-.main-menu nav a svg {
+.main-menu nav > ul > li > a svg {
   width: 1.375rem;
   height: 1.375rem;
   fill: rgba(255, 255, 255, 0.4);
@@ -1002,28 +1023,85 @@ main header .main-menu__toggle svg {
   -o-transition: fill 0.3s;
   transition: fill 0.3s;
 }
-.main-menu nav a span {
+.main-menu nav > ul > li > a span {
   opacity: 0;
   -webkit-transition: opacity 0.3s;
   -o-transition: opacity 0.3s;
   transition: opacity 0.3s;
 }
-.main-menu nav a:hover {
-  background-color: rgba(255, 255, 255, 0.2);
-}
-.main-menu nav a:hover::after {
+.main-menu nav > ul > li > a:hover::before {
   opacity: 1;
 }
-.main-menu nav a.active {
-  color: #fff;
-  background-color: rgba(255, 255, 255, 0.2);
+.main-menu nav > ul > li > a:hover svg {
+  fill: #fff;
 }
-.main-menu nav a.active::after {
+.main-menu nav > ul > li > a.active::before {
   opacity: 1;
+}
+.main-menu nav > ul > li > a.active svg {
+  fill: #fff;
+}
+.main-menu nav > ul > li.has__submenu {
+  position: relative;
+}
+.main-menu nav > ul > li.has__submenu > a {
+  -webkit-padding-end: 2.5rem;
+          padding-inline-end: 2.5rem;
+}
+.main-menu nav > ul > li.has__submenu > a::after {
+  content: "";
+  position: absolute;
+  inset-inline-end: 0.9375rem;
+  width: 0.9375rem;
+  height: 0.9375rem;
+  background-image: url(../images/left-arrow.svg);
+  opacity: 0;
+  pointer-events: none;
+  -webkit-transition: all 0.3s cubic-bezier(0.9, 0.4, 0.2, 1.17);
+  -o-transition: all 0.3s cubic-bezier(0.9, 0.4, 0.2, 1.17);
+  transition: all 0.3s cubic-bezier(0.9, 0.4, 0.2, 1.17);
+}
+[dir=ltr] .main-menu nav > ul > li.has__submenu > a::after {
+  -webkit-transform: scaleX(-1);
+      -ms-transform: scaleX(-1);
+          transform: scaleX(-1);
+}
+.main-menu nav > ul > li.has__submenu ul {
+  position: absolute;
+  top: 0;
+  inset-inline-start: 100%;
+  width: 200px;
+  max-height: 0;
+  background-color: #0d6ae4;
+  z-index: 2;
+  overflow: hidden;
+  -webkit-transition: max-height 0.3s;
+  -o-transition: max-height 0.3s;
+  transition: max-height 0.3s;
+}
+.main-menu nav > ul > li.has__submenu ul li a {
+  gap: 0 0.625rem;
+  -webkit-padding-start: 2.5rem;
+          padding-inline-start: 2.5rem;
+}
+.main-menu nav > ul > li.has__submenu ul li a::before {
+  width: 0.3125rem;
+  height: 0.3125rem;
+  border-radius: 50%;
+}
+.main-menu nav > ul > li.has__submenu ul li a:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+}
+.main-menu nav > ul > li.has__submenu ul li a:hover::before {
   background-color: #fff;
 }
-.main-menu nav a.active svg {
-  fill: #fff;
+.main-menu nav > ul > li.has__submenu ul li a.active {
+  background-color: rgba(255, 255, 255, 0.08);
+}
+.main-menu nav > ul > li.has__submenu.submenu--opened > a::after {
+  -webkit-transform: rotate(-90deg);
+      -ms-transform: rotate(-90deg);
+          transform: rotate(-90deg);
 }
 .main-menu__notifications {
   position: relative;
@@ -1089,6 +1167,14 @@ main header .main-menu__toggle svg {
 }
 .main-menu--opened .main-menu nav a span {
   opacity: 1;
+}
+.main-menu--opened .main-menu .has__submenu > a::after {
+  opacity: 1;
+}
+.main-menu--opened .main-menu .has__submenu > ul {
+  position: static;
+  max-height: auto;
+  background-color: transparent;
 }
 .main-menu--opened .main-menu .main-menu__notifications span,
 .main-menu--opened .main-menu .main-menu__profile span {

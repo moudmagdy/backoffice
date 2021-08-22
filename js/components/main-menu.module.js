@@ -1,6 +1,7 @@
 // const windowHeight = window.innerHeight;
 // const mainMenu = document.querySelector('.main-menu');
 const mainMenuToggles = document.querySelectorAll('.main-menu__toggle');
+const subMenuToggles = document.querySelectorAll('.has__submenu > a');
 // const headerMainMenuToggle = document.querySelector('.page__layout header > .main-menu__toggle');
 // const menuNav = document.querySelector('.main-menu nav');
 // const menuNavItem = document.querySelectorAll('.main-menu nav > a');
@@ -10,6 +11,20 @@ mainMenuToggles.forEach(mainMenuToggle => {
     mainMenuToggle.addEventListener('click', (e) => {
         e.preventDefault();
         document.querySelector('body').classList.toggle('main-menu--opened');
+    });
+});
+subMenuToggles.forEach(subMenuToggle => {
+    subMenuToggle.addEventListener('click', (e) => {
+        e.preventDefault();
+        subMenuToggle.closest('.has__submenu').classList.toggle('submenu--opened');
+
+        if (subMenuToggle.closest('.has__submenu').classList.contains('submenu--opened')) {
+            subMenuToggle.classList.add('active');
+            subMenuToggle.nextElementSibling.style.maxHeight = subMenuToggle.nextElementSibling.scrollHeight + 'px';
+        } else {
+            subMenuToggle.classList.remove('active');
+            subMenuToggle.nextElementSibling.style.maxHeight = 0;
+        }
     });
 });
 
