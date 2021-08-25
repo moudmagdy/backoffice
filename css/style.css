@@ -662,6 +662,9 @@ main header .main-menu__toggle svg {
   fill: #060505;
   fill: var(--color-text-primary);
 }
+main header .main-menu__toggle:hover svg {
+  fill: #060505;
+}
 @media (max-width: 1024px) {
   main header .main-menu__toggle {
     display: -webkit-box;
@@ -937,6 +940,12 @@ main header .main-menu__toggle svg {
 .main-menu__toggle svg {
   width: 1.25rem;
   height: 1.25rem;
+  fill: rgba(255, 255, 255, 0.4);
+  -webkit-transition: fill 0.3s;
+  -o-transition: fill 0.3s;
+  transition: fill 0.3s;
+}
+.main-menu__toggle:hover svg {
   fill: #fff;
 }
 .main-menu a:not(.main-menu__toggle) {
@@ -1085,17 +1094,12 @@ main header .main-menu__toggle svg {
           transform: scaleX(-1);
 }
 .main-menu nav > ul > li.has__submenu ul {
-  position: absolute;
-  top: 0;
-  inset-inline-start: 100%;
-  width: 200px;
   max-height: 0;
   background-color: #0d6ae4;
-  z-index: 2;
   overflow: hidden;
-  -webkit-transition: max-height 0.3s;
-  -o-transition: max-height 0.3s;
-  transition: max-height 0.3s;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
 }
 .main-menu nav > ul > li.has__submenu ul li a {
   gap: 0 0.625rem;
@@ -2107,7 +2111,7 @@ table tbody tr:nth-of-type(even):hover td {
   gap: 1.25rem;
   padding: 0.9375rem 0;
 }
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .home-page header {
     -ms-flex-wrap: nowrap;
         flex-wrap: nowrap;

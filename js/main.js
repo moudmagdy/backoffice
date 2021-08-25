@@ -10,6 +10,7 @@ datepickerElements.forEach(element => {
         // ...options
         format: 'yyyy/mm/dd',
         language: 'ar',
-        weekStart: '6'
+        weekStart: '6',
+        orientation: 'left'
     });
 });

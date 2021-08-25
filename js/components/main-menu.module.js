@@ -1,5 +1,13 @@
 const mainMenuToggles = document.querySelectorAll('.main-menu__toggle');
 const subMenuToggles = document.querySelectorAll('.has__submenu > a');
+const subMenuOpened = document.querySelector('.submenu--opened');
+
+function loadOpenSubMenu() {
+    if (subMenuOpened) {
+        subMenuOpened.querySelector('ul').style.maxHeight = subMenuOpened.querySelector('ul').scrollHeight + 'px';
+    }
+}
+
 
 mainMenuToggles.forEach(mainMenuToggle => {
     mainMenuToggle.addEventListener('click', (e) => {
@@ -17,24 +25,15 @@ function openSubMenu(e) {
         this.classList.add('active');
         this.nextElementSibling.style.maxHeight = this.nextElementSibling.scrollHeight + 'px';
     } else {
-        this.classList.remove('active');
+        if (!this.nextElementSibling.querySelector('.active').classList.contains('active')) {
+            this.classList.remove('active');
+        }
         this.nextElementSibling.style.maxHeight = 0;
     }
 }
 
 subMenuToggles.forEach(subMenuToggle => subMenuToggle.addEventListener('click', openSubMenu));
 
-// subMenuToggles.forEach(subMenuToggle => {
-//     subMenuToggle.addEventListener('click', (e) => {
-//         e.preventDefault();
-//         subMenuToggle.closest('.has__submenu').classList.toggle('submenu--opened');
 
-//         if (subMenuToggle.closest('.has__submenu').classList.contains('submenu--opened')) {
-//             subMenuToggle.classList.add('active');
-//             subMenuToggle.nextElementSibling.style.maxHeight = subMenuToggle.nextElementSibling.scrollHeight + 'px';
-//         } else {
-//             subMenuToggle.classList.remove('active');
-//             subMenuToggle.nextElementSibling.style.maxHeight = 0;
-//         }
-//     });
-// });
+
+window.addEventListener('load', loadOpenSubMenu);
