@@ -922,8 +922,9 @@ main header .main-menu__toggle svg {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  height: 52px;
   overflow: hidden;
-  padding: 1rem 1.5625rem;
+  padding: 0.625rem 1.5625rem;
 }
 .main-menu__footer {
   margin-top: auto;
@@ -970,6 +971,23 @@ main header .main-menu__toggle svg {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  height: 100%;
+  margin-bottom: 50px;
+  scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
+  scrollbar-width: thin;
+}
+.main-menu nav::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+.main-menu nav::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+.main-menu nav::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+.main-menu nav::-webkit-scrollbar-corner {
+  background-color: transparent;
 }
 .main-menu nav ul {
   list-style: none;
@@ -1164,6 +1182,10 @@ main header .main-menu__toggle svg {
   -webkit-transform: translateX(0);
       -ms-transform: translateX(0);
           transform: translateX(0);
+}
+.main-menu--opened .main-menu nav {
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 .main-menu--opened .main-menu nav a span {
   opacity: 1;
