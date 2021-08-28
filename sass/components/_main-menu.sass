@@ -19,11 +19,15 @@
     &__header
         display: flex
         align-items: center
+        flex: 0 0 52px
         height: 52px
         overflow: hidden
-        padding: rem(10px) rem(25px)
+        padding: 0 rem(25px)
 
     &__footer
+        display: flex
+        flex-direction: column
+        flex: 0 0 auto
         margin-top: auto
 
     &__toggle
@@ -41,8 +45,10 @@
 
     a:not(.main-menu__toggle)
         display: flex
+        align-items: center
         gap: rem(12px)
         font-size: rem(14px)
+        line-height: 1.15
         overflow: hidden
         text-overflow: ellipsis
         white-space: nowrap
@@ -61,9 +67,11 @@
     nav
         display: flex
         flex-direction: column
-        height: 100%
+        flex: 0 0 calc(100% - 202px)
+        height: calc(100% - 202px)
         margin-bottom: 50px
-        scrollbar-color: rgba(255, 255, 255, 0.2) transparent
+        overflow: hidden
+        scrollbar-color: rgba(255, 255, 255, 0.2) rgba(255, 255, 255, 0.1)
         scrollbar-width: thin
 
         &::-webkit-scrollbar
@@ -74,12 +82,12 @@
             background-color: rgba(255, 255, 255, 0.2)
 
         &::-webkit-scrollbar-track
-            background-color: transparent
+            background-color: rgba(255, 255, 255, 0.1)
 
         &::-webkit-scrollbar-corner
-            background-color: transparent
+            background-color: rgba(255, 255, 255, 0.1)
 
-        ul
+        ol
             list-style: none
             padding: 0
             margin: 0
@@ -97,17 +105,16 @@
                         background-color: rgba(255, 255, 255, 0.4)
                         transition: all 0.3s
 
-                    &:hover
+                    &:hover,
+                    &.active
                         color: $color-white
                         background-color: rgba(255, 255, 255, 0.08)
 
                     &.active
-                        color: $color-white
-
                         &::before
                             background-color: $color-white
 
-        & > ul
+        .menu__list
             & > li
                 & > a
                     &::before
@@ -143,7 +150,7 @@
                         svg
                             fill: $color-white
 
-                &.has__submenu
+                &.has--submenu
                     position: relative
 
                     & > a
@@ -163,24 +170,19 @@
                             [dir="ltr"] &
                                 transform: scaleX(-1)
 
-                    ul
-                        // position: absolute
-                        // top: 0
-                        // inset-inline-start: 100%
-                        // width: 200px
-                        // height: 0
+                    .submenu
                         max-height: 0
                         background-color: darken(#1877F2, 5%)
-                        // z-index: 2
                         overflow: hidden
                         transition: all 0.3s
 
                         li
                             a
                                 gap: 0 rem(10px)
-                                padding-inline-start: rem(40px)
+                                padding-inline-start: rem(35px)
 
                                 &::before
+                                    flex: 0 0 auto
                                     width: rem(5px)
                                     height: rem(5px)
                                     border-radius: 50%
@@ -251,6 +253,7 @@
             span
                 color: rgba(255, 255, 255, 0.95)
 
+    .main-menu--hover-opened &,
     .main-menu--opened &
         --main-menu-width: #{rem(200px)}
         transform: translateX(0)
@@ -259,22 +262,19 @@
             overflow-y: scroll
             overflow-x: hidden
 
-            a
-                span
-                    opacity: 1
+            .menu__list
+                & > li
+                    a
+                        span
+                            opacity: 1
 
-        .has__submenu
-            & > a
-                &::after
-                    opacity: 1
-
-            & > ul
-                position: static
-                // height: auto
-                max-height: auto
-                background-color: transparent
+                    &.has--submenu
+                        & > a
+                            &::after
+                                opacity: 1
 
         .main-menu__notifications,
         .main-menu__profile
             span
                 opacity: 1
+                max-width: 192px

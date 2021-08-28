@@ -1,39 +1,96 @@
+const body = document.querySelector('body');
+const mainMenu = document.querySelector('.main-menu');
 const mainMenuToggles = document.querySelectorAll('.main-menu__toggle');
-const subMenuToggles = document.querySelectorAll('.has__submenu > a');
-const subMenuOpened = document.querySelector('.submenu--opened');
+const subMenuToggles = document.querySelectorAll('.has--submenu > a');
 
-function loadOpenSubMenu() {
-    if (subMenuOpened) {
-        subMenuOpened.querySelector('ul').style.maxHeight = subMenuOpened.querySelector('ul').scrollHeight + 'px';
+function openMenuOnMouseEnter() {
+    body.classList.add('main-menu--hover-opened');
+    if (body.classList.contains('main-menu--hover-opened')) {
+        if (document.getElementsByClassName('submenu').length > 0) {
+            document.querySelectorAll('.submenu--opened .submenu').forEach(submenu => {
+                submenu.style.maxHeight = submenu.scrollHeight + 'px';
+            });
+        }
     }
 }
 
+function closeMenuOnMouseLeave() {
+    body.classList.remove('main-menu--hover-opened');
+    if (!body.classList.contains('main-menu--hover-opened') && !body.classList.contains('main-menu--opened')) {
+        if (document.getElementsByClassName('submenu').length > 0) {
+            document.querySelectorAll('.submenu--opened .submenu').forEach(submenu => {
+                submenu.style.maxHeight = 0;
+            });
+        }
+    }
+}
 
-mainMenuToggles.forEach(mainMenuToggle => {
-    mainMenuToggle.addEventListener('click', (e) => {
-        e.preventDefault();
-        document.querySelector('body').classList.toggle('main-menu--opened');
-    });
-});
+function toggleOpenMenu(e) {
+    e.preventDefault();
+    body.classList.toggle('main-menu--opened');
+    if (body.classList.contains('main-menu--opened') || body.classList.contains('main-menu--hover-opened')) {
+        if (document.getElementsByClassName('submenu').length > 0) {
+            document.querySelectorAll('.submenu--opened .submenu').forEach(submenu => {
+                submenu.style.maxHeight = submenu.scrollHeight + 'px';
+            });
+        }
+    } else {
+        if (document.getElementsByClassName('submenu').length > 0) {
+            document.querySelectorAll('.submenu--opened .submenu').forEach(submenu => {
+                submenu.style.maxHeight = 0;
+            });
+        }
+    }
+}
 
 function openSubMenu(e) {
     e.preventDefault();
 
-    this.closest('.has__submenu').classList.toggle('submenu--opened');
+    let getParentSiblings = function (elem) {
+        // Setup siblings array and get the first sibling
+        let siblings = [];
+        // let sibling = elem.closest('.menu__list').firstChild;
+        let sibling = elem.closest('.menu__list').firstChild;
 
-    if (this.closest('.has__submenu').classList.contains('submenu--opened')) {
+        // Loop through each sibling and push to the array
+        while (sibling) {
+            if (sibling.nodeType === 1 && sibling !== elem && sibling.classList.contains('submenu--opened')) {
+                siblings.push(sibling);
+            }
+            sibling = sibling.nextSibling
+        }
+        return siblings;
+    };
+
+    let siblings = getParentSiblings(this);
+
+    if (!this.closest('.has--submenu').classList.contains('submenu--opened')) {
+        siblings.forEach(sibling => {
+            if (!sibling.querySelector('.submenu').getElementsByClassName('active').length > 0) {
+                sibling.classList.remove('submenu--opened');
+                sibling.querySelector('a').classList.remove('active');
+                sibling.querySelector('.submenu').style.maxHeight = 0;
+            }
+        });
+
+        this.closest('.has--submenu').classList.add('submenu--opened');
         this.classList.add('active');
         this.nextElementSibling.style.maxHeight = this.nextElementSibling.scrollHeight + 'px';
+
+        setTimeout(function () {
+            let scrollPos = document.querySelector('.menu__nav').scrollTop + document.querySelector('.submenu--opened .submenu').scrollHeight;
+            document.querySelector('.menu__nav').scrollTo({ top: scrollPos, behavior: 'smooth' });
+        }, 300);
     } else {
-        if (!this.nextElementSibling.querySelector('.active').classList.contains('active')) {
+        this.closest('.has--submenu').classList.remove('submenu--opened');
+        if (!this.nextElementSibling.getElementsByClassName('active').length > 0) {
             this.classList.remove('active');
         }
         this.nextElementSibling.style.maxHeight = 0;
     }
 }
 
+mainMenu.addEventListener('mouseenter', openMenuOnMouseEnter);
+mainMenu.addEventListener('mouseleave', closeMenuOnMouseLeave);
+mainMenuToggles.forEach(mainMenuToggle => mainMenuToggle.addEventListener('click', toggleOpenMenu));
 subMenuToggles.forEach(subMenuToggle => subMenuToggle.addEventListener('click', openSubMenu));
-
-
-
-window.addEventListener('load', loadOpenSubMenu);

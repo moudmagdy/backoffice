@@ -9,8 +9,8 @@ LayoutTabs.forEach(tab => {
         const activeTabParent = document.querySelector('.layout__tab__content[data-tab="' + tabDataAttr + '"]');
 
 
-        tab.closest('.layout__tabs').querySelector('.active-tab').classList.remove('active-tab');
-        tab.classList.add('active-tab');
+        tab.closest('.layout__tabs').querySelector('.active--tab').classList.remove('active--tab');
+        tab.classList.add('active--tab');
 
 
         let getSiblings = function (elem) {
@@ -31,9 +31,9 @@ LayoutTabs.forEach(tab => {
         let siblings = getSiblings(activeTabParent);
 
         for (let sibling of siblings) {
-            sibling.classList.remove('active-tab')
+            sibling.classList.remove('active--tab')
         }
 
-        document.querySelector('.layout__tab__content[data-tab="' + tabDataAttr + '"]').classList.add('active-tab');
+        document.querySelector('.layout__tab__content[data-tab="' + tabDataAttr + '"]').classList.add('active--tab');
     });
 });
