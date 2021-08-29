@@ -1,19 +1,23 @@
 .layout__tabs
+    display: flex
     height: rem(65px)
     overflow: hidden
-    // overflow-x: auto
-    // +scrollbar-hidden
+    overflow-x: auto
+    +scrollbar-hidden
 
-    // @media (max-width: 1200px)
-    //     flex: 1 1 100%
-    //     width: 100%
+    @media (max-width: 1200px)
+        flex: 1 1 100%
+        width: 100%
 
 .layout__tabs__nav
     position: relative
     display: flex
     height: 100%
     width: fit-content
-    // overflow: hidden
+
+    @media (max-width: 1200px)
+        flex: 1 1 100%
+        width: 100%
 
     a
         position: relative
@@ -26,6 +30,8 @@
         white-space: nowrap
         transition: all 0.2s ease-in-out
         padding: rem(20px) rem(15px)
+        -webkit-user-drag: none
+        user-drag: none
 
         [dir="rtl"] &
             font-family: 'NotoSansArabic_Medium', sans-serif

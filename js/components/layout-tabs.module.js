@@ -39,28 +39,3 @@ LayoutTabsItem.forEach(tab => {
         document.querySelector('.layout__tab__content[data-tab="' + tabDataAttr + '"]').classList.add('active--tab');
     });
 });
-
-
-// var $tab_bar = document.querySelector('.layout__tabs__nav');
-
-// Our events are going to be in the tab bar
-var mc = new Hammer(LayoutTabsNav);
-
-// Our specific pan event
-mc.add(new Hammer.Pan({
-    direction: Hammer.DIRECTION_HORIZONTAL
-}));
-
-// Listen to events
-// mc.on("panleft panright", function (e) {
-//     if (e.type === "panleft") LayoutTabsNav.scrollLeft += 10;
-//     else LayoutTabsNav.scrollLeft -= 10;
-// });
-
-function swipe() {
-    if (e.type === "panleft") LayoutTabsNav.scrollLeft += 10;
-    else LayoutTabsNav.scrollLeft -= 10;
-}
-
-mc.addEventListener('panleft', swipe);
-mc.addEventListener('panright', swipe);
