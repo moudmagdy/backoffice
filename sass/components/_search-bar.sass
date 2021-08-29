@@ -4,11 +4,13 @@
     flex: 1 1 25%
     height: rem(40px)
     min-height: rem(40px)
-    max-width: rem(300px)
     background-color: #fff
     border: 2px solid #CBD0D6
     border-radius: rem(20px)
     padding: 0 rem(18px)
+
+    @media (min-width: 768px)
+        max-width: rem(300px)
 
     svg
         pointer-events: none

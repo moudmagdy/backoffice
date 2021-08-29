@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="icon" type="image/png" href="favicon.png">
     <title>المنتج - كاشير</title>
@@ -13,7 +13,7 @@
 </head>
 
 <body>
-    <main class="inventory-page">
+    <main class="">
         <div class="main-menu">
             <div class="main-menu__header">
                 <a href="#" class="main-menu__toggle">
@@ -182,7 +182,7 @@
             </div>
         </div>
         <div class="single-column-layout">
-            <header class="with-tabs">
+            <header class="has--tabs">
                 <a href="#" class="main-menu__toggle">
                     <svg width="34" height="34" viewBox="0 0 34 34">
                         <path d="M0,1.1h34v4H0V1.1z M0,15h34v4H0V15z M0,28.9h34v4H0V28.9z" />
@@ -194,12 +194,36 @@
                         <path d="M6.5,6v4l-6-5l6-5v4h5c4.4,0,8,3.6,8,8s-3.6,8-8,8h-9v-2h9c3.3,0,6-2.7,6-6s-2.7-6-6-6H6.5z"></path>
                     </svg>
                 </a>
-                <nav class="layout__tabs">
-                    <a href="#" data-tab="product_details" class="active--tab">تفاصيل المنتج</a>
-                    <a href="#" data-tab="operations_record">سجل العمليات</a>
-                    <a href="#" data-tab="current_validity_dates">تواريخ الصلاحيات الحالية</a>
-                    <a href="#" data-tab="serial_numbers">الأرقام المتسلسلة</a>
-                </nav>
+                <div class="page__navigation">
+                    <a href="#" class="navigation__btn btn--previous">
+                        <svg width="6" height="12" viewBox="0 0 6 12">
+                            <path d="M6,6L0,0v12L6,6z"></path>
+                        </svg>
+                    </a>
+                    <div class="navigation__datalist">
+                        <input type="text" class="navigation__input" id="navDataList" list="navDatalistOptions" autocomplete="off" value="زبادى المراعى - سادة">
+                        <datalist id="navDatalistOptions">
+                            <option value="زبادى المراعى - سادة">
+                            <option value="زبادى المراعى - تريتس مانجو">
+                            <option value="زبادى المراعى - تريتس خوخ">
+                            <option value="زبادى المراعى - تريتس تفاح">
+                            <option value="زبادى المراعى - تريتس اناناس">
+                        </datalist>
+                    </div>
+                    <a href="#" class="navigation__btn btn--next">
+                        <svg width="6" height="12" viewBox="0 0 6 12">
+                            <path d="M6,12V0L0,6L6,12z"></path>
+                        </svg>
+                    </a>
+                </div>
+                <div class="layout__tabs">
+                    <nav class="layout__tabs__nav ms-auto">
+                        <a href="#" data-tab="product_details" class="active--tab">تفاصيل المنتج</a>
+                        <a href="#" data-tab="operations_record">سجل العمليات</a>
+                        <a href="#" data-tab="current_validity_dates">تواريخ الصلاحيات الحالية</a>
+                        <a href="#" data-tab="serial_numbers">الأرقام المتسلسلة</a>
+                    </nav>
+                </div>
             </header>
             <section>
                 <div class="layout__container">
@@ -479,6 +503,7 @@
     </div>
     <script src="js/popper.min.js" defer></script>
     <script src="js/bootstrap.min.js" defer></script>
+    <script src="js/hammer.min.js" defer></script>
     <script src="js/main.js" defer></script>
     <script src="js/components/main-menu.module.js" type="module"></script>
     <script src="js/components/layout-tabs.module.js" type="module"></script>

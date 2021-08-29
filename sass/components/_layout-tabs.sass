@@ -1,7 +1,19 @@
 .layout__tabs
+    height: rem(65px)
+    overflow: hidden
+    // overflow-x: auto
+    // +scrollbar-hidden
+
+    // @media (max-width: 1200px)
+    //     flex: 1 1 100%
+    //     width: 100%
+
+.layout__tabs__nav
     position: relative
     display: flex
-    min-height: rem(65px)
+    height: 100%
+    width: fit-content
+    // overflow: hidden
 
     a
         position: relative
@@ -41,12 +53,6 @@
 
             &::after
                 width: 100%
-
-    @media (max-width: 768px)
-        width: 100%
-
-        a
-            white-space: normal
 
 .layout__container
     .layout__tab__content

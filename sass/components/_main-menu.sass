@@ -253,7 +253,32 @@
             span
                 color: rgba(255, 255, 255, 0.95)
 
-    .main-menu--hover-opened &,
+    .main-menu--hover-opened &
+        @media (min-width: 992px)
+            --main-menu-width: #{rem(200px)}
+            transform: translateX(0)
+
+            nav
+                overflow-y: scroll
+                overflow-x: hidden
+
+                .menu__list
+                    & > li
+                        a
+                            span
+                                opacity: 1
+
+                        &.has--submenu
+                            & > a
+                                &::after
+                                    opacity: 1
+
+            .main-menu__notifications,
+            .main-menu__profile
+                span
+                    opacity: 1
+                    max-width: 192px
+
     .main-menu--opened &
         --main-menu-width: #{rem(200px)}
         transform: translateX(0)
