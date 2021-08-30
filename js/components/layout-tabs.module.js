@@ -1,5 +1,5 @@
 // const LayoutTabs = document.querySelectorAll('.layout__tabs');
-const LayoutTabsNav = document.querySelectorAll('.layout__tabs__nav');
+// const LayoutTabsNav = document.querySelectorAll('.layout__tabs__nav');
 const LayoutTabsItem = document.querySelectorAll('.layout__tabs__nav a');
 
 LayoutTabsItem.forEach(tab => {

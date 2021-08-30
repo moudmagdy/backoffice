@@ -1,0 +1,54 @@
+.side-panel
+    position: fixed
+    top: 0
+    inset-inline-start: 100%
+    display: flex
+    flex-direction: column
+    width: 415px
+    height: 100%
+    background-color: #fff
+    overflow: hidden
+    z-index: 1000
+    transition: transform 0.3s cubic-bezier(0.8,-0.21, 0.35, 0.32)
+
+    @media (min-width: 1200px)
+        width: 500px
+
+    @media (max-width: 576px)
+        width: 100%
+
+    &__header
+        display: flex
+        align-items: center
+        gap: rem(10px)
+        min-height: 52px
+        max-height: 52px
+        color: #fff
+        +var(background-color, color-brand)
+        padding: 5px 16px
+
+    &__title
+        display: flex
+        align-items: center
+        gap: rem(5px)
+        font-size: rem(15px)
+        line-height: 1.5
+        margin-bottom: 0
+
+        [dir="rtl"] &
+            font-family: 'NotoSansArabic_Medium', sans-serif
+
+        [dir="ltr"] &
+            font-family: 'NotoSans_Medium', sans-serif
+
+    .side-panel--shown &
+        [dir="rtl"] &
+            transform: translateX(100%)
+
+        [dir="ltr"] &
+            transform: translateX(-100%)
+
+.side-panel--shown
+    &::before
+        pointer-events: auto
+        background-color: rgba(6, 5, 5, 0.35)
