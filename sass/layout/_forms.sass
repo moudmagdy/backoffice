@@ -8,7 +8,7 @@ fieldset
 
     &:not(:last-child)
         padding-bottom: rem(20px)
-        border-bottom: 1px solid #ececec
+        border-bottom: rem(1px) solid #ececec
 
 input
     &::-webkit-outer-spin-button,
@@ -33,10 +33,14 @@ button,
     [dir="ltr"] &
         direction: ltr
 
-.form-label
-    color: #A3AAB2
+.form-label,
+.form-check-label
+    color: #4D4D4D
 
 .form-control
+    &::placeholder
+        color: #65676B
+
     &[readonly]
         background-color: #F5F5F5
         border-color: #F5F5F5
@@ -47,51 +51,55 @@ button,
 
 .form-control,
 .form-select
-    border: 2px solid #CBD0D6
-    border-radius: 12px
+    line-height: 1.5
+    border: rem(2px) solid #CBD0D6
+    border-radius: rem(12px)
     padding: 0.725rem 0.95rem
 
     &:focus
         +var(border-color, color-brand)
         box-shadow: 0 0 0 0.25rem lighten($color-brand, 40%)
 
+.form-file
+    display: none
+
+    & + label
+        display: flex
+        align-items: center
+        gap: rem(15px)
+        line-height: 1.15
+        border: rem(2px) solid #CBD0D6
+        border-radius: rem(12px)
+        cursor: pointer
+        padding: 0.625rem 0.95rem
+        transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out
+
+        svg
+            fill: #4D4D4D
+
+        .form-file__label
+            direction: ltr
+            color: #65676B
+
+        &:active
+            +var(border-color, color-brand)
+            box-shadow: 0 0 0 0.25rem lighten($color-brand, 40%)
+
 .form-select
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8.8' height='16.2' viewBox='0 0 8.8 16.2'%3E%3Cpath fill='%23E4E6EB' d='M0,11.8l4.4,4.4l4.4-4.4H0z M0,4.4L4.4,0l4.4,4.4L0,4.4z'/%3E%3C/svg%3E")
     background-size: rem(8.8px) rem(16.2px)
-
-::-webkit-input-placeholder
-    color: #65676B
-    font-size: 14px
-
-::-moz-placeholder
-    color: #65676B
-    font-size: 14px
-
-:-ms-input-placeholder
-    color: #65676B
-    font-size: 14px
-
-:-moz-placeholder
-    color: #65676B
-    font-size: 14px
-
-::placeholder
-    color: #65676B
-    font-size: 14px
-
-.form-check-label
-    color: #242424
 
 .currency-symbol
     position: relative
 
     &::before
+        content: attr(data-symbol)
         position: absolute
         inset-inline-end: 0.95rem
-        top: 50%
-        transform: translateY(-50%)
-        content: attr(data-symbol)
-        font-size: 12px
+        display: flex
+        align-items: center
+        height: 100%
+        font-size: rem(12px)
 
     .form-control
         padding-inline-end: 2.8rem

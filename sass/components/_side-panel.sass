@@ -49,7 +49,15 @@
             transform: translateX(-100%)
 
     &__body
+        overflow-y: auto
+        +scrollbar
+        scroll-behavior: smooth
         padding: rem(30px) rem(24px)
+
+    &__footer
+        border-top: 1px solid #e1e3e9
+        padding: rem(15px) rem(25px)
+        margin-top: auto
 
 .side-panel--shown
     &::before

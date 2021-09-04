@@ -4,6 +4,12 @@
     overflow: hidden
     overflow-x: auto
     +scrollbar-hidden
+    margin: rem(20px) 0 rem(-12.5px)
+
+    .has--tabs &
+        @media (min-width: 1200px)
+            margin: rem(-12.5px) 0
+            margin-inline-start: auto
 
     @media (max-width: 1200px)
         flex: 1 1 100%

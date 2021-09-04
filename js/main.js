@@ -14,3 +14,36 @@ datepickerElements.forEach(element => {
         orientation: 'left'
     });
 });
+
+const fileInputs = document.querySelectorAll('.form-file');
+function getFileName() {
+    let fullPath = this.value;
+    if (fullPath) {
+        var startIndex = (fullPath.indexOf('\\') >= 0 ? fullPath.lastIndexOf('\\') : fullPath.lastIndexOf('/'));
+        var filename = fullPath.substring(startIndex);
+        if (filename.indexOf('\\') === 0 || filename.indexOf('/') === 0) {
+            filename = filename.substring(1);
+        }
+        this.nextElementSibling.querySelector('.form-file__label').textContent = filename;
+    } else {
+        let bodyElement = document.querySelector('body');
+        let direction;
+
+        if (window.getComputedStyle) {
+            // all browsers
+            direction = window.getComputedStyle(bodyElement, null).getPropertyValue('direction');
+        } else {
+            // IE5-8
+            direction = bodyElement.currentStyle.direction;
+        }
+
+        if (direction == 'rtl') {
+            this.nextElementSibling.querySelector('.form-file__label').textContent = 'اختر صورة للمنتج';
+        } else {
+            this.nextElementSibling.querySelector('.form-file__label').textContent = 'Choose an image for the product';
+        }
+    }
+}
+if (fileInputs) {
+    fileInputs.forEach(fileInput => fileInput.addEventListener('change', getFileName));
+}

@@ -90,3 +90,20 @@ multiCollapse.forEach(servicesCollapseToggle => {
         }
     });
 });
+
+const rowToggles = document.querySelectorAll('.row__toggle');
+
+rowToggles.forEach(rowToggle => {
+    rowToggle.addEventListener('click', (e) => {
+        e.preventDefault();
+        if (!rowToggle.closest('.flex-table__row').classList.contains('row__data--shown')) {
+            rowToggle.closest('.flex-table__row').classList.add('row__data--shown');
+            rowToggle.setAttribute('aria-expanded', 'true');
+            rowToggle.closest('.flex-table__row').querySelector('.flex-table__row__data').style.maxHeight = rowToggle.closest('.flex-table__row').querySelector('.flex-table__row__data').scrollHeight + 'px';
+        } else {
+            rowToggle.closest('.flex-table__row').classList.remove('row__data--shown');
+            rowToggle.setAttribute('aria-expanded', 'false');
+            rowToggle.closest('.flex-table__row').querySelector('.flex-table__row__data').style.maxHeight = 0;
+        }
+    });
+});

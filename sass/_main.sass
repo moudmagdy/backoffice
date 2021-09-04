@@ -168,6 +168,35 @@ body
         +var(background-color, color-brand)
         color: $color-white
 
+header
+    .dropdown-toggle
+        +flex-center
+        width: 40px
+        height: 40px
+        border: rem(1px) solid #e7dcdc
+        border-radius: 50%
+        transition: background-color 0.3s
+
+        svg
+            fill: #4D4D4D
+            width: rem(16px)
+            height: auto
+
+        &:hover
+            background-color: #F5F5F5
+
+        &.show
+            background-color: #F5F5F5
+
+            svg
+                fill: $color-brand
+
+    .dropdown-menu
+        min-width: 225px
+
+    .dropdown-item
+        padding: 1rem 1.25rem
+
 .datepicker-dropdown
     padding-top: 0
 

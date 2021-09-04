@@ -101,13 +101,11 @@ main
         gap: 0 rem(15px)
         background-color: $color-white
         border-radius: rem(12px) rem(12px) 0 0
-        padding: 0 rem(22px)
+        padding: rem(12.5px) rem(22px)
+        transition: min-height 0.3s
 
         &.has--tabs
             box-shadow: inset 0 -0.5px 1px #edeff4
-
-        &:not(.has--tabs)
-            padding: rem(12.5px) rem(22px)
 
         h1
             font-size: rem(18px)
@@ -124,16 +122,16 @@ main
 
             @media (max-width: 768px)
                 flex-basis: 100%
-                margin-bottom: rem(20px)
+                margin-top: rem(20px)
 
         .add-client--btn
             margin-inline-start: auto
 
             svg
-                width: rem(12px)
-                height: rem(12px)
+                width: rem(10px)
+                height: rem(10px)
 
-    section
+    & > section
         flex: 1 1 auto
         background-color: $color-white
         border-radius: 0 0 rem(12px) rem(12px)
@@ -144,6 +142,34 @@ main
         & > .layout__container,
         & > .layout__container > .layout__tab__content
             height: 100%
+
+.double-column-layout
+    flex: 1 1 auto
+    display: flex
+    gap: rem(15px)
+    background-color: transparent
+    border-radius: 0
+    overflow: hidden
+    padding: rem(15px) 0 0
+
+    @media (max-width: 1024px)
+        flex-wrap: wrap
+        align-content: flex-start
+        overflow-y: scroll
+        +scrollbar
+        scroll-behavior: smooth
+        padding-inline-end: rem(10px)
+        padding-bottom: rem(15px)
+
+    .layout__col
+        flex: 1 1 100%
+        border-radius: rem(8px)
+        overflow-y: auto
+        +scrollbar-hidden
+        scroll-behavior: smooth
+
+        &.has--white-bg
+            background-color: #fff
 
 .layout__tab__content
     flex-direction: column
