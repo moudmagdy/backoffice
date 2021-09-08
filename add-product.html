@@ -9,6 +9,7 @@
     <link rel="icon" type="image/png" href="favicon.png">
     <title>إضافة منتج - كاشير</title>
     <link rel="stylesheet" href="css/bootstrap.rtl.min.css">
+    <link rel="stylesheet" href="css/token-autocomplete.css">
     <link rel="stylesheet" href="css/style.min.css">
 </head>
 
@@ -288,6 +289,27 @@
                                 </div>
                                 <div class="col-6 d-flex">
                                     <span class="variables-count ms-auto">3 متغيرات</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product__data collapsible mb-3">
+                        <div class="product__data__header">
+                            <a href="#" class="collapse__toggle" aria-expanded="true">الوحدات</a>
+                        </div>
+                        <div class="collapse__container">
+                            <div class="row mt-3">
+                                <div class="col-12 col-sm-6 mb-3">
+                                    <label class="form-label" for="">اصغر الوحده</label>
+                                    <div class="tags-inputs"></div>
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-12 col-sm-6 mb-3">
+                                    <div class="form-switch">
+                                        <input class="form-switch-input" type="checkbox" id="flexSwitchCheckDefault">
+                                        <label class="form-switch-btn" for="flexSwitchCheckDefault"></label>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -630,6 +652,7 @@
     </div>
     <script src="js/popper.min.js" defer></script>
     <script src="js/bootstrap.min.js" defer></script>
+    <script src="js/token-autocomplete.js" defer></script>
     <script src="js/main.js" defer></script>
     <script src="js/components/main-menu.module.js" type="module"></script>
     <script src="js/components/collapsible.module.js" type="module"></script>

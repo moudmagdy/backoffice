@@ -50,11 +50,12 @@ button,
             box-shadow: none
 
 .form-control,
-.form-select
+.form-select,
+.tags-inputs
     line-height: 1.5
     border: rem(2px) solid #CBD0D6
     border-radius: rem(12px)
-    padding: 0.725rem 0.95rem
+    padding: 0.725rem 0.75rem
 
     &:focus
         +var(border-color, color-brand)
@@ -140,3 +141,111 @@ button,
     background-size: rem(8.8px) rem(16.2px)
     background-repeat: no-repeat
     background-position: left .75rem center
+
+.form-switch
+    display: flex
+    align-items: center
+    gap: rem(10px)
+    padding-right: 0
+
+.form-switch-input
+    display: none
+    appearance: none
+    -webkit-print-color-adjust: exact
+    color-adjust: exact
+
+.form-switch-btn
+    display: flex
+    align-items: center
+    position: relative
+    width: rem(44px)
+    height: rem(24px)
+    background-color: #dae0e7
+    border-radius: rem(12px)
+    transition: all 0.3s
+
+    .form-switch-input:checked + &
+        background-color: #c4e0fc
+
+    &::before
+        content: ""
+        position: absolute
+        inset-inline-start: rem(-2px)
+        width: rem(26px)
+        height: rem(26px)
+        border-radius: rem(13px)
+        background-color: #F6F6F6
+        box-shadow: 0 0 rem(3px) rgba(0, 0, 0, 0.15)
+        transition: all 0.3s
+
+    .form-switch-input:checked + &
+        &::before
+            +var(background-color, color-brand)
+
+            [dir="rtl"] &
+                transform: translateX(-22px)
+
+            [dir="ltr"] &
+                transform: translateX(22px)
+
+.tags-inputs
+    display: flex
+    align-items: center
+    width: 100%
+    min-height: rem(48px)
+    padding: rem(6px) 0.75rem
+
+.token-autocomplete-container
+    display: flex
+    gap: rem(10px)
+
+    .token-autocomplete-token
+        display: flex
+        align-items: center
+        gap: rem(5px)
+        height: rem(32px)
+        line-height: inherit
+        background-color: rgba(198, 207, 217, 0.48)
+        border: rem(1px) solid #C6CFD9
+        border-radius: rem(16px)
+        pointer-events: auto
+        padding: 0 rem(5px)
+        padding-inline-start: rem(10px)
+        margin: 0
+        transition: background-color 0.3s
+
+        &:hover
+            background-color: rgba(198, 207, 217, 0.68)
+
+        .token-autocomplete-token-delete
+            +flex-center
+            align-self: center
+            justify-self: flex-end
+            width: rem(22px)
+            height: rem(22px)
+            margin: 0
+            transition: background-color 0.3s
+
+            svg
+                width: rem(8px)
+
+            &:hover
+                background-color: rgba(198, 207, 217, 0.78)
+
+    .token-autocomplete-input
+        flex: 1 1 auto
+        padding: 0
+        margin: 0
+
+        &:empty
+            &::before
+                display: none
+
+    [data-value="_no_match_"]
+        font-size: rem(12px)
+        background-color: rgba(198, 207, 217, 0.48)
+        color: inherit
+
+.token-autocomplete-container,
+.token-autocomplete-container *
+    font-family: inherit
