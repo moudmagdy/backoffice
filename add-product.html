@@ -200,7 +200,7 @@
             </header>
             <div class="double-column-layout">
                 <div class="layout__col">
-                    <div class="product__data collapsible mb-3">
+                    <div class="product__data collapsible collapsed mb-3">
                         <div class="product__data__header">
                             <a href="#" class="collapse__toggle" aria-expanded="true">معلومات اساسية</a>
                         </div>
@@ -301,7 +301,17 @@
                             <div class="row mt-3">
                                 <div class="col-12 col-sm-6 mb-3">
                                     <label class="form-label" for="">اصغر الوحده</label>
-                                    <div class="tags-inputs"></div>
+                                    <div class="form-tags-control">
+                                        <span class="form-tags-control__tag">
+                                            <span class="form-tags-control__tag__label">كبير</span>
+                                            <a href="#" class="form-tags-control__tag__delete">
+                                                <svg viewBox="0 0 8.5 8.5">
+                                                    <path d="M5,4.2l3.5,3.5L7.8,8.5L4.2,5L0.7,8.5L0,7.8l3.5-3.5L0,0.7L0.7,0l3.5,3.5L7.8,0l0.7,0.7L5,4.2z"></path>
+                                                </svg>
+                                            </a>
+                                        </span>
+                                        <span class="form-tags-control__input" contenteditable="true"></span>
+                                    </div>
                                 </div>
                             </div>
                             <div class="row mt-3">
@@ -652,10 +662,10 @@
     </div>
     <script src="js/popper.min.js" defer></script>
     <script src="js/bootstrap.min.js" defer></script>
-    <script src="js/token-autocomplete.js" defer></script>
     <script src="js/main.js" defer></script>
     <script src="js/components/main-menu.module.js" type="module"></script>
     <script src="js/components/collapsible.module.js" type="module"></script>
+    <script src="js/components/tags-input.module.js" defer></script>
 </body>
 
 </html>

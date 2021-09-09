@@ -47,39 +47,3 @@ function getFileName() {
 if (fileInputs) {
     fileInputs.forEach(fileInput => fileInput.addEventListener('change', getFileName));
 }
-
-
-// check the page direction
-let bodyElement = document.querySelector('body');
-let direction;
-let noMatchesText;
-if (window.getComputedStyle) {
-    // all browsers
-    direction = window.getComputedStyle(bodyElement, null).getPropertyValue('direction');
-} else {
-    // IE5-8
-    direction = bodyElement.currentStyle.direction;
-}
-if (direction == 'rtl') {
-    noMatchesText = 'لا يوجد نتائج مطابقة...';
-} else {
-    noMatchesText = 'No matching results...';
-}
-
-let tokenAutocomplete = new TokenAutocomplete({
-    name: 'tags-inputs',
-    selector: '.tags-inputs',
-    minCharactersForSuggestion: 2,
-    noMatchesText: noMatchesText,
-    initialTokens: ['css', 'script', 'com'],
-    initialSuggestions: ['html', 'css', 'javascript', 'python', 'ruby', 'php']
-});
-
-// document.querySelector('.token-autocomplete-input').addEventListener('keydown', function (event) {
-//     if (event.which == 13 || event.keyCode == 13) {
-//         if (this.textContent == '') {
-
-//             event.preventDefault();
-//         }
-//     }
-// });

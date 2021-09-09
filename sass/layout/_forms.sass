@@ -51,7 +51,7 @@ button,
 
 .form-control,
 .form-select,
-.tags-inputs
+.form-tags-control
     line-height: 1.5
     border: rem(2px) solid #CBD0D6
     border-radius: rem(12px)
@@ -188,64 +188,61 @@ button,
             [dir="ltr"] &
                 transform: translateX(22px)
 
-.tags-inputs
+.form-tags-control
     display: flex
     align-items: center
+    gap: rem(10px)
     width: 100%
     min-height: rem(48px)
     padding: rem(6px) 0.75rem
 
-.token-autocomplete-container
+.form-tags-control__tag
     display: flex
-    gap: rem(10px)
+    align-items: center
+    gap: rem(5px)
+    height: rem(32px)
+    line-height: inherit
+    background-color: rgba(198, 207, 217, 0.48)
+    border: rem(1px) solid #C6CFD9
+    border-radius: rem(16px)
+    pointer-events: auto
+    padding: 0 rem(5px)
+    padding-inline-start: rem(10px)
+    margin: 0
+    transition: background-color 0.3s
 
-    .token-autocomplete-token
-        display: flex
-        align-items: center
-        gap: rem(5px)
-        height: rem(32px)
-        line-height: inherit
-        background-color: rgba(198, 207, 217, 0.48)
-        border: rem(1px) solid #C6CFD9
-        border-radius: rem(16px)
-        pointer-events: auto
-        padding: 0 rem(5px)
-        padding-inline-start: rem(10px)
-        margin: 0
-        transition: background-color 0.3s
+    &:hover
+        background-color: rgba(198, 207, 217, 0.68)
 
-        &:hover
-            background-color: rgba(198, 207, 217, 0.68)
+.form-tags-control__tag__label
+    display: flex
+    font-size: rem(12px)
 
-        .token-autocomplete-token-delete
-            +flex-center
-            align-self: center
-            justify-self: flex-end
-            width: rem(22px)
-            height: rem(22px)
-            margin: 0
-            transition: background-color 0.3s
+    [dir="rtl"] &
+        font-family: 'NotoSansArabic_Medium', sans-serif
 
-            svg
-                width: rem(8px)
+    [dir="ltr"] &
+        font-family: 'NotoSans_Medium', sans-serif
 
-            &:hover
-                background-color: rgba(198, 207, 217, 0.78)
+.form-tags-control__tag__delete
+    +flex-center
+    align-self: center
+    justify-self: flex-end
+    width: rem(22px)
+    height: rem(22px)
+    border-radius: 50%
+    transition: background-color 0.3s
 
-    .token-autocomplete-input
-        flex: 1 1 auto
-        padding: 0
-        margin: 0
+    svg
+        width: rem(8px)
+        height: rem(8px)
+        fill: #060505
+        pointer-events: none
 
-        &:empty
-            &::before
-                display: none
+    &:hover
+        background-color: rgba(198, 207, 217, 0.78)
 
-    [data-value="_no_match_"]
-        font-size: rem(12px)
-        background-color: rgba(198, 207, 217, 0.48)
-        color: inherit
-
-.token-autocomplete-container,
-.token-autocomplete-container *
-    font-family: inherit
+.form-tags-control__input
+    display: flex
+    flex: 1 1 auto
+    height: 100%
