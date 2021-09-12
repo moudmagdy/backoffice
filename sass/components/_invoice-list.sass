@@ -1,0 +1,266 @@
+.invoice__list
+    display: flex
+    flex-direction: column
+    width: 100%
+    height: 100%
+    list-style: none
+    padding: 0
+    margin: 0
+
+.invoice__item
+    position: relative
+    display: flex
+    align-items: center
+    justify-content: flex-end
+    gap: rem(10px)
+    width: 100%
+    background-color: $color-white
+    border-bottom: 1px solid #F0F0F0
+    z-index: 1
+    padding: rem(10px) rem(20px)
+    transition: background-color 0.3s
+
+    &.item-added
+        animation: blink 0.5s linear 1 forwards
+
+    &::before
+        content: ""
+        position: absolute
+        top: 0
+        inset-inline-start: 0
+        width: 0
+        height: 100%
+        background-color: #FAFAFA
+        transition: all 0.3s ease-in-out
+        z-index: -1
+
+    &::after
+        content: ""
+        position: absolute
+        bottom: 0
+        inset-inline-start: 0
+        width: rem(3px)
+        height: 0
+        +var(background-color, color-brand)
+        z-index: 1
+        transition: all 0.2s ease-in-out
+
+    &--data
+        display: flex
+        flex-direction: column
+        flex: 0 0 30%
+
+        &-name
+            margin-bottom: rem(10px)
+
+            h3
+                display: -webkit-box
+                -webkit-box-orient: vertical
+                font-size: 13px
+                line-height: 1.5
+                overflow: hidden
+                text-overflow: ellipsis
+                -webkit-line-clamp: 2
+                margin-bottom: 0
+
+                [dir="rtl"] &
+                    font-family: 'NotoSansArabic_Medium', sans-serif
+
+                [dir="ltr"] &
+                    font-family: 'NotoSans_Medium', sans-serif
+
+        .invoice__item__price
+            font-size: 11px
+
+        &-discountInput
+            display: flex
+            align-items: center
+            gap: 10px
+            width: max-content
+            font-size: 14px
+
+            span
+                text-decoration: line-through
+                color: #757575
+
+            input
+                width: 45px
+                line-height: 1.2
+                border: none
+                border-radius: rem(4px)
+                padding: rem(2px) rem(5px)
+
+                &::-webkit-outer-spin-button,
+                &::-webkit-inner-spin-button
+                    -webkit-appearance: none
+                    margin: 0
+
+                &[type="number"]
+                    background-color: transparent
+                    -moz-appearance: textfield
+
+                &:hover
+                    box-shadow: 0 0 0 1px #d6d1d1
+
+                &:focus
+                    outline: none
+
+                &::placeholder
+                    color: #212121
+
+    &--counter
+        display: flex
+        align-items: center
+        gap: rem(5px)
+        margin-inline-start: rem(15px)
+        margin-inline-end: auto
+
+        &-screen
+            display: flex
+            justify-content: center
+            align-items: center
+            min-width: rem(36px)
+            height: rem(40px)
+            font-size: rem(15px)
+            text-align: center
+            +var(color, color-text-primary)
+            background-color: #eef1f4
+            border-radius: rem(4px)
+            padding: 0.5rem
+
+            [dir="rtl"] &
+                font-family: 'NotoSansArabic_Medium', sans-serif
+
+            [dir="ltr"] &
+                font-family: 'NotoSans_Medium', sans-serif
+
+            input
+                width: 100%
+                max-width: 20px
+                height: 100%
+                background: transparent
+                text-align: center
+                border: none
+                box-shadow: none
+                +var(color, color-text-primary)
+                padding: 0
+                margin: 0
+
+                &::-webkit-outer-spin-button,
+                &::-webkit-inner-spin-button
+                    -webkit-appearance: none
+                    margin: 0
+
+                &[type="number"]
+                    -moz-appearance: textfield
+
+            &.return
+                color: #F02849
+
+                input
+                    color: #F02849
+
+        &--minus,
+        &--plus
+            +flex-center
+            cursor: pointer
+            width: 28px
+            height: 28px
+            border-radius: 50%
+            opacity: 0
+            pointer-events: none
+
+            svg
+                width: 12px
+                height: 12px
+
+            &:hover
+                background-color: #F2F2F2
+
+    &--discount
+        +flex-center
+        width: 24px
+        height: 24px
+        border-radius: 50%
+        opacity: 0
+        text-decoration: none
+
+        &.add-discount
+            background-color: rgba(198, 207, 217, 0.3)
+
+            span
+                display: none
+
+            svg
+                width: 13px
+
+        &.number
+            width: max-content
+            border-radius: 25px
+            background-color: #FFE9F0
+            color: #FF8591
+            font-size: 12px
+            opacity: 1
+            padding: 0 5px
+
+            svg
+                display: none
+
+        &.final
+            background-color: #FF8591
+            border-radius: 52px
+            width: 3.5rem
+
+            span
+                font-size: 1.2rem
+                color: #fff
+
+    &--price
+        font-size: 15px
+
+        [dir="rtl"] &
+            font-family: 'NotoSansArabic_SemiBold', sans-serif
+
+        [dir="ltr"] &
+            font-family: 'NotoSans_SemiBold', sans-serif
+
+        &.return-amount
+            color: #F02849
+
+    &--delete
+        +flex-center
+        width: 24px
+        height: 24px
+        border-radius: 50%
+        opacity: 0
+
+        svg
+            width: 12px
+            height: 12px
+
+        &:hover
+            background-color: #F2F2F2
+
+    &:hover
+        .invoice__item--counter--minus,
+        .invoice__item--counter--plus
+            opacity: 1
+            pointer-events: auto
+
+        .invoice__item--discount
+            opacity: 1
+
+        .invoice__item--delete
+            opacity: 1
+
+        &::before
+            width: 100%
+
+        &::after
+            height: 100%
+
+@keyframes blink
+    0%, 100%
+        background-color: $color-white
+    50%
+        background-color: #F0F0F0
