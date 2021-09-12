@@ -34,12 +34,13 @@ button,
         direction: ltr
 
 .form-label,
+.col-form-label,
 .form-check-label
     color: #4D4D4D
 
 .form-control
     &::placeholder
-        color: #65676B
+        color: #C6CFD9
 
     &[readonly]
         background-color: #F5F5F5
@@ -60,6 +61,29 @@ button,
     &:focus
         +var(border-color, color-brand)
         box-shadow: 0 0 0 0.25rem lighten($color-brand, 40%)
+
+.form-check
+    display: inline-flex
+    align-items: center
+    gap: rem(8px)
+    padding-right: 0
+    margin-bottom: 0
+
+    .form-check-input
+        width: rem(18px)
+        height: rem(18px)
+        border: rem(2px) solid #CBD0D6
+        border-radius: rem(5px)
+        float: none
+        margin-top: 0
+        margin-right: 0
+
+        &:checked
+            +var(background-color, color-brand)
+            +var(border-color, color-brand)
+
+.form-select
+    padding-inline-end: 2rem
 
 .form-file
     display: none
@@ -95,6 +119,21 @@ button,
 
     &::before
         content: attr(data-symbol)
+        position: absolute
+        inset-inline-end: 0.95rem
+        display: flex
+        align-items: center
+        height: 100%
+        font-size: rem(12px)
+
+    .form-control
+        padding-inline-end: 2.8rem
+
+.unit-symbol
+    position: relative
+
+    &::before
+        content: attr(data-unit)
         position: absolute
         inset-inline-end: 0.95rem
         display: flex
@@ -199,6 +238,11 @@ button,
     width: 100%
     min-height: rem(48px)
     padding: rem(6px) 0.75rem
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out
+
+    &:focus-within
+        +var(border-color, color-brand)
+        box-shadow: 0 0 0 0.25rem lighten($color-brand, 40%)
 
 .form-tags-control__tag
     display: flex
@@ -262,6 +306,7 @@ button,
     border-radius: rem(6px)
     padding: rem(10px)
     z-index: 1
+    box-shadow: 0 rem(6px) rem(10px) rgba(0, 0, 0, 0.12)
 
     a
         display: inline-flex

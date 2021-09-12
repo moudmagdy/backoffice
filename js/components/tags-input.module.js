@@ -36,8 +36,10 @@ function getValue() {
 }
 
 function selectTag(e) {
-    if (e.target.closest('.search-result')) {
+    // if (e.target.closest('.search-result')) {
+    if (e.target.matches('.search-result a')) {
         e.preventDefault();
+        e.stopPropagation();
         let resulTagLabel = e.target.textContent;
         let parentInput = e.target.parentNode.previousElementSibling.querySelector('.form-tags-control__input');
         parentInput.textContent = resulTagLabel;

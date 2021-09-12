@@ -8,6 +8,16 @@ collapseContainers.forEach(container => {
             container.style.maxHeight = 0;
         } else {
             container.style.maxHeight = container.scrollHeight + 'px';
+            container.style.overflowY = 'visible';
+        }
+    });
+});
+
+collapseContainers.forEach(container => {
+    window.addEventListener('resize', () => {
+        if (!container.parentNode.classList.contains('collapsed')) {
+            container.style.maxHeight = container.scrollHeight + 'px';
+            container.style.overflowY = 'visible';
         }
     });
 });
@@ -53,6 +63,7 @@ collapseToggles.forEach(collapseToggle => {
                 if (!sibling.classList.contains('collapsed')) {
                     sibling.classList.add('collapsed');
                     sibling.querySelector('.collapse__container').style.maxHeight = 0;
+                    sibling.querySelector('.collapse__container').style.overflowY = 'clip';
                     sibling.querySelector('.collapse__toggle').setAttribute('aria-expanded', 'false');
                 }
             }
@@ -61,10 +72,14 @@ collapseToggles.forEach(collapseToggle => {
         if (!parentCollapsible.classList.contains('collapsed')) {
             parentCollapsible.classList.add('collapsed');
             siblingCollapseContainer.style.maxHeight = 0;
+            siblingCollapseContainer.style.overflowY = 'clip';
             collapseToggle.setAttribute('aria-expanded', 'false');
         } else {
             parentCollapsible.classList.remove('collapsed');
             siblingCollapseContainer.style.maxHeight = siblingCollapseContainer.scrollHeight + 'px';
+            setTimeout(function () {
+                siblingCollapseContainer.style.overflowY = 'visible';
+            }, 350);
             collapseToggle.setAttribute('aria-expanded', 'true');
         }
     });
