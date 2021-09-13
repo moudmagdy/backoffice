@@ -3,14 +3,8 @@
     display: grid
     grid-template-columns: repeat(auto-fill, minmax(120px, 1fr))
     gap: rem(16px)
+    padding-inline-end: rem(10px)
     transition: all 0.4s ease-in
-    margin-bottom: rem(20px)
-
-    [dir="rtl"] &
-        padding: rem(10px) rem(30px) 0 rem(23px)
-
-    [dir="ltr"] &
-        padding: rem(10px) rem(23px) 0 rem(30px)
 
     &.list-view
         grid-template-columns: repeat(auto-fill, minmax(225px, 1fr))
@@ -73,7 +67,7 @@
                         width: rem(15px)
                         +var(fill, color-text-primary)
 
-    &__image
+    .product__image
         width: 100%
         height: rem(90px)
         overflow: hidden
@@ -85,13 +79,13 @@
             height: 100%
             object-fit: cover
 
-    &__details
+    .product__details
         display: flex
         flex-direction: column
         padding: rem(5px)
         margin-top: auto
 
-    &__title
+    .product__title
         display: -webkit-box
         -webkit-box-orient: vertical
         font-size: 14px
@@ -108,12 +102,12 @@
         [dir="ltr"] &
             font-family: 'NotoSans_Medium', sans-serif
 
-    &__price
+    .product__details__price
         display: block
         font-size: rem(14px)
         margin-top: auto
 
-    &__quantity
+    .product__quantity
         position: absolute
         top: -7px
         inset-inline-end: rem(-7px)
