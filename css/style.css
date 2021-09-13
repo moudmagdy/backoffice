@@ -2284,8 +2284,8 @@ main header .main-menu__toggle:hover svg {
   display: none;
 }
 .search__bar__feature svg {
-  max-width: 18px;
-  max-height: 18px;
+  max-width: 1.125rem;
+  max-height: 1.125rem;
   fill: #A3AAB2;
   -webkit-transition: fill 0.3s;
   -o-transition: fill 0.3s;
@@ -4358,4 +4358,8 @@ section .page-card:nth-last-child(-n+2) {
 }
 .product__data textarea {
   resize: none;
+}
+
+.new-invoice-page .double-column-layout .layout__col {
+  overflow-y: hidden;
 }
