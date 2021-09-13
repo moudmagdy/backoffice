@@ -1,3 +1,69 @@
+.search__bar
+    display: flex
+    flex-wrap: wrap
+    align-items: center
+    gap: rem(15px)
+
+    &__features
+        display: flex
+        align-items: center
+
+    &__feature
+        +flex-center
+        width: 36px
+        height: 36px
+        background-color: transparent
+        border-radius: 8px
+        transition: background-color 0.3s
+
+        &::after
+            display: none
+
+        svg
+            max-width: 18px
+            max-height: 18px
+            fill: #A3AAB2
+            transition: fill 0.3s
+
+        &:hover
+            background-color: rgba(198, 207, 217, 0.2)
+
+            svg
+                fill: darken(#A3AAB2, 15%)
+
+        &.active
+            background-color: rgba(198, 207, 217, 0.2)
+
+            svg
+                +var(fill, color-brand)
+
+    .features__dropdown
+        .dropdown-toggle
+            &.show
+                background-color: rgba(198, 207, 217, 0.2)
+
+                svg
+                    +var(fill, color-brand)
+
+        .features__dropdown__menu
+            .dropdown-item
+                svg
+                    +var(fill, color-text-primary)
+
+                &.active
+                    svg
+                        fill: $color-white
+
+                    &:hover
+                        +var(background-color, color-brand)
+
+                    &:active
+                        color: $color-white
+
+    .search__input
+        flex: 1 1 auto
+        max-width: none
+
 .search__input
     display: flex
     align-items: center

@@ -1330,6 +1330,9 @@ main header .main-menu__toggle:hover svg {
 .double-column-layout .layout__col.has--white-bg {
   background-color: #fff;
 }
+.double-column-layout .layout__col header {
+  margin-bottom: 0.625rem;
+}
 
 .layout__tab__content {
   -webkit-box-orient: vertical;
@@ -2238,6 +2241,95 @@ main header .main-menu__toggle:hover svg {
 
 .modal-sm .modal-footer .btn {
   padding: 0.725rem 2.95rem;
+}
+
+.search__bar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 0.9375rem;
+}
+.search__bar__features {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.search__bar__feature {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 36px;
+  height: 36px;
+  background-color: transparent;
+  border-radius: 8px;
+  -webkit-transition: background-color 0.3s;
+  -o-transition: background-color 0.3s;
+  transition: background-color 0.3s;
+}
+.search__bar__feature::after {
+  display: none;
+}
+.search__bar__feature svg {
+  max-width: 18px;
+  max-height: 18px;
+  fill: #A3AAB2;
+  -webkit-transition: fill 0.3s;
+  -o-transition: fill 0.3s;
+  transition: fill 0.3s;
+}
+.search__bar__feature:hover {
+  background-color: rgba(198, 207, 217, 0.2);
+}
+.search__bar__feature:hover svg {
+  fill: #79848f;
+}
+.search__bar__feature.active {
+  background-color: rgba(198, 207, 217, 0.2);
+}
+.search__bar__feature.active svg {
+  fill: #1877F2;
+  fill: var(--color-brand);
+}
+.search__bar .features__dropdown .dropdown-toggle.show {
+  background-color: rgba(198, 207, 217, 0.2);
+}
+.search__bar .features__dropdown .dropdown-toggle.show svg {
+  fill: #1877F2;
+  fill: var(--color-brand);
+}
+.search__bar .features__dropdown .features__dropdown__menu .dropdown-item svg {
+  fill: #050505;
+  fill: var(--color-text-primary);
+}
+.search__bar .features__dropdown .features__dropdown__menu .dropdown-item.active svg {
+  fill: #fff;
+}
+.search__bar .features__dropdown .features__dropdown__menu .dropdown-item.active:hover {
+  background-color: #1877F2;
+  background-color: var(--color-brand);
+}
+.search__bar .features__dropdown .features__dropdown__menu .dropdown-item.active:active {
+  color: #fff;
+}
+.search__bar .search__input {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  max-width: none;
 }
 
 .search__input {
