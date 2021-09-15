@@ -256,3 +256,10 @@ header
 
 .datepicker-footer
     display: none
+
+.tooltip-inner
+    +var(background-color, color-brand)
+
+.bs-tooltip-top .tooltip-arrow::before,
+.bs-tooltip-auto[data-popper-placement^=top] .tooltip-arrow::before
+    +var(border-top-color, color-brand)
