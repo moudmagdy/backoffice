@@ -631,7 +631,8 @@ button:focus,
   padding-right: 0;
   margin-bottom: 0;
 }
-.form-check .form-check-input {
+
+.form-check-input:not(.form-switch .form-check-input) {
   width: 1.125rem;
   height: 1.125rem;
   border: 0.125rem solid #CBD0D6;
@@ -640,7 +641,7 @@ button:focus,
   margin-top: 0;
   margin-right: 0;
 }
-.form-check .form-check-input:checked {
+.form-check-input:not(.form-switch .form-check-input):checked {
   background-color: #1877F2;
   background-color: var(--color-brand);
   border-color: #1877F2;
@@ -818,6 +819,7 @@ button:focus,
   height: 1.5rem;
   background-color: #dae0e7;
   border-radius: 0.75rem;
+  cursor: pointer;
   -webkit-transition: all 0.3s;
   -o-transition: all 0.3s;
   transition: all 0.3s;
