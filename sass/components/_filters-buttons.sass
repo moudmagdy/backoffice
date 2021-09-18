@@ -10,7 +10,6 @@
         display: flex
         gap: rem(5px)
         font-size: rem(12px)
-        color: #4D4D4D
         color: #A3AAB2
         text-decoration: none
         border: rem(2px) solid #C6CFD9
@@ -25,7 +24,14 @@
         [dir="ltr"] &
             font-family: 'NotoSans_Medium', sans-serif
 
+        svg
+            fill: #A3AAB2
+            transition: all 0.3s
+
         &:hover,
         &.selected
             +var(color, color-brand)
             +var(border-color, color-brand)
+
+            svg
+                +var(fill, color-brand)

@@ -3070,7 +3070,6 @@ table tbody tr:nth-of-type(even):hover td {
   display: flex;
   gap: 0.3125rem;
   font-size: 0.75rem;
-  color: #4D4D4D;
   color: #A3AAB2;
   text-decoration: none;
   border: 0.125rem solid #C6CFD9;
@@ -3087,11 +3086,21 @@ table tbody tr:nth-of-type(even):hover td {
 [dir=ltr] .filters__buttons .filter__btn {
   font-family: "NotoSans_Medium", sans-serif;
 }
+.filters__buttons .filter__btn svg {
+  fill: #A3AAB2;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
 .filters__buttons .filter__btn:hover, .filters__buttons .filter__btn.selected {
   color: #1877F2;
   color: var(--color-brand);
   border-color: #1877F2;
   border-color: var(--color-brand);
+}
+.filters__buttons .filter__btn:hover svg, .filters__buttons .filter__btn.selected svg {
+  fill: #1877F2;
+  fill: var(--color-brand);
 }
 
 .products__list {
