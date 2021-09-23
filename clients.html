@@ -5,8 +5,8 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+    <link rel="icon" type="image/png" href="images/favicon.png">
     <title>العملاء - كاشير</title>
     <link rel="stylesheet" href="css/bootstrap.rtl.min.css">
     <link rel="stylesheet" href="css/style.min.css">
@@ -293,10 +293,10 @@
                             <thead>
                                 <tr>
                                     <th>اسم العميل</th>
-                                    <th>رقم موبيل</th>
+                                    <th>رقم تليفون</th>
                                     <th>عدد الفوتير</th>
                                     <th>الرصيد</th>
-                                    <th></th>
+                                    <th>الحالة</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -320,9 +320,16 @@
                                     <td>00.00</td>
                                     <td>
                                         <div class="table__actions">
-                                            <div class="form-check form-switch">
-                                                <input class="form-check-input" type="checkbox" id="">
+                                            <div class="form-switch">
+                                                <input class="form-switch-input" type="checkbox" id="switch1">
+                                                <label class="form-switch-btn" for="switch1"></label>
                                             </div>
+                                            <a href="" class="edit-btn">
+                                                <span>تعديل</span>
+                                                <svg width="27" height="27" viewBox="0 0 27 27">
+                                                    <path fill="#CBD0D6" d="M19.7,1.3l-2.9,2.9H2.9v20h20V10.2l2.9-2.9v18.2c0,0.8-0.6,1.4-1.4,1.4H1.4C0.6,27,0,26.4,0,25.6l0,0V2.7 c0-0.8,0.6-1.4,1.4-1.4H19.7z M25,0l2,2L13.9,15.2h-2v-2L25,0z"></path>
+                                                </svg>
+                                            </a>
                                         </div>
                                     </td>
                                 </tr>
