@@ -1,14 +1,27 @@
 fieldset
-    legend
-        color: #4D4D4D
-        margin-bottom: rem(18px)
+    &:not(.collapsible)
+        &:not(:last-child)
+            padding-bottom: rem(15px)
+            border-bottom: rem(1px) solid #ececec
+            margin-bottom: rem(15px)
 
-    &:not(:first-child)
-        padding-top: rem(20px)
+        legend
+            display: flex
+            color: #4D4D4D
+            margin-bottom: rem(18px)
 
-    &:not(:last-child)
-        padding-bottom: rem(20px)
+    &.collapsible
         border-bottom: rem(1px) solid #ececec
+        padding-bottom: rem(15px)
+
+        legend
+            margin-bottom: 0
+
+        &:not(:last-child)
+            margin-bottom: rem(15px)
+
+    // &:not(:first-child)
+    //     padding-top: rem(20px)
 
 input
     &::-webkit-outer-spin-button,
@@ -53,8 +66,9 @@ button,
 .form-control,
 .form-select,
 .form-tags-control
+    max-height: rem(48px)
     line-height: 1.5
-    border: rem(2px) solid #CBD0D6
+    border: rem(2px) solid #C6CFD9
     border-radius: rem(12px)
     padding: 0.725rem 0.75rem
 
@@ -82,9 +96,6 @@ button,
         &:checked
             +var(background-color, color-brand)
             +var(border-color, color-brand)
-
-.form-select
-    padding-inline-end: 2rem
 
 .form-file
     display: none
@@ -114,6 +125,7 @@ button,
 .form-select
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8.8' height='16.2' viewBox='0 0 8.8 16.2'%3E%3Cpath fill='%23E4E6EB' d='M0,11.8l4.4,4.4l4.4-4.4H0z M0,4.4L4.4,0l4.4,4.4L0,4.4z'/%3E%3C/svg%3E")
     background-size: rem(8.8px) rem(16.2px)
+    padding-inline-end: 2rem
 
 .currency-symbol
     position: relative
@@ -199,39 +211,39 @@ button,
     color-adjust: exact
 
 .form-switch-btn
+    position: relative
     display: flex
     align-items: center
-    position: relative
-    width: rem(44px)
-    height: rem(24px)
-    background-color: #dae0e7
-    border-radius: rem(12px)
     cursor: pointer
-    transition: all 0.3s
+    padding: rem(2px)
 
-    .form-switch-input:checked + &
-        background-color: #c4e0fc
+    &::before,
+    &::after
+        content: ""
+        transition: all 0.3s
 
     &::before
-        content: ""
+        width: rem(34px)
+        height: rem(18px)
+        background-color: #dae0e7
+        border-radius: rem(9px)
+
+    &::after
         position: absolute
-        inset-inline-start: rem(-2px)
-        width: rem(26px)
-        height: rem(26px)
-        border-radius: rem(13px)
+        inset-inline-start: 0
+        width: rem(20px)
+        height: rem(20px)
+        border-radius: 50%
         background-color: #F6F6F6
         box-shadow: 0 0 rem(3px) rgba(0, 0, 0, 0.15)
-        transition: all 0.3s
 
     .form-switch-input:checked + &
         &::before
+            background-color: #c4e0fc
+
+        &::after
             +var(background-color, color-brand)
-
-            [dir="rtl"] &
-                transform: translateX(-22px)
-
-            [dir="ltr"] &
-                transform: translateX(22px)
+            inset-inline-start: calc(100% - 20px)
 
 .form-tags-control__container
     position: relative
@@ -336,3 +348,67 @@ button,
 
         &:hover
             background-color: rgba(198, 207, 217, 0.68)
+
+.form-select--with-icon
+    display: flex
+    align-items: center
+    max-height: rem(48px)
+    border: rem(2px) solid #C6CFD9
+    border-radius: rem(12px)
+    overflow: hidden
+
+    &:focus-within
+        +var(border-color, color-brand)
+        box-shadow: 0 0 0 0.25rem lighten($color-brand, 40%)
+
+    label
+        +flex-center
+        height: 100%
+        padding-inline-start: rem(12px)
+
+    svg
+        width: rem(15px)
+
+    .form-select
+        height: rem(44px)
+        appearance: none
+        border: none
+        padding: 0.6rem 0.75rem !important
+
+        &:focus
+            box-shadow: none
+
+.form__group
+    display: flex
+
+.form__group__col
+    flex: 1 1
+    display: flex
+    flex-direction: column
+    justify-content: flex-end
+
+    & > *
+        &:focus-within,
+        &:focus
+            z-index: 1
+
+    &:first-child,
+    &:last-child
+        flex-basis: 15%
+
+    &:not(:first-child, :last-child)
+        & > *
+            border-radius: 0 !important
+
+    &:not(:first-child)
+        margin-right: rem(-2px)
+
+    &:first-child
+        & > *
+            border-start-end-radius: 0 !important
+            border-end-end-radius: 0 !important
+
+    &:last-child
+        & > *
+            border-start-start-radius: 0 !important
+            border-end-start-radius: 0 !important

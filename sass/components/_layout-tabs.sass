@@ -1,5 +1,6 @@
 .layout__tabs
     display: flex
+    order: 1
     height: rem(65px)
     overflow: hidden
     overflow-x: auto
@@ -8,6 +9,7 @@
 
     .has--tabs &
         @media (min-width: 1200px)
+            order: initial
             margin: rem(-12.5px) 0
             margin-inline-start: auto
 

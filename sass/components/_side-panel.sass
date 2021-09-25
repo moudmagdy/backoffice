@@ -52,12 +52,45 @@
         overflow-y: auto
         +scrollbar
         scroll-behavior: smooth
-        padding: rem(30px) rem(24px)
+        padding: rem(20px) rem(18px)
+
+        legend
+            span
+                font-size: rem(18px)
+                color: #A3AAB2
+
+                [dir="rtl"] &
+                    font-family: 'NotoSansArabic_SemiBold', sans-serif
+
+                [dir="ltr"] &
+                    font-family: 'NotoSans_SemiBold', sans-serif
+
+        .form-label
+            color: #060505
+
+        .form-control,
+        .form-select,
+        .form-tags-control
+            max-height: rem(44px)
+            border-radius: rem(6px)
+            padding: 0.663rem 0.75rem
+
+        .form-select--with-icon
+            max-height: rem(44px)
+            min-height: rem(44px)
+            border-radius: rem(6px)
+
+            .form-select
+                max-height: rem(40px)
 
     &__footer
-        border-top: 1px solid #e1e3e9
-        padding: rem(15px) rem(25px)
+        border-top: rem(1px) solid #ececec
+        z-index: 1
+        padding: rem(15px) rem(18px)
         margin-top: auto
+
+        .btn-lg
+            padding: 0.575rem 3.5rem
 
 .side-panel--shown
     &::before

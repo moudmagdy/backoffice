@@ -100,13 +100,21 @@
                             <span>التقارير</span>
                         </a>
                     </li>
-                    <li>
-                        <a href="clients.html" class="active">
+                    <li class="has--submenu submenu--opened">
+                        <a href="#" class="active">
                             <svg width="34" height="34" viewBox="0 0 34 34">
                                 <path d="M4,34c0-7.2,5.8-13,13-13c7.2,0,13,5.8,13,13h-3.2c0-5.4-4.4-9.7-9.7-9.7S7.3,28.6,7.3,34H4z M17,19.4 c-5.4,0-9.7-4.4-9.7-9.7S11.6,0,17,0c5.4,0,9.7,4.4,9.7,9.7C26.7,15.1,22.4,19.4,17,19.4C17,19.4,17,19.4,17,19.4z M17,16.2 c3.6,0,6.5-2.9,6.5-6.5S20.6,3.2,17,3.2c-3.6,0-6.5,2.9-6.5,6.5C10.5,13.3,13.4,16.2,17,16.2C17,16.2,17,16.2,17,16.2z"></path>
                             </svg>
                             <span>العملاء</span>
                         </a>
+                        <ol class="submenu">
+                            <li>
+                                <a href="clients-list.html" class="active">قائمة العملاء</a>
+                            </li>
+                            <li>
+                                <a href="clients-groups.html">مجموعات العملاء</a>
+                            </li>
+                        </ol>
                     </li>
                     <li>
                         <a href="suppliers.html">
@@ -193,18 +201,24 @@
                     <svg width="15" height="13.9" viewBox="0 0 15 13.9">
                         <path d="M14.8,12.7l-2.4-2.4c1.6-2.6,1.3-6-0.9-8.3C8.8-0.7,4.6-0.7,2,2C0.7,3.2,0,4.9,0,6.7s0.7,3.5,2,4.7 c1.3,1.3,2.9,2,4.7,2s3.5-0.7,4.7-2c0,0,0.1-0.1,0.1-0.1l2.3,2.3c0.1,0.1,0.3,0.2,0.5,0.2s0.4-0.1,0.5-0.2 C15.1,13.4,15.1,12.9,14.8,12.7z M6.7,12C5.3,12,4,11.4,3,10.4c-1-1-1.6-2.3-1.6-3.7S2,4,3,2.9c1-1,2.3-1.6,3.7-1.6s2.7,0.6,3.7,1.6 c2.1,2.1,2.1,5.4,0,7.5C9.4,11.4,8.1,12,6.7,12z"></path>
                     </svg>
-                    <input type="search" name="search" placeholder="ابحث بالإسم او الباركود">
+                    <input type="search" name="search" placeholder="ابحث باسم او رقم العميل">
                 </div>
-                <div href="#" class="filters-open">
-                    <svg width="22" height="18" viewBox="0 0 22 18">
-                        <path d="M20,15v3h-2v-3h-2v-2h6v2H20z M4,15v3H2v-3H0v-2h6v2H4z M10,3V0h2v3h2v2H8V3H10z M10,7h2v11h-2V7z M2,11V0h2v11 H2z M18,11V0h2v11H18z"></path>
-                    </svg>
-                    <span>إظهار الفلاتر</span>
-                    <a href="#" class="filters-close">
-                        <svg width="18" height="18" viewBox="0 0 18 18">
-                            <path d="M9.7,9l8.3,8.3L17.3,18L9,9.7L0.7,18L0,17.3L8.3,9L0,0.7L0.7,0L9,8.3L17.3,0L18,0.7L9.7,9z"></path>
-                        </svg>
+                <div class="dropdown search__bar__dropdown">
+                    <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                        <span class="dropdown__label">مجموعة عملاء:</span>
+                        <span class="dropdown__selected-value">كل العملاء</span>
                     </a>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <li>
+                            <a class="dropdown-item" href="#" data-filter-list="">كل العملاء</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="#" data-filter-list="">مجموعة 1</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="#" data-filter-list="">مجموعة 2</a>
+                        </li>
+                    </ul>
                 </div>
                 <a href="" class="need-help-cta">
                     <svg width="20" height="20" viewBox="0 0 20 20">
@@ -218,7 +232,7 @@
                     </svg>
                     <span>اضافة عميل</span>
                 </a>
-                <div class="dropdown">
+                <div class="dropdown header__dropdown">
                     <a class="dropdown-toggle" href="#" role="button" id="" data-bs-toggle="dropdown" aria-expanded="false">
                         <svg width="10" height="2" viewBox="0 0 10 2">
                             <path d="M10,1c0,0.6-0.4,1-1,1S8,1.6,8,1s0.4-1,1-1S10,0.4,10,1z M6,1c0,0.6-0.4,1-1,1S4,1.6,4,1s0.4-1,1-1 S6,0.4,6,1z M2,1c0,0.6-0.4,1-1,1S0,1.6,0,1s0.4-1,1-1S2,0.4,2,1z"></path>
@@ -259,32 +273,6 @@
                         </li>
                     </ul>
                 </div>
-                <div class="page-filters-container">
-                    <form action="">
-                        <div class="page-filters">
-                            <select class="form-select">
-                                <option selected disabled>الفرع</option>
-                                <option value="1">كل الفروع</option>
-                                <option value="2">فرع الدقي</option>
-                                <option value="3">فرع الجيزة</option>
-                                <option value="4">فرع المنيل</option>
-                            </select>
-                            <select class="form-select">
-                                <option selected disabled>البراند</option>
-                                <option value="1">بيبسي</option>
-                                <option value="2">شيبسي</option>
-                            </select>
-                            <select class="form-select">
-                                <option selected disabled>فـئة</option>
-                                <option value="1">كل الفئات</option>
-                            </select>
-                            <select class="form-select">
-                                <option selected disabled>فئة فرعية</option>
-                                <option value="1">كل الفئات</option>
-                            </select>
-                        </div>
-                    </form>
-                </div>
             </header>
             <section>
                 <div class="scrollable-content">
@@ -304,20 +292,24 @@
                                     <td>
                                         <div class="client__data">
                                             <div class="client__icon">
-                                                <a href="">
+                                                <a href="client.html">
                                                     <img src="images/client-icon-neutral.svg" alt="">
                                                 </a>
                                             </div>
                                             <div class="client__name">
-                                                <a href="">عاصم السيد</a>
+                                                <a href="client.html">عاصم السيد</a>
                                             </div>
                                         </div>
                                     </td>
                                     <td>
-                                        <span class="client__phone">0101387581</span>
+                                        <a class="client__phone" href="tel:+20101387581">0101387581</a>
                                     </td>
-                                    <td>20</td>
-                                    <td>00.00</td>
+                                    <td>
+                                        <span class="invoices-number">20</span>
+                                    </td>
+                                    <td>
+                                        <span class="amount">00.00</span>
+                                    </td>
                                     <td>
                                         <div class="table__actions">
                                             <div class="form-switch">
@@ -327,7 +319,303 @@
                                             <a href="" class="edit-btn">
                                                 <span>تعديل</span>
                                                 <svg width="27" height="27" viewBox="0 0 27 27">
-                                                    <path fill="#CBD0D6" d="M19.7,1.3l-2.9,2.9H2.9v20h20V10.2l2.9-2.9v18.2c0,0.8-0.6,1.4-1.4,1.4H1.4C0.6,27,0,26.4,0,25.6l0,0V2.7 c0-0.8,0.6-1.4,1.4-1.4H19.7z M25,0l2,2L13.9,15.2h-2v-2L25,0z"></path>
+                                                    <path d="M19.7,1.3l-2.9,2.9H2.9v20h20V10.2l2.9-2.9v18.2c0,0.8-0.6,1.4-1.4,1.4H1.4C0.6,27,0,26.4,0,25.6l0,0V2.7 c0-0.8,0.6-1.4,1.4-1.4H19.7z M25,0l2,2L13.9,15.2h-2v-2L25,0z"></path>
+                                                </svg>
+                                            </a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="client__data">
+                                            <div class="client__icon">
+                                                <a href="client.html">
+                                                    <img src="images/client-icon-debtor.svg" alt="">
+                                                </a>
+                                            </div>
+                                            <div class="client__name">
+                                                <a href="client.html">عاصم السيد</a>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <a class="client__phone" href="tel:+20101387581">0101387581</a>
+                                    </td>
+                                    <td>
+                                        <span class="invoices-number">2</span>
+                                    </td>
+                                    <td>
+                                        <span class="amount debtor">250.00</span>
+                                    </td>
+                                    <td>
+                                        <div class="table__actions">
+                                            <div class="form-switch">
+                                                <input class="form-switch-input" type="checkbox" id="switch2">
+                                                <label class="form-switch-btn" for="switch2"></label>
+                                            </div>
+                                            <a href="" class="edit-btn">
+                                                <span>تعديل</span>
+                                                <svg width="27" height="27" viewBox="0 0 27 27">
+                                                    <path d="M19.7,1.3l-2.9,2.9H2.9v20h20V10.2l2.9-2.9v18.2c0,0.8-0.6,1.4-1.4,1.4H1.4C0.6,27,0,26.4,0,25.6l0,0V2.7 c0-0.8,0.6-1.4,1.4-1.4H19.7z M25,0l2,2L13.9,15.2h-2v-2L25,0z"></path>
+                                                </svg>
+                                            </a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="client__data">
+                                            <div class="client__icon">
+                                                <a href="client.html">
+                                                    <img src="images/client-icon-creditor.svg" alt="">
+                                                </a>
+                                            </div>
+                                            <div class="client__name">
+                                                <a href="client.html">عاصم السيد</a>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <a class="client__phone" href="tel:+20101387581">0101387581</a>
+                                    </td>
+                                    <td>
+                                        <span class="invoices-number">250</span>
+                                    </td>
+                                    <td>
+                                        <span class="amount creditor">400.00</span>
+                                    </td>
+                                    <td>
+                                        <div class="table__actions">
+                                            <div class="form-switch">
+                                                <input class="form-switch-input" type="checkbox" id="switch3">
+                                                <label class="form-switch-btn" for="switch3"></label>
+                                            </div>
+                                            <a href="" class="edit-btn">
+                                                <span>تعديل</span>
+                                                <svg width="27" height="27" viewBox="0 0 27 27">
+                                                    <path d="M19.7,1.3l-2.9,2.9H2.9v20h20V10.2l2.9-2.9v18.2c0,0.8-0.6,1.4-1.4,1.4H1.4C0.6,27,0,26.4,0,25.6l0,0V2.7 c0-0.8,0.6-1.4,1.4-1.4H19.7z M25,0l2,2L13.9,15.2h-2v-2L25,0z"></path>
+                                                </svg>
+                                            </a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="client__data">
+                                            <div class="client__icon">
+                                                <a href="client.html">
+                                                    <img src="images/client-icon-neutral.svg" alt="">
+                                                </a>
+                                            </div>
+                                            <div class="client__name">
+                                                <a href="client.html">عاصم السيد</a>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <a class="client__phone" href="tel:+20101387581">0101387581</a>
+                                    </td>
+                                    <td>
+                                        <span class="invoices-number">20</span>
+                                    </td>
+                                    <td>
+                                        <span class="amount">00.00</span>
+                                    </td>
+                                    <td>
+                                        <div class="table__actions">
+                                            <div class="form-switch">
+                                                <input class="form-switch-input" type="checkbox" id="switch4">
+                                                <label class="form-switch-btn" for="switch4"></label>
+                                            </div>
+                                            <a href="" class="edit-btn">
+                                                <span>تعديل</span>
+                                                <svg width="27" height="27" viewBox="0 0 27 27">
+                                                    <path d="M19.7,1.3l-2.9,2.9H2.9v20h20V10.2l2.9-2.9v18.2c0,0.8-0.6,1.4-1.4,1.4H1.4C0.6,27,0,26.4,0,25.6l0,0V2.7 c0-0.8,0.6-1.4,1.4-1.4H19.7z M25,0l2,2L13.9,15.2h-2v-2L25,0z"></path>
+                                                </svg>
+                                            </a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="client__data">
+                                            <div class="client__icon">
+                                                <a href="client.html">
+                                                    <img src="images/client-icon-neutral.svg" alt="">
+                                                </a>
+                                            </div>
+                                            <div class="client__name">
+                                                <a href="client.html">عاصم السيد</a>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <a class="client__phone" href="tel:+20101387581">0101387581</a>
+                                    </td>
+                                    <td>
+                                        <span class="invoices-number">20</span>
+                                    </td>
+                                    <td>
+                                        <span class="amount">00.00</span>
+                                    </td>
+                                    <td>
+                                        <div class="table__actions">
+                                            <div class="form-switch">
+                                                <input class="form-switch-input" type="checkbox" id="switch5">
+                                                <label class="form-switch-btn" for="switch5"></label>
+                                            </div>
+                                            <a href="" class="edit-btn">
+                                                <span>تعديل</span>
+                                                <svg width="27" height="27" viewBox="0 0 27 27">
+                                                    <path d="M19.7,1.3l-2.9,2.9H2.9v20h20V10.2l2.9-2.9v18.2c0,0.8-0.6,1.4-1.4,1.4H1.4C0.6,27,0,26.4,0,25.6l0,0V2.7 c0-0.8,0.6-1.4,1.4-1.4H19.7z M25,0l2,2L13.9,15.2h-2v-2L25,0z"></path>
+                                                </svg>
+                                            </a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="client__data">
+                                            <div class="client__icon">
+                                                <a href="client.html">
+                                                    <img src="images/client-icon-neutral.svg" alt="">
+                                                </a>
+                                            </div>
+                                            <div class="client__name">
+                                                <a href="client.html">عاصم السيد</a>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <a class="client__phone" href="tel:+20101387581">0101387581</a>
+                                    </td>
+                                    <td>
+                                        <span class="invoices-number">20</span>
+                                    </td>
+                                    <td>
+                                        <span class="amount">00.00</span>
+                                    </td>
+                                    <td>
+                                        <div class="table__actions">
+                                            <div class="form-switch">
+                                                <input class="form-switch-input" type="checkbox" id="switch6">
+                                                <label class="form-switch-btn" for="switch6"></label>
+                                            </div>
+                                            <a href="" class="edit-btn">
+                                                <span>تعديل</span>
+                                                <svg width="27" height="27" viewBox="0 0 27 27">
+                                                    <path d="M19.7,1.3l-2.9,2.9H2.9v20h20V10.2l2.9-2.9v18.2c0,0.8-0.6,1.4-1.4,1.4H1.4C0.6,27,0,26.4,0,25.6l0,0V2.7 c0-0.8,0.6-1.4,1.4-1.4H19.7z M25,0l2,2L13.9,15.2h-2v-2L25,0z"></path>
+                                                </svg>
+                                            </a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="client__data">
+                                            <div class="client__icon">
+                                                <a href="client.html">
+                                                    <img src="images/client-icon-neutral.svg" alt="">
+                                                </a>
+                                            </div>
+                                            <div class="client__name">
+                                                <a href="client.html">عاصم السيد</a>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <a class="client__phone" href="tel:+20101387581">0101387581</a>
+                                    </td>
+                                    <td>
+                                        <span class="invoices-number">20</span>
+                                    </td>
+                                    <td>
+                                        <span class="amount">00.00</span>
+                                    </td>
+                                    <td>
+                                        <div class="table__actions">
+                                            <div class="form-switch">
+                                                <input class="form-switch-input" type="checkbox" id="switch7">
+                                                <label class="form-switch-btn" for="switch7"></label>
+                                            </div>
+                                            <a href="" class="edit-btn">
+                                                <span>تعديل</span>
+                                                <svg width="27" height="27" viewBox="0 0 27 27">
+                                                    <path d="M19.7,1.3l-2.9,2.9H2.9v20h20V10.2l2.9-2.9v18.2c0,0.8-0.6,1.4-1.4,1.4H1.4C0.6,27,0,26.4,0,25.6l0,0V2.7 c0-0.8,0.6-1.4,1.4-1.4H19.7z M25,0l2,2L13.9,15.2h-2v-2L25,0z"></path>
+                                                </svg>
+                                            </a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="client__data">
+                                            <div class="client__icon">
+                                                <a href="client.html">
+                                                    <img src="images/client-icon-neutral.svg" alt="">
+                                                </a>
+                                            </div>
+                                            <div class="client__name">
+                                                <a href="client.html">عاصم السيد</a>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <a class="client__phone" href="tel:+20101387581">0101387581</a>
+                                    </td>
+                                    <td>
+                                        <span class="invoices-number">20</span>
+                                    </td>
+                                    <td>
+                                        <span class="amount">00.00</span>
+                                    </td>
+                                    <td>
+                                        <div class="table__actions">
+                                            <div class="form-switch">
+                                                <input class="form-switch-input" type="checkbox" id="switch8">
+                                                <label class="form-switch-btn" for="switch8"></label>
+                                            </div>
+                                            <a href="" class="edit-btn">
+                                                <span>تعديل</span>
+                                                <svg width="27" height="27" viewBox="0 0 27 27">
+                                                    <path d="M19.7,1.3l-2.9,2.9H2.9v20h20V10.2l2.9-2.9v18.2c0,0.8-0.6,1.4-1.4,1.4H1.4C0.6,27,0,26.4,0,25.6l0,0V2.7 c0-0.8,0.6-1.4,1.4-1.4H19.7z M25,0l2,2L13.9,15.2h-2v-2L25,0z"></path>
+                                                </svg>
+                                            </a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="client__data">
+                                            <div class="client__icon">
+                                                <a href="client.html">
+                                                    <img src="images/client-icon-neutral.svg" alt="">
+                                                </a>
+                                            </div>
+                                            <div class="client__name">
+                                                <a href="client.html">عاصم السيد</a>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <a class="client__phone" href="tel:+20101387581">0101387581</a>
+                                    </td>
+                                    <td>
+                                        <span class="invoices-number">20</span>
+                                    </td>
+                                    <td>
+                                        <span class="amount">00.00</span>
+                                    </td>
+                                    <td>
+                                        <div class="table__actions">
+                                            <div class="form-switch">
+                                                <input class="form-switch-input" type="checkbox" id="switch9">
+                                                <label class="form-switch-btn" for="switch9"></label>
+                                            </div>
+                                            <a href="" class="edit-btn">
+                                                <span>تعديل</span>
+                                                <svg width="27" height="27" viewBox="0 0 27 27">
+                                                    <path d="M19.7,1.3l-2.9,2.9H2.9v20h20V10.2l2.9-2.9v18.2c0,0.8-0.6,1.4-1.4,1.4H1.4C0.6,27,0,26.4,0,25.6l0,0V2.7 c0-0.8,0.6-1.4,1.4-1.4H19.7z M25,0l2,2L13.9,15.2h-2v-2L25,0z"></path>
                                                 </svg>
                                             </a>
                                         </div>
@@ -344,27 +632,70 @@
                 <h4 class="side-panel__title">اضافة عميل</h4>
             </div>
             <div class="side-panel__body">
-                <div class="row">
-                    <div class="col-12 mb-3">
+                <div class="row gx-3">
+                    <div class="col-12 col-sm-6 mb-3">
                         <label class="form-label" for="add_client_name">اسم العميل</label>
                         <input type="text" class="form-control" id="add_client_name" placeholder="">
                     </div>
-                    <div class="col-12 mb-3">
+                    <div class="col-12 col-sm-6 mb-3">
                         <label class="form-label" for="add_client_phone_number">رقم الموبيل</label>
                         <input type="tel" class="form-control" id="add_client_phone_number" placeholder="">
                     </div>
-                    <div class="col-12 mb-3">
+                </div>
+                <div class="row gx-3">
+                    <div class="col-12 col-sm-6 mb-3">
                         <label class="form-label" for="add_client_code">كود العميل</label>
                         <input type="number" class="form-control" id="add_client_code" placeholder="">
                     </div>
+                    <div class="col-12 col-sm-6 mb-3">
+                        <label class="form-label" for="add_client_group">مجموعة العملاء</label>
+                        <select class="form-select" id="add_client_group">
+                            <option selected>كل العملاء</option>
+                        </select>
+                    </div>
                 </div>
-                <fieldset class="collapsible pb-0 mb-3">
+                <fieldset>
                     <legend>
-                        <a href="#" class="collapse__toggle" aria-expanded="true">عنوان 1</a>
+                        <span>رصيـد العميـل</span>
+                    </legend>
+                    <div class="form__group">
+                        <div class="form__group__col">
+                            <label class="form-label" for="add_client_branch">مجموعة العملاء</label>
+                            <div class="form-select--with-icon">
+                                <label for="add_client_branch">
+                                    <svg width="18" height="21.7" viewBox="0 0 18 21.7">
+                                        <path fill="#A3AAB2" d="M9,21.7l-6.4-6.4c-3.5-3.5-3.5-9.2,0-12.7s9.2-3.5,12.7,0c3.5,3.5,3.5,9.2,0,12.7L9,21.7z M14,14 c2.7-2.7,2.7-7.2,0-9.9s-7.2-2.7-9.9,0c-2.7,2.7-2.7,7.2,0,9.9L9,18.9C9,18.9,14,13.9,14,14z M9,11c-1.1,0-2-0.9-2-2s0.9-2,2-2 s2,0.9,2,2S10.1,11,9,11z"></path>
+                                    </svg>
+                                </label>
+                                <select class="form-select" id="add_client_branch">
+                                    <option selected>اختر فرع</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form__group__col">
+                            <select class="form-select" id="add_client_balance">
+                                <option value="for-him" selected>له</option>
+                                <option value="on-him">عليه</option>
+                            </select>
+                        </div>
+                        <div class="form__group__col">
+                            <label class="form-label" for="add_client_balance_amount">الرصيد</label>
+                            <input type="number" class="form-control" id="add_client_balance_amount" placeholder="00.00">
+                        </div>
+                    </div>
+                </fieldset>
+                <fieldset class="collapsible">
+                    <legend class="d-flex">
+                        <a href="#" class="collapse__toggle d-inline-flex" aria-expanded="true">عنوان 1</a>
+                        <a href="#" class="remove-item ms-auto">
+                            <svg width="20" height="20" viewBox="0 0 20 20" enable-background="new 0 0 20 20">
+                                <path d="M2,6h16v13c0,0.6-0.4,1-1,1H3c-0.6,0-1-0.4-1-1V6z M4,8v10h12V8H4z M7,10h2v6H7V10z M11,10h2v6h-2V10z M5,3 V1c0-0.6,0.4-1,1-1h8c0.6,0,1,0.4,1,1v2h5v2H0V3H5z M7,2v1h6V2H7z"></path>
+                            </svg>
+                        </a>
                     </legend>
                     <div class="collapse__container">
-                        <div class="row">
-                            <div class="col-12 mb-3">
+                        <div class="row pt-3 gx-3">
+                            <div class="col-12 col-sm-4 mb-3">
                                 <label class="form-label" for="add_client_governorate">المحافظة</label>
                                 <select class="form-select" id="add_client_governorate">
                                     <option value="">القاهرة</option>
@@ -374,7 +705,7 @@
                                     <option value="">الشرقية</option>
                                 </select>
                             </div>
-                            <div class="col-12 mb-3">
+                            <div class="col-12 col-sm-4 mb-3">
                                 <label class="form-label" for="add_client_city">المدينة</label>
                                 <select class="form-select" id="add_client_city">
                                     <option value="">مدينة نصر</option>
@@ -384,26 +715,30 @@
                                     <option value="">الجيزة</option>
                                 </select>
                             </div>
-                            <div class="col-12 mb-3">
+                            <div class="col-12 col-sm-4 mb-3">
                                 <label class="form-label" for="add_client_neighborhood">الحي</label>
                                 <select class="form-select" id="add_client_neighborhood">
                                     <option value="">الحي السابع</option>
                                     <option value="">الحي الثامن</option>
                                 </select>
                             </div>
+                        </div>
+                        <div class="row gx-3">
                             <div class="col-12 mb-3">
                                 <label class="form-label" for="add_client_street">الشارع</label>
                                 <input type="text" class="form-control" id="add_client_street" placeholder="">
                             </div>
-                            <div class="col-12 col-sm-4 mb-3">
+                        </div>
+                        <div class="row">
+                            <div class="col-12 col-sm-4 mb-3 mb-sm-0">
                                 <label class="form-label" for="add_client_building">العمارة</label>
                                 <input type="text" class="form-control" id="add_client_building" placeholder="">
                             </div>
-                            <div class="col-12 col-sm-4 mb-3">
+                            <div class="col-12 col-sm-4 mb-3 mb-sm-0">
                                 <label class="form-label" for="add_client_floor">الدور</label>
                                 <input type="number" class="form-control" id="add_client_floor" placeholder="">
                             </div>
-                            <div class="col-12 col-sm-4 mb-3">
+                            <div class="col-12 col-sm-4">
                                 <label class="form-label" for="add_client_apartment">الشقة</label>
                                 <input type="number" class="form-control" id="add_client_apartment" placeholder="">
                             </div>
@@ -433,7 +768,6 @@
     <script src="js/bootstrap.min.js" defer></script>
     <script src="js/main.js" defer></script>
     <script src="js/components/main-menu.module.js" type="module"></script>
-    <script src="js/components/filters.module.js" type="module"></script>
     <script src="js/components/collapsible.module.js" type="module"></script>
     <script src="js/pages/clients.module.js" type="module" defer></script>
 </body>

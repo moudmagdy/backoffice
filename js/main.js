@@ -52,3 +52,13 @@ var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggl
 var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
     return new bootstrap.Tooltip(tooltipTriggerEl)
 });
+
+const searchBarDropdownItems = document.querySelectorAll('.search__bar__dropdown .dropdown-item');
+if (searchBarDropdownItems) {
+    searchBarDropdownItems.forEach(item => {
+        item.addEventListener('click', (e) => {
+            e.preventDefault();
+            item.closest('.search__bar__dropdown').querySelector('.dropdown__selected-value').textContent = item.textContent;
+        });
+    });
+}
