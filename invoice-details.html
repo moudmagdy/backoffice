@@ -13,7 +13,7 @@
 </head>
 
 <body>
-    <main class="add-product-page">
+    <main class="invoice-details-page">
         <div class="main-menu">
             <div class="main-menu__header">
                 <a href="#" class="main-menu__toggle">
@@ -182,36 +182,95 @@
             </div>
         </div>
         <div class="single-column-layout">
-            <header>
+            <header class="mb-3">
                 <a href="#" class="main-menu__toggle">
                     <svg width="34" height="34" viewBox="0 0 34 34">
                         <path d="M0,1.1h34v4H0V1.1z M0,15h34v4H0V15z M0,28.9h34v4H0V28.9z"></path>
                     </svg>
                 </a>
-                <h1>إضافة منتج</h1>
-                <a href="" class="back-btn ms-auto">
+                <a href="" class="back-btn">
                     <svg width="20" height="20" viewBox="0 0 20 20">
                         <path d="M8.5,6c-3.3,0-6,2.7-6,6s2.7,6,6,6h9v2h-9c-4.4,0-8-3.6-8-8s3.6-8,8-8h5V0l6,5l-6,5V6H8.5z"></path>
                     </svg>
                     <span>رجــوع</span>
                 </a>
-            </header>
-            <section class="product-types__container">
-                <div class="product-types">
-                    <div class="product-types__item selected">
-                        <h3>منتج اساسى</h3>
-                        <p>منتج ليس له متغيرات</p>
+                <div class="page__navigation">
+                    <a href="#" class="navigation__btn btn--previous">
+                        <svg width="6" height="12" viewBox="0 0 6 12">
+                            <path d="M6,6L0,0v12L6,6z"></path>
+                        </svg>
+                    </a>
+                    <div class="navigation__datalist">
+                        <input type="text" class="navigation__input" id="navDataList" list="navDatalistOptions" autocomplete="off" value="215554877999">
+                        <datalist id="navDatalistOptions">
+                            <option value="215554877999">
+                            <option value="215554878000">
+                            <option value="215554878001">
+                            <option value="215554878002">
+                        </datalist>
                     </div>
-                    <div class="product-types__item">
-                        <h3>منتج متنوع</h3>
-                        <p>منتج لديه متغيرات</p>
-                    </div>
-                    <div class="product-types__item">
-                        <h3>منتج مركب</h3>
-                        <p>منتج مكون من مجموعه منتجات</p>
-                    </div>
+                    <a href="#" class="navigation__btn btn--next">
+                        <svg width="6" height="12" viewBox="0 0 6 12">
+                            <path d="M6,12V0L0,6L6,12z"></path>
+                        </svg>
+                    </a>
                 </div>
-            </section>
+            </header>
+            <div class="double-column-layout">
+                <div class="layout__col">
+                    <table class="table--with-gaps">
+                        <thead>
+                            <tr>
+                                <th>
+                                    <span>المنتــج</span>
+                                </th>
+                                <th>
+                                    <span>الكمية</span>
+                                </th>
+                                <th>
+                                    <span>سعر الشراء</span>
+                                </th>
+                                <th>
+                                    <span>الإجمالى</span>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <span>جونسون، صابون للاستحمام 15ملم</span>
+                                </td>
+                                <td>
+                                    <span>554</span>
+                                </td>
+                                <td>
+                                    <span>33.00</span>
+                                </td>
+                                <td>
+                                    <span>2022.00</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span>جونسون، صابون للاستحمام 15ملم</span>
+                                </td>
+                                <td>
+                                    <span>554</span>
+                                </td>
+                                <td>
+                                    <span>33.00</span>
+                                </td>
+                                <td>
+                                    <span>2022.00</span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="layout__col has--white-bg">
+
+                </div>
+            </div>
         </div>
     </main>
     <div class="page-preloader">
@@ -229,6 +288,8 @@
     <script src="js/bootstrap.min.js" defer></script>
     <script src="js/main.js" defer></script>
     <script src="js/components/main-menu.module.js" type="module"></script>
+    <script src="js/components/collapsible.module.js" type="module"></script>
+    <script src="js/components/tags-input.module.js" defer></script>
 </body>
 
 </html>
