@@ -1,0 +1,40 @@
+.purchases-page
+    header
+        @media (max-width: 920px)
+            gap: 15px
+
+    .filters-open
+        @media (max-width: 920px)
+            order: 1
+
+    .page-filters-container
+        @media (max-width: 920px)
+            order: 1
+
+    .new-invoice--btn
+        margin-inline-start: auto
+
+        @media (max-width: 720px)
+            order: 1
+            margin-inline-start: 0
+
+        @media (max-width: 576px)
+            width: 100%
+
+        svg
+            width: rem(10px)
+            height: rem(10px)
+
+    table
+        td
+            & > *
+                font-size: rem(14px)
+
+                [dir="rtl"] &
+                    font-family: 'NotoSansArabic_Medium', sans-serif
+
+                [dir="ltr"] &
+                    font-family: 'NotoSans_Medium', sans-serif
+
+    .supplier-name
+        color: #65676B

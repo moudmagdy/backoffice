@@ -72,7 +72,7 @@
     height: rem(40px)
     min-height: rem(40px)
     background-color: rgba(240, 242, 245, 0.09)
-    border: 2px solid #CBD0D6
+    border: rem(2px) solid #CBD0D6
     border-radius: rem(20px)
     padding: 0 rem(18px)
 
@@ -114,16 +114,19 @@
         gap: rem(15px)
         margin-top: rem(15px)
 
-        .form-select
+        & > *
             flex: 1 1 100%
+
+            @media (min-width: 576px)
+                flex: 1 1 calc(25% - 45px)
+
+        .form-control,
+        .form-select
             padding-top: 0.538rem
             padding-bottom: 0.538rem
 
             &:focus
                 box-shadow: none
-
-            @media (min-width: 576px)
-                flex: 1 1 calc(25% - 45px)
 
     .filters-shown &
         max-height: rem(100px)
