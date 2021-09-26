@@ -231,7 +231,7 @@
                         <a href="#" data-tab="invoices">الفواتير</a>
                     </nav>
                 </div>
-                <a href="#" class="btn btn-outline-primary ms-0 ms-sm-auto edit-client--btn">تعديل</a>
+                <a href="#" class="btn btn-outline-primary edit-client--btn side-panel--btn" data-panel="edit-client-data">تعديل</a>
             </header>
             <section>
                 <div class="layout__container">
@@ -257,14 +257,14 @@
                                                 <span>50.00</span>
                                             </div>
                                             <div class="client__actions">
-                                                <a href="">
+                                                <a href="#" class="side-panel--btn" data-panel="cash-operation">
                                                     <svg width="52" height="52" viewBox="0 0 52 52">
                                                         <path fill="#FFFFFF" d="M26,0c14.4,0,26,11.6,26,26S40.4,52,26,52S0,40.4,0,26S11.6,0,26,0z"></path>
                                                         <path fill="#1877F2" d="M26,52C11.7,52,0,40.3,0,26C0,11.7,11.7,0,26,0c14.3,0,26,11.7,26,26C52,40.3,40.3,52,26,52z M26,2 C12.8,2,2,12.8,2,26s10.8,24,24,24s24-10.8,24-24S39.2,2,26,2z M33.5,14.6H21.9v2h6.8L14.3,31l1.4,1.4L33.5,14.6z M29.6,36.1h-6.8 l14.4-14.4l-1.4-1.4L18,38.1h11.6V36.1z"></path>
                                                     </svg>
                                                     <span>عملية نقدية</span>
                                                 </a>
-                                                <a href="">
+                                                <a href="#" class="side-panel--btn" data-panel="">
                                                     <svg width="52" height="52" viewBox="0 0 52 52">
                                                         <path fill="#FFFFFF" d="M26,0c14.4,0,26,11.6,26,26S40.4,52,26,52S0,40.4,0,26S11.6,0,26,0z"></path>
                                                         <path fill="#1877F2" d="M26,52C11.7,52,0,40.3,0,26C0,11.7,11.7,0,26,0c14.3,0,26,11.7,26,26C52,40.3,40.3,52,26,52z M26,2 C12.8,2,2,12.8,2,26s10.8,24,24,24s24-10.8,24-24S39.2,2,26,2z M37.7,21.5h-23v2h23V21.5z M37.7,29.2h-23v2h23V29.2z"></path>
@@ -305,7 +305,7 @@
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-12 col-md-6">
+                                        <div class="col-12 col-lg-6">
                                             <div class="client__info">
                                                 <span class="client__info__icon">
                                                     <svg viewBox="0 0 34.1 41.2">
@@ -322,7 +322,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-12 col-md-6">
+                                        <div class="col-12 col-lg-6">
                                             <div class="client__info">
                                                 <span class="client__info__icon">
                                                     <svg viewBox="0 0 34.1 41.2">
@@ -341,7 +341,7 @@
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-12 col-md-6">
+                                        <div class="col-12 col-lg-6">
                                             <div class="client__info">
                                                 <span class="client__info__icon">
                                                     <svg viewBox="0 0 34.1 41.2">
@@ -358,7 +358,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-12 col-md-6">
+                                        <div class="col-12 col-lg-6">
                                             <div class="client__info">
                                                 <span class="client__info__icon">
                                                     <svg viewBox="0 0 34.1 41.2">
@@ -608,7 +608,7 @@
                 </div>
             </section>
         </div>
-        <div class="side-panel">
+        <div class="side-panel" data-panel="edit-client-data">
             <div class="side-panel__header">
                 <h4 class="side-panel__title">تعديل بيانات العميل</h4>
             </div>
@@ -733,6 +733,76 @@
                 <button type="button" class="btn btn-link btn-lg side-panel__dismiss--btn">الغاء</button>
             </div>
         </div>
+        <div class="side-panel" data-panel="cash-operation">
+            <div class="side-panel__header">
+                <h4 class="side-panel__title">عملية نقدية</h4>
+                <a href="#" class="side-panel__close-btn side-panel__dismiss--btn">
+                    <svg width="18" height="18" viewBox="0 0 18 18">
+                        <path d="M9.7,9l8.3,8.3L17.3,18L9,9.7L0.7,18L0,17.3L8.3,9L0,0.7L0.7,0L9,8.3L17.3,0L18,0.7L9.7,9z"></path>
+                    </svg>
+                </a>
+            </div>
+            <div class="side-panel__body">
+                <div class="added__client">
+                    <div class="client__icon creditor">
+                        <img src="images/client-icon-creditor.svg" alt="Creditor Client">
+                    </div>
+                    <span class="client__data">عاصم السيد - 01013875801</span>
+                    <span class="amount">00.00</span>
+                    <div class="last__operation">
+                        <h5>اخر عملية</h5>
+                        <span class="operation__date-time">
+                            <span class="operation__date">23/12/2020</span>
+                            <span class="operation__time">6:30 م</span>
+                        </span>
+                        <div class="operation__amount">
+                            <span>50.00</span>
+                            <span class="icon">
+                                <svg width="14" height="14" viewBox="0 0 14 14">
+                                    <path fill="#51DC90" d="M0.1,4.3l1.1,8.6L9.9,14l0.2-1.6l-6.6-0.9L13.9,1.2L12.7,0L2.5,10.2L1.7,4.1L0.1,4.3z"></path>
+                                </svg>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="side-panel__bottom-bar">
+                <form>
+                    <div class="row">
+                        <div class="col-12 mb-3">
+                            <label class="form-label" for="amount_spent">المبلغ</label>
+                            <div class="currency-symbol" data-symbol="جـ.م">
+                                <input type="number" class="form-control" name="amount_spent" id="amount_spent" placeholder="00.00">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 mb-3">
+                            <label class="form-label" for="comment">التعليق</label>
+                            <textarea class="form-control" name="comment" id="comment" placeholder="اكتب تعليقك" rows="3"></textarea>
+                        </div>
+                    </div>
+                    <div class="d-flex gap-3">
+                        <button type="submit" class="btn btn-outline-danger btn-lg">
+                            <span class="icon">
+                                <svg width="14" height="14" viewBox="0 0 14 14">
+                                    <path d="M13.9,9.7l-1.1-8.6L4.1,0L3.9,1.6l6.6,0.9L0.1,12.8L1.3,14L11.5,3.8l0.8,6.1L13.9,9.7z"></path>
+                                </svg>
+                            </span>
+                            <span>دفع</span>
+                        </button>
+                        <button type="submit" class="btn btn-outline-success btn-lg">
+                            <span class="icon">
+                                <svg width="14" height="14" viewBox="0 0 14 14">
+                                    <path d="M0.1,4.3l1.1,8.6L9.9,14l0.2-1.6l-6.6-0.9L13.9,1.2L12.7,0L2.5,10.2L1.7,4.1L0.1,4.3z"></path>
+                                </svg>
+                            </span>
+                            <span>تحصيل</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
     </main>
     <div class="page-preloader">
         <div class="loading-bar">
@@ -750,7 +820,7 @@
     <script src="js/main.js" defer></script>
     <script src="js/components/main-menu.module.js" type="module"></script>
     <script src="js/components/layout-tabs.module.js" type="module"></script>
-    <script src="js/pages/clients.module.js" type="module" defer></script>
+    <script src="js/components/side-panel.module.js" type="module" defer></script>
 </body>
 
 </html>

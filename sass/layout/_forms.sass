@@ -63,10 +63,14 @@ button,
             border-color: #F5F5F5
             box-shadow: none
 
-.form-control,
+.form-control:not(textarea),
 .form-select,
 .form-tags-control
     max-height: rem(48px)
+
+.form-control,
+.form-select,
+.form-tags-control
     line-height: 1.5
     border: rem(2px) solid #C6CFD9
     border-radius: rem(12px)
