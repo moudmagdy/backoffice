@@ -7,7 +7,7 @@
     <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
     <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
     <link rel="icon" type="image/png" href="images/favicon.png">
-    <title>إضافة منتج - كاشير</title>
+    <title>تفاصيل الفاتورة - كاشير</title>
     <link rel="stylesheet" href="css/bootstrap.rtl.min.css">
     <link rel="stylesheet" href="css/style.min.css">
 </head>
@@ -32,8 +32,8 @@
                             <span>الرئيسية</span>
                         </a>
                     </li>
-                    <li class="has--submenu submenu--opened">
-                        <a href="#" class="active">
+                    <li class="has--submenu">
+                        <a href="#">
                             <svg width="34" height="34" viewBox="0 0 34 34">
                                 <path d="M3.4,5.2v23.7h27.2V5.2H3.4z M1.7,1.8h30.6c0.9,0,1.7,0.8,1.7,1.7v27.1c0,0.9-0.8,1.7-1.7,1.7c0,0,0,0,0,0H1.7 c-0.9,0-1.7-0.8-1.7-1.7c0,0,0,0,0,0V3.5C0,2.5,0.8,1.8,1.7,1.8C1.7,1.8,1.7,1.8,1.7,1.8z M6.8,8.5h5.1v16.9H6.8L6.8,8.5z M13.6,8.5 H17v16.9h-3.4L13.6,8.5z M18.7,8.5h1.7v16.9h-1.7V8.5z M22.1,8.5h5.1v16.9h-5.1V8.5z"></path>
                             </svg>
@@ -41,7 +41,7 @@
                         </a>
                         <ol class="submenu">
                             <li>
-                                <a href="products.html" class="active">المنتجات</a>
+                                <a href="products.html">المنتجات</a>
                             </li>
                             <li>
                                 <a href="catalog-settings.html">اعدادات المنتجات</a>
@@ -73,8 +73,8 @@
                             </li>
                         </ol>
                     </li>
-                    <li class="has--submenu">
-                        <a href="#">
+                    <li class="has--submenu submenu--opened">
+                        <a href="#" class="active">
                             <svg width="34" height="34" viewBox="0 0 34 34">
                                 <path d="M3.4,1.1h27.2L34,8.1v23c0,1-0.7,1.8-1.7,1.8H1.7c-1,0-1.7-0.8-1.7-1.8v-23L3.4,1.1z M30.6,11.7H3.4v17.7h27.2V11.7z M30.2,8.1l-1.7-3.5h-23L3.8,8.1H30.2z M18.7,20.5h5.1L17,27.6l-6.8-7.1h5.1v-7.1h3.4L18.7,20.5z"></path>
                             </svg>
@@ -82,7 +82,7 @@
                         </a>
                         <ol class="submenu">
                             <li>
-                                <a href="purchases.html">المشتريات</a>
+                                <a href="purchases.html" class="active">المشتريات</a>
                             </li>
                             <li>
                                 <a href="purchase-returns.html">مرتجع المشتريات</a>
@@ -100,13 +100,21 @@
                             <span>التقارير</span>
                         </a>
                     </li>
-                    <li>
-                        <a href="clients.html">
+                    <li class="has--submenu">
+                        <a href="#">
                             <svg width="34" height="34" viewBox="0 0 34 34">
                                 <path d="M4,34c0-7.2,5.8-13,13-13c7.2,0,13,5.8,13,13h-3.2c0-5.4-4.4-9.7-9.7-9.7S7.3,28.6,7.3,34H4z M17,19.4 c-5.4,0-9.7-4.4-9.7-9.7S11.6,0,17,0c5.4,0,9.7,4.4,9.7,9.7C26.7,15.1,22.4,19.4,17,19.4C17,19.4,17,19.4,17,19.4z M17,16.2 c3.6,0,6.5-2.9,6.5-6.5S20.6,3.2,17,3.2c-3.6,0-6.5,2.9-6.5,6.5C10.5,13.3,13.4,16.2,17,16.2C17,16.2,17,16.2,17,16.2z"></path>
                             </svg>
                             <span>العملاء</span>
                         </a>
+                        <ol class="submenu">
+                            <li>
+                                <a href="clients-list.html">قائمة العملاء</a>
+                            </li>
+                            <li>
+                                <a href="clients-groups.html">مجموعات العملاء</a>
+                            </li>
+                        </ol>
                     </li>
                     <li>
                         <a href="suppliers.html">
@@ -218,7 +226,12 @@
             </header>
             <div class="double-column-layout">
                 <div class="layout__col">
-                    <table class="table--with-gaps">
+                    <div class="navigation-buttons">
+                        <a href="">طباعة باركود</a>
+                        <a href="">إضافة صلاحية</a>
+                        <a href="">اضافة سريال</a>
+                    </div>
+                    <table class="table--with-gaps invoice-products-table">
                         <thead>
                             <tr>
                                 <th>
@@ -237,8 +250,13 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td>
-                                    <span>جونسون، صابون للاستحمام 15ملم</span>
+                                <td class="p-0">
+                                    <div class="product__details">
+                                        <div class="product__image">
+                                            <img src="images/default-image.jpg" alt="">
+                                        </div>
+                                        <h5 class="product__name">جونسون، صابون للاستحمام 15ملم</h5>
+                                    </div>
                                 </td>
                                 <td>
                                     <span>554</span>
@@ -251,8 +269,203 @@
                                 </td>
                             </tr>
                             <tr>
+                                <td class="p-0">
+                                    <div class="product__details">
+                                        <div class="product__image">
+                                            <img src="images/default-image.jpg" alt="">
+                                        </div>
+                                        <h5 class="product__name">جونسون، صابون للاستحمام 15ملم</h5>
+                                    </div>
+                                </td>
                                 <td>
-                                    <span>جونسون، صابون للاستحمام 15ملم</span>
+                                    <span>554</span>
+                                </td>
+                                <td>
+                                    <span>33.00</span>
+                                </td>
+                                <td>
+                                    <span>2022.00</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="p-0">
+                                    <div class="product__details">
+                                        <div class="product__image">
+                                            <img src="images/default-image.jpg" alt="">
+                                        </div>
+                                        <h5 class="product__name">جونسون، صابون للاستحمام 15ملم</h5>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span>554</span>
+                                </td>
+                                <td>
+                                    <span>33.00</span>
+                                </td>
+                                <td>
+                                    <span>2022.00</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="p-0">
+                                    <div class="product__details">
+                                        <div class="product__image">
+                                            <img src="images/default-image.jpg" alt="">
+                                        </div>
+                                        <h5 class="product__name">جونسون، صابون للاستحمام 15ملم</h5>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span>554</span>
+                                </td>
+                                <td>
+                                    <span>33.00</span>
+                                </td>
+                                <td>
+                                    <span>2022.00</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="p-0">
+                                    <div class="product__details">
+                                        <div class="product__image">
+                                            <img src="images/default-image.jpg" alt="">
+                                        </div>
+                                        <h5 class="product__name">جونسون، صابون للاستحمام 15ملم</h5>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span>554</span>
+                                </td>
+                                <td>
+                                    <span>33.00</span>
+                                </td>
+                                <td>
+                                    <span>2022.00</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="p-0">
+                                    <div class="product__details">
+                                        <div class="product__image">
+                                            <img src="images/default-image.jpg" alt="">
+                                        </div>
+                                        <h5 class="product__name">جونسون، صابون للاستحمام 15ملم</h5>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span>554</span>
+                                </td>
+                                <td>
+                                    <span>33.00</span>
+                                </td>
+                                <td>
+                                    <span>2022.00</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="p-0">
+                                    <div class="product__details">
+                                        <div class="product__image">
+                                            <img src="images/default-image.jpg" alt="">
+                                        </div>
+                                        <h5 class="product__name">جونسون، صابون للاستحمام 15ملم</h5>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span>554</span>
+                                </td>
+                                <td>
+                                    <span>33.00</span>
+                                </td>
+                                <td>
+                                    <span>2022.00</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="p-0">
+                                    <div class="product__details">
+                                        <div class="product__image">
+                                            <img src="images/default-image.jpg" alt="">
+                                        </div>
+                                        <h5 class="product__name">جونسون، صابون للاستحمام 15ملم</h5>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span>554</span>
+                                </td>
+                                <td>
+                                    <span>33.00</span>
+                                </td>
+                                <td>
+                                    <span>2022.00</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="p-0">
+                                    <div class="product__details">
+                                        <div class="product__image">
+                                            <img src="images/default-image.jpg" alt="">
+                                        </div>
+                                        <h5 class="product__name">جونسون، صابون للاستحمام 15ملم</h5>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span>554</span>
+                                </td>
+                                <td>
+                                    <span>33.00</span>
+                                </td>
+                                <td>
+                                    <span>2022.00</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="p-0">
+                                    <div class="product__details">
+                                        <div class="product__image">
+                                            <img src="images/default-image.jpg" alt="">
+                                        </div>
+                                        <h5 class="product__name">جونسون، صابون للاستحمام 15ملم</h5>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span>554</span>
+                                </td>
+                                <td>
+                                    <span>33.00</span>
+                                </td>
+                                <td>
+                                    <span>2022.00</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="p-0">
+                                    <div class="product__details">
+                                        <div class="product__image">
+                                            <img src="images/default-image.jpg" alt="">
+                                        </div>
+                                        <h5 class="product__name">جونسون، صابون للاستحمام 15ملم</h5>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span>554</span>
+                                </td>
+                                <td>
+                                    <span>33.00</span>
+                                </td>
+                                <td>
+                                    <span>2022.00</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="p-0">
+                                    <div class="product__details">
+                                        <div class="product__image">
+                                            <img src="images/default-image.jpg" alt="">
+                                        </div>
+                                        <h5 class="product__name">جونسون، صابون للاستحمام 15ملم</h5>
+                                    </div>
                                 </td>
                                 <td>
                                     <span>554</span>
@@ -267,8 +480,92 @@
                         </tbody>
                     </table>
                 </div>
-                <div class="layout__col has--white-bg">
-
+                <div class="layout__col has--white-bg overflow-hidden">
+                    <div class="control-panel">
+                        <div class="control-panel__header">
+                            <h3 class="control-panel__title">
+                                <span>تفاصيل الفاتورة</span>
+                                <span>#1005</span>
+                            </h3>
+                        </div>
+                        <div class="control-panel__body">
+                            <div class="select-item">
+                                <div class="invoice__client">
+                                    <svg width="25" height="25" viewBox="0 0 25 25">
+                                        <path fill="#A3AAB2" d="M12.5,0C19.4,0,25,5.6,25,12.5S19.4,25,12.5,25S0,19.4,0,12.5S5.6,0,12.5,0z"></path>
+                                        <path fill="#F5F5F5" d="M18.7,16.1c-2.3,3.4-7,4.4-10.5,2c-0.8-0.5-1.5-1.2-2-2c2.3-3.4,7-4.4,10.5-2C17.5,14.6,18.2,15.3,18.7,16.1z M12.5,5.6c1.6,0,2.8,1.3,2.8,2.8s-1.3,2.8-2.8,2.8S9.7,10,9.7,8.4S10.9,5.6,12.5,5.6z"></path>
+                                    </svg>
+                                    <span>عباس العقاد</span>
+                                </div>
+                            </div>
+                            <div class="control-panel__content">
+                                <ul class="control-panel__list">
+                                    <li class="control-panel__item">
+                                        <span class="item__title">الفرع</span>
+                                        <span class="item__data">مدينة نصر</span>
+                                    </li>
+                                    <li class="control-panel__item">
+                                        <span class="item__title">تاريخ فاتورة المورد</span>
+                                        <span class="item__data">20/7/2021</span>
+                                    </li>
+                                    <li class="control-panel__item">
+                                        <span class="item__title">رقم فاتورة المورد</span>
+                                        <span class="item__data">10225</span>
+                                    </li>
+                                    <li class="control-panel__item">
+                                        <span class="item__title">الموظف المسئول</span>
+                                        <span class="item__data">محمود احمد</span>
+                                    </li>
+                                    <li class="control-panel__item">
+                                        <span class="item__title">تاريخ انشاء الفاتورة</span>
+                                        <span class="item__data">20/7/2021 - 10:50 PM</span>
+                                    </li>
+                                    <li class="control-panel__item">
+                                        <span class="item__title">عدد المنتجات</span>
+                                        <span class="item__data">16</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="control-panel__footer">
+                            <div class="checkout slidable">
+                                <a href="#" class="checkout__slide__toggle">
+                                    <svg width="30" height="13" viewBox="0 0 30 13">
+                                        <path fill="#C6CFD9" d="M27.5,12.8c-0.4,0-0.8-0.1-1.2-0.3L14.9,5.9L3.7,12.5c-1.2,0.7-2.7,0.3-3.4-0.9C-0.3,10.5,0,8.9,1.2,8.3 l13.7-8.1l13.9,8.1c1.2,0.7,1.6,2.2,0.9,3.4C29.2,12.4,28.4,12.8,27.5,12.8z"></path>
+                                    </svg>
+                                </a>
+                                <ul class="checkout__list list-unstyled">
+                                    <li class="checkout__list__item">
+                                        <h5>الاجمالي</h5>
+                                        <span class="checkout__item__detail invoice-total-amount">320.00</span>
+                                    </li>
+                                    <li class="checkout__list__item invoice-discount">
+                                        <h5>الخصم الكلي</h5>
+                                        <div class="checkout__item__detail discount-details">
+                                            <span class="discount-percentage">10%</span>
+                                            <span class="discount-amount">25.00</span>
+                                        </div>
+                                    </li>
+                                    <li class="checkout__list__item">
+                                        <h5>التوصيل</h5>
+                                        <span class="checkout__item__detail delivery-fees-amount">25.00</span>
+                                    </li>
+                                    <li class="checkout__list__item main-item">
+                                        <h5>اجمالى الفاتورة</h5>
+                                        <span class="checkout__item__detail">360.00</span>
+                                    </li>
+                                    <li class="checkout__list__item">
+                                        <h5>المدفوع</h5>
+                                        <span class="checkout__item__detail">25.00</span>
+                                    </li>
+                                    <li class="checkout__list__item">
+                                        <h5>الباقي</h5>
+                                        <span class="checkout__item__detail">25.00</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

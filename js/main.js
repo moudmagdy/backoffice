@@ -62,3 +62,11 @@ if (searchBarDropdownItems) {
         });
     });
 }
+
+const checkoutToggle = document.querySelector('.checkout__slide__toggle');
+if (checkoutToggle) {
+    checkoutToggle.addEventListener('click', (e) => {
+        e.preventDefault();
+        checkoutToggle.closest('.checkout').classList.toggle('slide');
+    });
+}

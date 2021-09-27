@@ -38,3 +38,56 @@
 
     .supplier-name
         color: #65676B
+
+.invoice-details-page
+    .invoice-products-table
+        table
+            position: relative
+
+        thead
+            position: sticky
+            top: rem(-4px)
+            transition: all 0.3s
+
+        th
+            white-space: nowrap
+
+        td
+            font-size: rem(14px)
+            overflow: hidden
+
+            [dir="rtl"] &
+                font-family: 'NotoSansArabic_Medium', sans-serif
+
+            [dir="ltr"] &
+                font-family: 'NotoSans_Medium', sans-serif
+
+        .product__details
+            display: flex
+            align-items: center
+            gap: rem(8px)
+            padding-inline-end: rem(15px)
+
+        .product__name
+            display: -webkit-box
+            -webkit-box-orient: vertical
+            line-height: 1.5
+            font-size: rem(14px)
+            overflow: hidden
+            text-overflow: ellipsis
+            -webkit-line-clamp: 2
+            margin-bottom: 0
+
+        .product__image
+            flex: 0 0 auto
+            width: rem(60px)
+            height: rem(60px)
+            border: none
+            border-radius: 0
+            border-start-start-radius: rem(4px)
+            border-end-start-radius: rem(4px)
+
+            img
+                border-radius: 0
+                border-start-start-radius: rem(4px)
+                border-end-start-radius: rem(4px)
