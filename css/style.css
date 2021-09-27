@@ -2894,7 +2894,7 @@ table.table--with-gaps td {
   overflow-x: auto;
   scrollbar-color: transparent transparent;
   scrollbar-width: thin;
-  margin: 1.25rem 0 -0.78125rem;
+  margin: 0.9375rem 0 -0.78125rem;
 }
 .layout__tabs::-webkit-scrollbar {
   width: 0;
