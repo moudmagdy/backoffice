@@ -3785,7 +3785,6 @@ table.table--with-gaps td {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   gap: 0.5rem;
-  padding: 0 1.375rem;
   margin-bottom: 0.9375rem;
 }
 .filters__buttons .filter__btn {
@@ -5873,10 +5872,6 @@ section .page-card:nth-last-child(-n+2) {
 }
 .purchase-invoice .collapse__toggle:hover {
   background-color: #e8e8e8;
-}
-.purchase-invoice .form-control,
-.purchase-invoice .form-select {
-  border-radius: 0.25rem;
 }
 
 .login-page {
