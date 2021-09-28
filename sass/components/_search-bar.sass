@@ -3,7 +3,6 @@
     flex-wrap: wrap
     align-items: center
     gap: rem(15px)
-    margin-bottom: rem(10px)
 
     &__features
         display: flex
@@ -129,7 +128,7 @@
                 box-shadow: none
 
     .filters-shown &
-        max-height: rem(100px)
+        // max-height: rem(100px)
         opacity: 1
 
 .filters-open
@@ -209,32 +208,38 @@
         svg
             fill: darken(#93AEE6, 20%)
 
-.back-btn
+.back-btn,
+.cancel-btn
     display: flex
     align-items: center
-    gap: rem(5px)
-    font-size: rem(14px)
+    gap: rem(8px)
     text-decoration: none
-    color: #65676B
     background-color: transparent
     border-radius: rem(12px)
     padding: 0.6rem 0.8rem
     transition: all 0.3s ease-in-out
 
+    span
+        font-size: rem(14px)
+        color: #65676B
+        transition: all 0.3s ease-in-out
+
     svg
         width: rem(16px)
-        fill: #65676B
+        fill: #4D4D4D
         transition: fill 0.3s ease-in-out
 
         [dir="ltr"] &
             transform: scaleX(-1)
 
     &:hover
-        color: darken(#65676B, 20%)
         background-color: #f3f2f7
 
+        span
+            color: darken(#65676B, 20%)
+
         svg
-            fill: darken(#65676B, 20%)
+            fill: darken(#4D4D4D, 20%)
 
 .search__bar__dropdown
     @media (max-width: 576px)
