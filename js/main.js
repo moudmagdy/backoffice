@@ -70,3 +70,19 @@ if (checkoutToggle) {
         checkoutToggle.closest('.checkout').classList.toggle('slide');
     });
 }
+
+const tableCheck = document.querySelectorAll('table tbody [type="checkbox"]');
+const tableRadio = document.querySelectorAll('table tbody [type="radio"]');
+function selectTableRow() {
+    if (this.checked) {
+        this.closest('tr').classList.add('selected')
+    } else {
+        this.closest('tr').classList.remove('selected')
+    }
+}
+if (tableCheck) {
+    tableCheck.forEach(check => check.addEventListener('change', selectTableRow));
+}
+if (tableRadio) {
+    tableRadio.forEach(radio => radio.addEventListener('change', selectTableRow));
+}

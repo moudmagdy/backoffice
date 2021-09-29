@@ -82,6 +82,9 @@ table
         border-collapse: separate
         border-spacing: rem(4px)
 
+        tr
+            border-radius: rem(4px)
+
         th,
         td
             border-radius: rem(4px)
@@ -91,3 +94,11 @@ table
 
         td
             background-color: #fff
+
+        tbody
+            tr
+                transition: all 0.3s
+
+                &.selected
+
+                    box-shadow: 0 0 0 1.5px $color-brand

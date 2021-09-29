@@ -2883,6 +2883,9 @@ table.table--with-gaps {
   border-collapse: separate;
   border-spacing: 0.25rem;
 }
+table.table--with-gaps tr {
+  border-radius: 0.25rem;
+}
 table.table--with-gaps th,
 table.table--with-gaps td {
   border-radius: 0.25rem;
@@ -2892,6 +2895,15 @@ table.table--with-gaps th {
 }
 table.table--with-gaps td {
   background-color: #fff;
+}
+table.table--with-gaps tbody tr {
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+table.table--with-gaps tbody tr.selected {
+  -webkit-box-shadow: 0 0 0 1.5px #1877F2;
+          box-shadow: 0 0 0 1.5px #1877F2;
 }
 
 .layout__tabs {
