@@ -7,13 +7,15 @@
     <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
     <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
     <link rel="icon" type="image/png" href="images/favicon.png">
-    <title>تفاصيل الفاتورة - كاشير</title>
+    <title>إضافة صلاحية - كاشير</title>
     <link rel="stylesheet" href="css/bootstrap.rtl.min.css">
+    <link rel="stylesheet" href="css/datepicker-bs5.min.css">
+    <link rel="stylesheet" href="css/animate.min.css">
     <link rel="stylesheet" href="css/style.min.css">
 </head>
 
 <body>
-    <main class="invoice-details-page">
+    <main class="barcode-printing-page">
         <div class="main-menu">
             <div class="main-menu__header">
                 <a href="#" class="main-menu__toggle">
@@ -190,47 +192,22 @@
             </div>
         </div>
         <div class="single-column-layout">
-            <header class="mb-3">
-                <a href="#" class="main-menu__toggle">
-                    <svg width="34" height="34" viewBox="0 0 34 34">
-                        <path d="M0,1.1h34v4H0V1.1z M0,15h34v4H0V15z M0,28.9h34v4H0V28.9z"></path>
-                    </svg>
-                </a>
-                <a href="" class="back-btn">
-                    <svg width="20" height="20" viewBox="0 0 20 20">
-                        <path d="M8.5,6c-3.3,0-6,2.7-6,6s2.7,6,6,6h9v2h-9c-4.4,0-8-3.6-8-8s3.6-8,8-8h5V0l6,5l-6,5V6H8.5z"></path>
-                    </svg>
-                    <span>رجــوع</span>
-                </a>
-                <div class="page__navigation">
-                    <a href="#" class="navigation__btn btn--previous">
-                        <svg width="6" height="12" viewBox="0 0 6 12">
-                            <path d="M6,6L0,0v12L6,6z"></path>
-                        </svg>
-                    </a>
-                    <div class="navigation__datalist">
-                        <input type="text" class="navigation__input" id="navDataList" list="navDatalistOptions" autocomplete="off" value="215554877999">
-                        <datalist id="navDatalistOptions">
-                            <option value="215554877999">
-                            <option value="215554878000">
-                            <option value="215554878001">
-                            <option value="215554878002">
-                        </datalist>
-                    </div>
-                    <a href="#" class="navigation__btn btn--next">
-                        <svg width="6" height="12" viewBox="0 0 6 12">
-                            <path d="M6,12V0L0,6L6,12z"></path>
-                        </svg>
-                    </a>
-                </div>
-            </header>
             <div class="double-column-layout">
                 <div class="layout__col">
-                    <div class="navigation-buttons">
-                        <a href="barcode-printing.html">طباعة باركود</a>
-                        <a href="add-validity.html">إضافة صلاحية</a>
-                        <a href="">اضافة سريال</a>
-                    </div>
+                    <header>
+                        <a href="#" class="main-menu__toggle">
+                            <svg width="34" height="34" viewBox="0 0 34 34">
+                                <path d="M0,1.1h34v4H0V1.1z M0,15h34v4H0V15z M0,28.9h34v4H0V28.9z"></path>
+                            </svg>
+                        </a>
+                        <h1>إضافة صلاحية</h1>
+                        <a href="" class="cancel-btn ms-auto">
+                            <span>الغاء</span>
+                            <svg width="20" height="20" viewBox="0 0 20 20">
+                                <path d="M11.9,10l7.7-7.7c0.5-0.5,0.5-1.4,0-1.9s-1.4-0.5-1.9,0L10,8.1L2.3,0.4c-0.5-0.5-1.4-0.5-1.9,0s-0.5,1.4,0,1.9 L8.1,10l-7.7,7.7c-0.5,0.5-0.5,1.4,0,1.9C0.7,19.9,1,20,1.4,20s0.7-0.1,1-0.4l7.7-7.7l7.7,7.7c0.3,0.3,0.6,0.4,1,0.4 c0.3,0,0.7-0.1,1-0.4c0.5-0.5,0.5-1.4,0-1.9L11.9,10z"></path>
+                            </svg>
+                        </a>
+                    </header>
                     <table class="table--with-gaps invoice-products-table">
                         <thead>
                             <tr>
@@ -246,6 +223,7 @@
                                 <th>
                                     <span>الإجمالى</span>
                                 </th>
+                                <th></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -267,24 +245,8 @@
                                 <td>
                                     <span>2022.00</span>
                                 </td>
-                            </tr>
-                            <tr>
-                                <td class="p-0">
-                                    <div class="product__details">
-                                        <div class="product__image">
-                                            <img src="images/default-image.jpg" alt="">
-                                        </div>
-                                        <h5 class="product__name">جونسون، صابون للاستحمام 15ملم</h5>
-                                    </div>
-                                </td>
-                                <td>
-                                    <span>554</span>
-                                </td>
-                                <td>
-                                    <span>33.00</span>
-                                </td>
-                                <td>
-                                    <span>2022.00</span>
+                                <td class="text-center">
+                                    <input class="form-check-input" type="radio" name="validity_radio" id="" value="">
                                 </td>
                             </tr>
                             <tr>
@@ -305,24 +267,8 @@
                                 <td>
                                     <span>2022.00</span>
                                 </td>
-                            </tr>
-                            <tr>
-                                <td class="p-0">
-                                    <div class="product__details">
-                                        <div class="product__image">
-                                            <img src="images/default-image.jpg" alt="">
-                                        </div>
-                                        <h5 class="product__name">جونسون، صابون للاستحمام 15ملم</h5>
-                                    </div>
-                                </td>
-                                <td>
-                                    <span>554</span>
-                                </td>
-                                <td>
-                                    <span>33.00</span>
-                                </td>
-                                <td>
-                                    <span>2022.00</span>
+                                <td class="text-center">
+                                    <input class="form-check-input" type="radio" name="validity_radio" id="" value="">
                                 </td>
                             </tr>
                             <tr>
@@ -343,24 +289,8 @@
                                 <td>
                                     <span>2022.00</span>
                                 </td>
-                            </tr>
-                            <tr>
-                                <td class="p-0">
-                                    <div class="product__details">
-                                        <div class="product__image">
-                                            <img src="images/default-image.jpg" alt="">
-                                        </div>
-                                        <h5 class="product__name">جونسون، صابون للاستحمام 15ملم</h5>
-                                    </div>
-                                </td>
-                                <td>
-                                    <span>554</span>
-                                </td>
-                                <td>
-                                    <span>33.00</span>
-                                </td>
-                                <td>
-                                    <span>2022.00</span>
+                                <td class="text-center">
+                                    <input class="form-check-input" type="radio" name="validity_radio" id="" value="">
                                 </td>
                             </tr>
                             <tr>
@@ -381,24 +311,8 @@
                                 <td>
                                     <span>2022.00</span>
                                 </td>
-                            </tr>
-                            <tr>
-                                <td class="p-0">
-                                    <div class="product__details">
-                                        <div class="product__image">
-                                            <img src="images/default-image.jpg" alt="">
-                                        </div>
-                                        <h5 class="product__name">جونسون، صابون للاستحمام 15ملم</h5>
-                                    </div>
-                                </td>
-                                <td>
-                                    <span>554</span>
-                                </td>
-                                <td>
-                                    <span>33.00</span>
-                                </td>
-                                <td>
-                                    <span>2022.00</span>
+                                <td class="text-center">
+                                    <input class="form-check-input" type="radio" name="validity_radio" id="" value="">
                                 </td>
                             </tr>
                             <tr>
@@ -419,24 +333,8 @@
                                 <td>
                                     <span>2022.00</span>
                                 </td>
-                            </tr>
-                            <tr>
-                                <td class="p-0">
-                                    <div class="product__details">
-                                        <div class="product__image">
-                                            <img src="images/default-image.jpg" alt="">
-                                        </div>
-                                        <h5 class="product__name">جونسون، صابون للاستحمام 15ملم</h5>
-                                    </div>
-                                </td>
-                                <td>
-                                    <span>554</span>
-                                </td>
-                                <td>
-                                    <span>33.00</span>
-                                </td>
-                                <td>
-                                    <span>2022.00</span>
+                                <td class="text-center">
+                                    <input class="form-check-input" type="radio" name="validity_radio" id="" value="">
                                 </td>
                             </tr>
                             <tr>
@@ -457,6 +355,9 @@
                                 <td>
                                     <span>2022.00</span>
                                 </td>
+                                <td class="text-center">
+                                    <input class="form-check-input" type="radio" name="validity_radio" id="" value="">
+                                </td>
                             </tr>
                             <tr>
                                 <td class="p-0">
@@ -475,94 +376,152 @@
                                 </td>
                                 <td>
                                     <span>2022.00</span>
+                                </td>
+                                <td class="text-center">
+                                    <input class="form-check-input" type="radio" name="validity_radio" id="" value="">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="p-0">
+                                    <div class="product__details">
+                                        <div class="product__image">
+                                            <img src="images/default-image.jpg" alt="">
+                                        </div>
+                                        <h5 class="product__name">جونسون، صابون للاستحمام 15ملم</h5>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span>554</span>
+                                </td>
+                                <td>
+                                    <span>33.00</span>
+                                </td>
+                                <td>
+                                    <span>2022.00</span>
+                                </td>
+                                <td class="text-center">
+                                    <input class="form-check-input" type="radio" name="validity_radio" id="" value="">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="p-0">
+                                    <div class="product__details">
+                                        <div class="product__image">
+                                            <img src="images/default-image.jpg" alt="">
+                                        </div>
+                                        <h5 class="product__name">جونسون، صابون للاستحمام 15ملم</h5>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span>554</span>
+                                </td>
+                                <td>
+                                    <span>33.00</span>
+                                </td>
+                                <td>
+                                    <span>2022.00</span>
+                                </td>
+                                <td class="text-center">
+                                    <input class="form-check-input" type="radio" name="validity_radio" id="" value="">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="p-0">
+                                    <div class="product__details">
+                                        <div class="product__image">
+                                            <img src="images/default-image.jpg" alt="">
+                                        </div>
+                                        <h5 class="product__name">جونسون، صابون للاستحمام 15ملم</h5>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span>554</span>
+                                </td>
+                                <td>
+                                    <span>33.00</span>
+                                </td>
+                                <td>
+                                    <span>2022.00</span>
+                                </td>
+                                <td class="text-center">
+                                    <input class="form-check-input" type="radio" name="validity_radio" id="" value="">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="p-0">
+                                    <div class="product__details">
+                                        <div class="product__image">
+                                            <img src="images/default-image.jpg" alt="">
+                                        </div>
+                                        <h5 class="product__name">جونسون، صابون للاستحمام 15ملم</h5>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span>554</span>
+                                </td>
+                                <td>
+                                    <span>33.00</span>
+                                </td>
+                                <td>
+                                    <span>2022.00</span>
+                                </td>
+                                <td class="text-center">
+                                    <input class="form-check-input" type="radio" name="validity_radio" id="" value="">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="p-0">
+                                    <div class="product__details">
+                                        <div class="product__image">
+                                            <img src="images/default-image.jpg" alt="">
+                                        </div>
+                                        <h5 class="product__name">جونسون، صابون للاستحمام 15ملم</h5>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span>554</span>
+                                </td>
+                                <td>
+                                    <span>33.00</span>
+                                </td>
+                                <td>
+                                    <span>2022.00</span>
+                                </td>
+                                <td class="text-center">
+                                    <input class="form-check-input" type="radio" name="validity_radio" id="" value="">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="p-0">
+                                    <div class="product__details">
+                                        <div class="product__image">
+                                            <img src="images/default-image.jpg" alt="">
+                                        </div>
+                                        <h5 class="product__name">جونسون، صابون للاستحمام 15ملم</h5>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span>554</span>
+                                </td>
+                                <td>
+                                    <span>33.00</span>
+                                </td>
+                                <td>
+                                    <span>2022.00</span>
+                                </td>
+                                <td class="text-center">
+                                    <input class="form-check-input" type="radio" name="validity_radio" id="" value="">
                                 </td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
-                <div class="layout__col has--white-bg overflow-hidden">
-                    <div class="control-panel">
-                        <div class="control-panel__header">
-                            <h3 class="control-panel__title">
-                                <span>تفاصيل الفاتورة</span>
-                                <span>#1005</span>
-                            </h3>
-                        </div>
-                        <div class="control-panel__body">
-                            <div class="invoice__person">
-                                <svg width="25" height="25" viewBox="0 0 25 25">
-                                    <path fill="#A3AAB2" d="M12.5,0C19.4,0,25,5.6,25,12.5S19.4,25,12.5,25S0,19.4,0,12.5S5.6,0,12.5,0z"></path>
-                                    <path fill="#F5F5F5" d="M18.7,16.1c-2.3,3.4-7,4.4-10.5,2c-0.8-0.5-1.5-1.2-2-2c2.3-3.4,7-4.4,10.5-2C17.5,14.6,18.2,15.3,18.7,16.1z M12.5,5.6c1.6,0,2.8,1.3,2.8,2.8s-1.3,2.8-2.8,2.8S9.7,10,9.7,8.4S10.9,5.6,12.5,5.6z"></path>
-                                </svg>
-                                <span class="invoice__person__name">عباس العقاد</span>
-                            </div>
-                            <div class="control-panel__content">
-                                <ul class="control-panel__list">
-                                    <li class="control-panel__item">
-                                        <span class="item__title">الفرع</span>
-                                        <span class="item__data">مدينة نصر</span>
-                                    </li>
-                                    <li class="control-panel__item">
-                                        <span class="item__title">تاريخ فاتورة المورد</span>
-                                        <span class="item__data">20/7/2021</span>
-                                    </li>
-                                    <li class="control-panel__item">
-                                        <span class="item__title">رقم فاتورة المورد</span>
-                                        <span class="item__data">10225</span>
-                                    </li>
-                                    <li class="control-panel__item">
-                                        <span class="item__title">الموظف المسئول</span>
-                                        <span class="item__data">محمود احمد</span>
-                                    </li>
-                                    <li class="control-panel__item">
-                                        <span class="item__title">تاريخ انشاء الفاتورة</span>
-                                        <span class="item__data">20/7/2021 - 10:50 PM</span>
-                                    </li>
-                                    <li class="control-panel__item">
-                                        <span class="item__title">عدد المنتجات</span>
-                                        <span class="item__data">16</span>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="control-panel__footer">
-                            <div class="checkout slidable">
-                                <a href="#" class="checkout__slide__toggle">
-                                    <svg width="30" height="13" viewBox="0 0 30 13">
-                                        <path fill="#C6CFD9" d="M27.5,12.8c-0.4,0-0.8-0.1-1.2-0.3L14.9,5.9L3.7,12.5c-1.2,0.7-2.7,0.3-3.4-0.9C-0.3,10.5,0,8.9,1.2,8.3 l13.7-8.1l13.9,8.1c1.2,0.7,1.6,2.2,0.9,3.4C29.2,12.4,28.4,12.8,27.5,12.8z"></path>
-                                    </svg>
-                                </a>
-                                <ul class="checkout__list list-unstyled">
-                                    <li class="checkout__list__item">
-                                        <h5>الاجمالي</h5>
-                                        <span class="checkout__item__detail invoice-total-amount">320.00</span>
-                                    </li>
-                                    <li class="checkout__list__item invoice-discount">
-                                        <h5>الخصم الكلي</h5>
-                                        <div class="checkout__item__detail discount-details">
-                                            <span class="discount-percentage">10%</span>
-                                            <span class="discount-amount">25.00</span>
-                                        </div>
-                                    </li>
-                                    <li class="checkout__list__item">
-                                        <h5>التوصيل</h5>
-                                        <span class="checkout__item__detail delivery-fees-amount">25.00</span>
-                                    </li>
-                                    <li class="checkout__list__item main-item">
-                                        <h5>اجمالى الفاتورة</h5>
-                                        <span class="checkout__item__detail">360.00</span>
-                                    </li>
-                                    <li class="checkout__list__item">
-                                        <h5>المدفوع</h5>
-                                        <span class="checkout__item__detail">25.00</span>
-                                    </li>
-                                    <li class="checkout__list__item">
-                                        <h5>الباقي</h5>
-                                        <span class="checkout__item__detail">25.00</span>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
+                <div class="layout__col has--white-bg">
+
+                    <div class="control-panel__footer">
+                        <form action="">
+                            <button type="button" class="btn btn-primary btn-lg">حفظ</button>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -581,10 +540,12 @@
     </div>
     <script src="js/popper.min.js" defer></script>
     <script src="js/bootstrap.min.js" defer></script>
+    <script src="js/datepicker.min.js" defer></script>
+    <script src="js/ar.js" defer></script>
     <script src="js/main.js" defer></script>
-    <script src="js/components/main-menu.module.js" type="module"></script>
-    <script src="js/components/collapsible.module.js" type="module"></script>
-    <script src="js/components/tags-input.module.js" defer></script>
+    <script src="js/components/main-menu.module.js" type="module" defer></script>
+    <script src="js/components/collapsible.module.js" type="module" defer></script>
+    <script src="js/components/filters.module.js" type="module" defer></script>
 </body>
 
 </html>

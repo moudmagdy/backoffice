@@ -73,15 +73,23 @@ if (checkoutToggle) {
 
 const tableCheck = document.querySelectorAll('table tbody [type="checkbox"]');
 const tableRadio = document.querySelectorAll('table tbody [type="radio"]');
+function checkTableRow() {
+    if (this.checked) {
+        this.closest('tr').classList.add('selected');
+    } else {
+        this.closest('tr').classList.remove('selected');
+    }
+}
 function selectTableRow() {
     if (this.checked) {
-        this.closest('tr').classList.add('selected')
-    } else {
-        this.closest('tr').classList.remove('selected')
+        this.closest('tbody').querySelectorAll('.selected').forEach(radio => {
+            radio.classList.remove('selected');
+        });
+        this.closest('tr').classList.add('selected');
     }
 }
 if (tableCheck) {
-    tableCheck.forEach(check => check.addEventListener('change', selectTableRow));
+    tableCheck.forEach(check => check.addEventListener('change', checkTableRow));
 }
 if (tableRadio) {
     tableRadio.forEach(radio => radio.addEventListener('change', selectTableRow));
