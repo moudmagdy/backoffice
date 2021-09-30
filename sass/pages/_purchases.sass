@@ -90,3 +90,33 @@
             border-radius: 0
             border-start-start-radius: rem(4px)
             border-end-start-radius: rem(4px)
+
+.validity__list
+    display: flex
+    flex-direction: column
+    width: 100%
+
+.validity__item
+    display: flex
+    align-items: center
+    justify-content: space-between
+    gap: rem(10px)
+    width: 100%
+    background-color: $color-white
+    border-bottom: rem(1px) solid #F0F0F0
+    padding: rem(10px) rem(20px)
+
+    .form-control
+        border-radius: rem(4px)
+
+        &:focus
+            box-shadow: none
+
+        &::-webkit-outer-spin-button,
+        &::-webkit-inner-spin-button
+            -webkit-appearance: none
+            margin: 0
+
+        &[type="number"]
+            text-align: center
+            -moz-appearance: textfield
