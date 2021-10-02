@@ -91,20 +91,66 @@
             border-start-start-radius: rem(4px)
             border-end-start-radius: rem(4px)
 
+.product-validity-details
+    display: flex
+    align-items: center
+    gap: rem(20px)
+    background-color: #F5F5F5
+    border-radius: rem(6px)
+    padding: rem(18px) rem(20px)
+    margin-bottom: rem(20px)
+
+    .product-name
+        font-size: rem(14px)
+        margin-bottom: 0
+
+    .product-total-quantity
+        display: flex
+        flex-direction: column
+        align-items: center
+        font-size: rem(14px)
+        margin-inline-start: auto
+        margin-inline-end: rem(65px)
+
+        span
+            &:first-child
+                font-size: rem(12px)
+                color: #4D4D4D
+
+            &:last-child
+                font-size: rem(14px)
+
+                [dir="rtl"] &
+                    font-family: 'NotoSansArabic_SemiBold', sans-serif
+
+                [dir="ltr"] &
+                    font-family: 'NotoSans_SemiBold', sans-serif
+
 .validity__list
     display: flex
     flex-direction: column
     width: 100%
+    overflow-y: auto
+    +scrollbar
 
 .validity__item
     display: flex
     align-items: center
     justify-content: space-between
-    gap: rem(10px)
+    gap: rem(15px)
     width: 100%
     background-color: $color-white
     border-bottom: rem(1px) solid #F0F0F0
     padding: rem(10px) rem(20px)
+
+    .form-datepicker
+        +var(color, color-brand)
+
+    .input-with-icon
+        margin-inline-start: auto
+
+    .invoice__item__quantity
+        margin-inline-start: auto
 
     .form-control
         border-radius: rem(4px)
@@ -120,3 +166,25 @@
         &[type="number"]
             text-align: center
             -moz-appearance: textfield
+
+.validity-status
+    display: flex
+    align-items: center
+    justify-content: flex-start
+    width: rem(12px)
+    height: rem(12px)
+    background-color: #C6CFD9
+    border-radius: 50%
+    overflow: hidden
+
+    svg
+        width: rem(10px)
+        height: auto
+        fill: #fff
+        opacity: 0
+
+    .active &
+        +var(background-color, color-brand)
+
+        svg
+            opacity: 1
