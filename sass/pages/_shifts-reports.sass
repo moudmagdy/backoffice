@@ -1,0 +1,108 @@
+.shifts-reports-page
+    header
+        .header__dropdown
+            margin-inline-start: auto
+
+    h4
+        font-size: rem(18px)
+        margin-bottom: rem(18px)
+
+        [dir="rtl"] &
+            font-family: 'NotoSansArabic_SemiBold', sans-serif
+
+        [dir="ltr"] &
+            font-family: 'NotoSans_SemiBold', sans-serif
+
+    .shift-summary__container
+        display: flex
+        flex-direction: column
+        align-items: center
+
+    .shift-summary
+        display: flex
+        flex-direction: column
+        min-width: 75%
+        background-color: #F5F5F5
+        border-radius: rem(15px)
+        padding: rem(30px) rem(20px)
+        margin-bottom: rem(20px)
+
+        @media (max-width: 576px)
+            min-width: 100%
+
+        h3
+            font-size: calc(1rem + .5vw)
+            margin-bottom: 24px
+
+        .shift-details
+            display: flex
+
+            .shift-state
+                flex: 1 1 50%
+
+                svg
+                    width: rem(30px)
+
+    .shift-summary__list
+        display: flex
+        flex-direction: column
+        max-width: 75%
+
+        li
+            display: flex
+            align-items: center
+            gap: rem(20px)
+            height: rem(54px)
+            border-bottom: 1px solid #efefef
+            padding: 0.85rem 1rem
+
+            h5
+                flex: 0 0 50%
+                font-size: 16px
+                color: #4D4D4D
+                margin: 0
+
+            .receipt__count
+                white-space: nowrap
+                flex: 0 0 25%
+
+            .opening-balance-amount,
+            .daily-total-amount,
+            .operations-amount
+                flex: 0 0 25%
+
+            .opening-balance-amount,
+            .daily-total-amount
+                color: #060505
+                font-size: 22px
+
+                [dir="rtl"] &
+                    font-family: 'NotoSansArabic_SemiBold', sans-serif
+
+                [dir="ltr"] &
+                    font-family: 'NotoSans_SemiBold', sans-serif
+
+            .operations-amount
+                font-size: 17px
+
+                [dir="rtl"] &
+                    font-family: 'NotoSansArabic_SemiBold', sans-serif
+
+                [dir="ltr"] &
+                    font-family: 'NotoSans_SemiBold', sans-serif
+
+                &.revenue
+                    color: #3ABD76
+
+                &.outgoing
+                    color: #FF6B73
+
+            .receipt__count
+                font-size: 12px
+                color: #4D4D4D
+
+                [dir="rtl"] &
+                    font-family: 'NotoSansArabic_Medium', sans-serif
+
+                [dir="ltr"] &
+                    font-family: 'NotoSans_Medium', sans-serif
