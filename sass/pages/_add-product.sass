@@ -4,9 +4,10 @@
             padding: 0.475rem 3rem
 
     .product-types__container
-        +flex-center
+        display: flex
+        justify-content: center
         background-color: transparent
-        padding: rem(80px) rem(25px)
+        padding: rem(30px) rem(15px)
 
     .flex-table
         flex-direction: row
@@ -151,7 +152,11 @@
 
 .product-types
     +flex-center
+    flex-wrap: wrap
     gap: rem(20px)
+    width: max-content
+    height: max-content
+    margin: auto 0
 
     &__item
         position: relative
@@ -164,6 +169,10 @@
         border-radius: rem(8px)
         cursor: pointer
         padding: rem(20px)
+
+        @media (max-width: 576px)
+            width: 100%
+            min-width: auto
 
         &::after
             content: ""
