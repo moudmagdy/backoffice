@@ -3,6 +3,11 @@
     padding: 0 rem(22px) rem(15px)
 
 table
+    position: relative
+
+    thead
+        position: sticky
+
     th
         font-size: rem(12px)
         font-weight: normal
@@ -23,7 +28,6 @@ table
             color: inherit
 
     &:not(.table--with-gaps)
-        position: relative
         width: 100%
         border-spacing: 0
         border-style: solid
@@ -31,7 +35,6 @@ table
         border-width: 0
 
         thead
-            position: sticky
             top: rem(1px)
             border-start-start-radius: rem(12px)
             border-start-end-radius: rem(12px)
@@ -79,8 +82,17 @@ table
 
     &.table--with-gaps
         width: 100%
+        border-radius: rem(4px)
         border-collapse: separate
         border-spacing: rem(4px)
+        margin-top: rem(-4px)
+
+        thead,
+        tbody
+            border-radius: rem(4px)
+
+        thead
+            top: rem(0)
 
         tr
             border-radius: rem(4px)

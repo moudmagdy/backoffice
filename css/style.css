@@ -1421,6 +1421,7 @@ main header .main-menu__toggle:hover svg {
   }
 }
 .double-column-layout .layout__col {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1454,6 +1455,8 @@ main header .main-menu__toggle:hover svg {
   background-color: #fff;
 }
 .double-column-layout .layout__col header {
+  position: sticky;
+  top: 0;
   margin-bottom: 0.625rem;
 }
 
@@ -1482,6 +1485,23 @@ main header .main-menu__toggle:hover svg {
   background-color: rgba(0, 0, 0, 0.08);
 }
 .scrollable-content::-webkit-scrollbar-corner {
+  background-color: transparent;
+}
+.scrollable-content.hidden-scrollbar {
+  scrollbar-color: transparent transparent;
+  scrollbar-width: thin;
+}
+.scrollable-content.hidden-scrollbar::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+.scrollable-content.hidden-scrollbar::-webkit-scrollbar-thumb {
+  background-color: transparent;
+}
+.scrollable-content.hidden-scrollbar::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+.scrollable-content.hidden-scrollbar::-webkit-scrollbar-corner {
   background-color: transparent;
 }
 
@@ -2540,8 +2560,9 @@ main header .main-menu__toggle:hover svg {
 @media (min-width: 576px) {
   .page-filters-container .page-filters > * {
     -webkit-box-flex: 1;
-        -ms-flex: 1 1 calc(25% - 45px);
-            flex: 1 1 calc(25% - 45px);
+        -ms-flex: 1 1 calc(25% - 11.25px);
+            flex: 1 1 calc(25% - 11.25px);
+    max-width: calc(25% - 11.25px);
   }
 }
 .page-filters-container .page-filters .form-control,
@@ -2808,6 +2829,12 @@ main header .main-menu__toggle:hover svg {
   padding: 0 1.375rem 0.9375rem;
 }
 
+table {
+  position: relative;
+}
+table thead {
+  position: sticky;
+}
 table th {
   font-size: 0.75rem;
   font-weight: normal;
@@ -2828,7 +2855,6 @@ table td a {
   color: inherit;
 }
 table:not(.table--with-gaps) {
-  position: relative;
   width: 100%;
   border-spacing: 0;
   border-style: solid;
@@ -2836,7 +2862,6 @@ table:not(.table--with-gaps) {
   border-width: 0;
 }
 table:not(.table--with-gaps) thead {
-  position: sticky;
   top: 0.0625rem;
   border-start-start-radius: 0.75rem;
   border-start-end-radius: 0.75rem;
@@ -2882,8 +2907,17 @@ table:not(.table--with-gaps) tbody tr:nth-of-type(even):hover td {
 }
 table.table--with-gaps {
   width: 100%;
+  border-radius: 0.25rem;
   border-collapse: separate;
   border-spacing: 0.25rem;
+  margin-top: -0.25rem;
+}
+table.table--with-gaps thead,
+table.table--with-gaps tbody {
+  border-radius: 0.25rem;
+}
+table.table--with-gaps thead {
+  top: 0rem;
 }
 table.table--with-gaps tr {
   border-radius: 0.25rem;
@@ -6310,16 +6344,6 @@ section .page-card:nth-last-child(-n+2) {
   color: #65676B;
 }
 
-.invoice-products-table table {
-  position: relative;
-}
-.invoice-products-table thead {
-  position: sticky;
-  top: -0.25rem;
-  -webkit-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
-}
 .invoice-products-table th {
   white-space: nowrap;
 }
@@ -6495,20 +6519,20 @@ section .page-card:nth-last-child(-n+2) {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  width: 0.75rem;
-  height: 0.75rem;
+  width: 1.25rem;
+  height: 1.25rem;
   background-color: #C6CFD9;
   border-radius: 50%;
   overflow: hidden;
 }
 .validity-status svg {
-  width: 0.625rem;
+  width: 0.75rem;
   height: auto;
   fill: #fff;
   opacity: 0;
@@ -6544,6 +6568,16 @@ section .page-card:nth-last-child(-n+2) {
 .shifts-reports-page header .header__dropdown {
   -webkit-margin-start: auto;
           margin-inline-start: auto;
+}
+.shifts-reports-page .layout__tabs {
+  -webkit-margin-start: 0;
+          margin-inline-start: 0;
+}
+@media (min-width: 1200px) {
+  .shifts-reports-page .layout__tabs {
+    -webkit-margin-start: 3.75rem;
+            margin-inline-start: 3.75rem;
+  }
 }
 .shifts-reports-page h4 {
   font-size: 1.125rem;

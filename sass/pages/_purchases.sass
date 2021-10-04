@@ -40,14 +40,6 @@
         color: #65676B
 
 .invoice-products-table
-    table
-        position: relative
-
-    thead
-        position: sticky
-        top: rem(-4px)
-        transition: all 0.3s
-
     th
         white-space: nowrap
 
@@ -168,17 +160,15 @@
             -moz-appearance: textfield
 
 .validity-status
-    display: flex
-    align-items: center
-    justify-content: flex-start
-    width: rem(12px)
-    height: rem(12px)
+    +flex-center
+    width: rem(20px)
+    height: rem(20px)
     background-color: #C6CFD9
     border-radius: 50%
     overflow: hidden
 
     svg
-        width: rem(10px)
+        width: rem(12px)
         height: auto
         fill: #fff
         opacity: 0
