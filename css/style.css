@@ -2975,8 +2975,8 @@ table.table--with-gaps tbody tr.selected {
         -ms-flex-order: initial;
             order: initial;
     margin: -0.78125rem 0;
-    -webkit-margin-start: auto;
-            margin-inline-start: auto;
+    -webkit-margin-start: 3.75rem;
+            margin-inline-start: 3.75rem;
   }
 }
 @media (max-width: 1200px) {
@@ -5420,16 +5420,6 @@ section .page-card:nth-last-child(-n+2) {
   padding: 0.75rem 0.8rem;
 }
 
-.client-page .layout__tabs {
-  -webkit-margin-start: 0;
-          margin-inline-start: 0;
-}
-@media (min-width: 1200px) {
-  .client-page .layout__tabs {
-    -webkit-margin-start: 3.75rem;
-            margin-inline-start: 3.75rem;
-  }
-}
 .client-page .client__panel__container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -6594,16 +6584,6 @@ section .page-card:nth-last-child(-n+2) {
 .shifts-reports-page header .header__dropdown {
   -webkit-margin-start: auto;
           margin-inline-start: auto;
-}
-.shifts-reports-page .layout__tabs {
-  -webkit-margin-start: 0;
-          margin-inline-start: 0;
-}
-@media (min-width: 1200px) {
-  .shifts-reports-page .layout__tabs {
-    -webkit-margin-start: 3.75rem;
-            margin-inline-start: 3.75rem;
-  }
 }
 .shifts-reports-page h4 {
   font-size: 1.125rem;
