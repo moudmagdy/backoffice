@@ -1362,6 +1362,8 @@ main header .main-menu__toggle:hover svg {
   overflow-y: auto;
   scrollbar-color: #61a0f2 rgba(0, 0, 0, 0.08);
   scrollbar-width: thin;
+  -webkit-box-shadow: 0 0.0625rem 0.1875rem rgba(0, 0, 0, 0.08);
+          box-shadow: 0 0.0625rem 0.1875rem rgba(0, 0, 0, 0.08);
 }
 .single-column-layout > section::-webkit-scrollbar {
   width: 8px;
@@ -1375,6 +1377,10 @@ main header .main-menu__toggle:hover svg {
 }
 .single-column-layout > section::-webkit-scrollbar-corner {
   background-color: transparent;
+}
+.single-column-layout > section + section {
+  border-radius: 0.75rem;
+  margin-top: 0.9375rem;
 }
 .single-column-layout > section > .layout__container, .single-column-layout > section > .layout__container > .layout__tab__content {
   height: 100%;
@@ -3078,6 +3084,10 @@ table.table--with-gaps tbody tr.selected {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+.single-column-layout > section + section .layout__tabs {
+  margin: 0;
 }
 
 .page__navigation {
