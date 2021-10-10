@@ -132,11 +132,15 @@
 
         .btn-lg
             +flex-center
-            gap: rem(5px)
+            gap: rem(10px)
             width: 100%
-            font-size: 1rem
+            font-size: rem(16px)
             border-radius: rem(28px)
             padding: 0.875rem 1rem
+
+            &:only-of-type
+                width: 100%
+                padding: 0.625rem 3.5rem
 
             .icon
                 +flex-center

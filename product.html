@@ -9,11 +9,12 @@
     <link rel="icon" type="image/png" href="images/favicon.png">
     <title>المنتج - كاشير</title>
     <link rel="stylesheet" href="css/bootstrap.rtl.min.css">
+    <link rel="stylesheet" href="css/swiper-bundle.min.css">
     <link rel="stylesheet" href="css/style.min.css">
 </head>
 
 <body>
-    <main class="">
+    <main class="product-page">
         <div class="main-menu">
             <div class="main-menu__header">
                 <a href="#" class="main-menu__toggle">
@@ -195,7 +196,7 @@
             </div>
         </div>
         <div class="single-column-layout">
-            <header class="has--tabs">
+            <header>
                 <a href="#" class="main-menu__toggle">
                     <svg width="34" height="34" viewBox="0 0 34 34">
                         <path d="M0,1.1h34v4H0V1.1z M0,15h34v4H0V15z M0,28.9h34v4H0V28.9z"></path>
@@ -229,7 +230,7 @@
                         </svg>
                     </a>
                 </div>
-                <a href="" class="btn btn-outline-primary">تعديل</a>
+                <a href="" class="btn btn-outline-primary edit-product--btn">تعديل</a>
                 <div class="dropdown header__dropdown">
                     <a class="dropdown-toggle" href="#" role="button" id="" data-bs-toggle="dropdown" aria-expanded="false">
                         <svg width="10" height="2" viewBox="0 0 10 2">
@@ -273,53 +274,410 @@
                 </div>
             </header>
             <section>
-                <div class="product__details">
-                    <div class="product__details__header">
-                        <div class="product__image">
-                            <img src="images/almarai-yoghurt.jpg" alt="">
+                <div class="product__view">
+                    <div class="swiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <img src="images/Nivea_1.jpg" alt="">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="images/Nivea_2.jpg" alt="">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="images/Nivea_3.jpg" alt="">
+                            </div>
                         </div>
-                        <div class="product__data">
-                            <h3 class="product__name">زبادى المراعى - تريتس مانجو</h3>
-                            <span class="product__price">50.00</span>
-                        </div>
+                        <div class="swiper-pagination"></div>
                     </div>
-                    <div class="product__details__body">
-                        <ul class="list-unstyled">
-                            <li>
+                    <div class="product__data">
+                        <h3 class="product__name">نيفيا مزيل عرق بخاخ للرجال 150 مل</h3>
+                        <span class="product__price">34.95</span>
+                        <div class="stock-details">
+                            <div class="product__info__item">
                                 <h6>سعر البيع</h6>
                                 <span>4.50</span>
-                            </li>
-                            <li>
+                            </div>
+                            <div class="product__info__item">
                                 <h6>متوسط سعر البيع</h6>
                                 <span>4.50</span>
-                            </li>
-                            <li>
+                            </div>
+                            <div class="product__info__item">
                                 <h6>متوسط سعر التكلفة</h6>
                                 <span>3.50</span>
-                            </li>
-                            <li>
+                            </div>
+                            <div class="product__info__item">
                                 <h6>هامش الربج</h6>
                                 <span>1.00</span>
-                            </li>
-                        </ul>
+                            </div>
+                            <div class="product__info__item">
+                                <h6>سعر البيع</h6>
+                                <span>4.50</span>
+                            </div>
+                            <div class="product__info__item">
+                                <h6>متوسط سعر البيع</h6>
+                                <span>4.50</span>
+                            </div>
+                            <div class="product__info__item">
+                                <h6>متوسط سعر التكلفة</h6>
+                                <span>3.50</span>
+                            </div>
+                            <div class="product__info__item">
+                                <h6>هامش الربج</h6>
+                                <span>1.00</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
-            <section>
-                <div class="layout__tabs">
-                    <nav class="layout__tabs__nav">
-                        <a href="#" data-tab="variables" class="active--tab">
-                            <span>المتغيرات</span>
-                        </a>
-                        <a href="#" data-tab="product_pictures">
-                            <span>صور المنتج</span>
-                        </a>
-                    </nav>
-                </div>
-                <div class="layout__container">
-                    <div class="layout__tab__content active--tab" data-tab="variables">
+            <section class="has--tabs">
+                <div class="page__layout">
+                    <div class="layout__tabs mb-3">
+                        <nav class="layout__tabs__nav">
+                            <a href="#" data-tab="variables" class="active--tab">
+                                <svg width="22" height="20" viewBox="0 0 22 20">
+                                    <path d="M18.7,13.4l1.1,0.7c0.2,0.1,0.3,0.4,0.2,0.7c0,0.1-0.1,0.1-0.2,0.2l-8.3,5c-0.3,0.2-0.7,0.2-1,0l-8.3-5 c-0.2-0.1-0.3-0.4-0.2-0.7c0-0.1,0.1-0.1,0.2-0.2l1.1-0.7L11,18C11,18,18.7,13.4,18.7,13.4z M18.7,8.9l1.1,0.7 c0.2,0.1,0.3,0.4,0.2,0.7c0,0.1-0.1,0.1-0.2,0.2L11,15.7l-8.8-5.3C1.9,10.2,1.9,10,2,9.7c0-0.1,0.1-0.1,0.2-0.2l1.1-0.7l7.7,4.6 L18.7,8.9z M11.5,0.1l8.3,5c0.2,0.1,0.3,0.4,0.2,0.7c0,0.1-0.1,0.1-0.2,0.2L11,11.3L2.2,6C1.9,5.8,1.9,5.5,2,5.3 c0-0.1,0.1-0.1,0.2-0.2l8.3-5C10.8,0,11.2,0,11.5,0.1L11.5,0.1z M11,2.1L5.2,5.6L11,9l5.8-3.5L11,2.1z"></path>
+                                </svg>
+                                <span>المتغيرات</span>
+                            </a>
+                            <a href="#" data-tab="product_pictures">
+                                <svg width="22" height="20" viewBox="0 0 22 20">
+                                    <path d="M19,12v3h3v2h-3v3h-2v-3h-3v-2h3v-3H19z M19,0c0.5,0,1,0.4,1,1v9h-2V2H2v14L12,6l3,3v2.8l-3-3L4.8,16H12v2H1 c-0.5,0-1-0.4-1-1V1c0-0.5,0.4-1,1-1H19z M6,4c1.1,0,2,0.9,2,2S7.1,8,6,8S4,7.1,4,6S4.9,4,6,4z"></path>
+                                </svg>
+                                <span>صور المنتج</span>
+                            </a>
+                        </nav>
                     </div>
-                    <div class="layout__tab__content" data-tab="product_pictures">
+                    <div class="layout__container">
+                        <div class="layout__tab__content active--tab" data-tab="variables">
+                            <div class="scrollable-content">
+                                <div class="table__container">
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th>المتغير</th>
+                                                <th>الباركـود</th>
+                                                <th>سعـر البيـع</th>
+                                                <th>سعـر التكلفـة</th>
+                                                <th>حد الطلب</th>
+                                                <th>تنبيه المخزون</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <span class="fw-bold">شيبسيي / ملح (كيس)</span>
+                                                </td>
+                                                <td>
+                                                    <span>125847788522</span>
+                                                </td>
+                                                <td>
+                                                    <span>4.50</span>
+                                                </td>
+                                                <td>
+                                                    <span>4.50</span>
+                                                </td>
+                                                <td>
+                                                    <span>50</span>
+                                                </td>
+                                                <td>
+                                                    <span>10</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span class="fw-bold">شيبسيي / ملح (كيس)</span>
+                                                </td>
+                                                <td>
+                                                    <span>125847788522</span>
+                                                </td>
+                                                <td>
+                                                    <span>4.50</span>
+                                                </td>
+                                                <td>
+                                                    <span>4.50</span>
+                                                </td>
+                                                <td>
+                                                    <span>50</span>
+                                                </td>
+                                                <td>
+                                                    <span>10</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span class="fw-bold">شيبسيي / ملح (كيس)</span>
+                                                </td>
+                                                <td>
+                                                    <span>125847788522</span>
+                                                </td>
+                                                <td>
+                                                    <span>4.50</span>
+                                                </td>
+                                                <td>
+                                                    <span>4.50</span>
+                                                </td>
+                                                <td>
+                                                    <span>50</span>
+                                                </td>
+                                                <td>
+                                                    <span>10</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span class="fw-bold">شيبسيي / ملح (كيس)</span>
+                                                </td>
+                                                <td>
+                                                    <span>125847788522</span>
+                                                </td>
+                                                <td>
+                                                    <span>4.50</span>
+                                                </td>
+                                                <td>
+                                                    <span>4.50</span>
+                                                </td>
+                                                <td>
+                                                    <span>50</span>
+                                                </td>
+                                                <td>
+                                                    <span>10</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span class="fw-bold">شيبسيي / ملح (كيس)</span>
+                                                </td>
+                                                <td>
+                                                    <span>125847788522</span>
+                                                </td>
+                                                <td>
+                                                    <span>4.50</span>
+                                                </td>
+                                                <td>
+                                                    <span>4.50</span>
+                                                </td>
+                                                <td>
+                                                    <span>50</span>
+                                                </td>
+                                                <td>
+                                                    <span>10</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span class="fw-bold">شيبسيي / ملح (كيس)</span>
+                                                </td>
+                                                <td>
+                                                    <span>125847788522</span>
+                                                </td>
+                                                <td>
+                                                    <span>4.50</span>
+                                                </td>
+                                                <td>
+                                                    <span>4.50</span>
+                                                </td>
+                                                <td>
+                                                    <span>50</span>
+                                                </td>
+                                                <td>
+                                                    <span>10</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span class="fw-bold">شيبسيي / ملح (كيس)</span>
+                                                </td>
+                                                <td>
+                                                    <span>125847788522</span>
+                                                </td>
+                                                <td>
+                                                    <span>4.50</span>
+                                                </td>
+                                                <td>
+                                                    <span>4.50</span>
+                                                </td>
+                                                <td>
+                                                    <span>50</span>
+                                                </td>
+                                                <td>
+                                                    <span>10</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span class="fw-bold">شيبسيي / ملح (كيس)</span>
+                                                </td>
+                                                <td>
+                                                    <span>125847788522</span>
+                                                </td>
+                                                <td>
+                                                    <span>4.50</span>
+                                                </td>
+                                                <td>
+                                                    <span>4.50</span>
+                                                </td>
+                                                <td>
+                                                    <span>50</span>
+                                                </td>
+                                                <td>
+                                                    <span>10</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span class="fw-bold">شيبسيي / ملح (كيس)</span>
+                                                </td>
+                                                <td>
+                                                    <span>125847788522</span>
+                                                </td>
+                                                <td>
+                                                    <span>4.50</span>
+                                                </td>
+                                                <td>
+                                                    <span>4.50</span>
+                                                </td>
+                                                <td>
+                                                    <span>50</span>
+                                                </td>
+                                                <td>
+                                                    <span>10</span>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="layout__tab__content" data-tab="product_pictures">
+                            <div class="scrollable-content">
+                                <div class="table__container">
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th>المتغير</th>
+                                                <th>الصورة</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <span class="fw-bold">شيبسيي / ملح (كيس)</span>
+                                                </td>
+                                                <td class="py-2">
+                                                    <ul class="images__list">
+                                                        <li>
+                                                            <div class="product-image">
+                                                                <img src="images/Nivea_1.jpg" alt="">
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div class="product-image">
+                                                                <img src="images/Nivea_2.jpg" alt="">
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div class="product-image">
+                                                                <img src="images/Nivea_3.jpg" alt="">
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span class="fw-bold">شيبسيي / ملح (كيس)</span>
+                                                </td>
+                                                <td class="py-2">
+                                                    <ul class="images__list">
+                                                        <li>
+                                                            <div class="product-image">
+                                                                <img src="images/almarai-yoghurt.jpg" alt="">
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span class="fw-bold">شيبسيي / ملح (كيس)</span>
+                                                </td>
+                                                <td class="py-2">
+                                                    <ul class="images__list">
+                                                        <li>
+                                                            <div class="product-image">
+                                                                <img src="images/Nivea_1.jpg" alt="">
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div class="product-image">
+                                                                <img src="images/Nivea_2.jpg" alt="">
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div class="product-image">
+                                                                <img src="images/Nivea_3.jpg" alt="">
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span class="fw-bold">شيبسيي / ملح (كيس)</span>
+                                                </td>
+                                                <td class="py-2">
+                                                    <ul class="images__list">
+                                                        <li>
+                                                            <div class="product-image">
+                                                                <img src="images/almarai-yoghurt.jpg" alt="">
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span class="fw-bold">شيبسيي / ملح (كيس)</span>
+                                                </td>
+                                                <td class="py-2">
+                                                    <ul class="images__list">
+                                                        <li>
+                                                            <div class="product-image">
+                                                                <img src="images/Nivea_1.jpg" alt="">
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div class="product-image">
+                                                                <img src="images/Nivea_2.jpg" alt="">
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div class="product-image">
+                                                                <img src="images/Nivea_3.jpg" alt="">
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span class="fw-bold">شيبسيي / ملح (كيس)</span>
+                                                </td>
+                                                <td class="py-2">
+                                                    <ul class="images__list">
+                                                        <li>
+                                                            <div class="product-image">
+                                                                <img src="images/almarai-yoghurt.jpg" alt="">
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -338,6 +696,7 @@
     </div>
     <script src="js/popper.min.js" defer></script>
     <script src="js/bootstrap.min.js" defer></script>
+    <script src="js/swiper-bundle.min.js" defer></script>
     <script src="js/main.js" defer></script>
     <script src="js/components/main-menu.module.js" type="module"></script>
     <script src="js/components/layout-tabs.module.js" type="module"></script>

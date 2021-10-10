@@ -264,3 +264,60 @@ body
 .bs-tooltip-top .tooltip-arrow::before,
 .bs-tooltip-auto[data-popper-placement^=top] .tooltip-arrow::before
     +var(border-top-color, color-brand)
+
+.table-filters
+    display: flex
+    flex-wrap: wrap
+    gap: rem(15px)
+    padding: rem(10px) rem(22px)
+
+    .search__input,
+    .form-select
+        flex: 1 1 100%
+
+    .form-select
+        width: auto
+        padding: 0.475rem 0.95rem
+
+        &:focus
+            box-shadow: none
+
+    @media (min-width: 768px)
+        flex-wrap: nowrap
+
+        .search__input,
+        .form-select
+            flex: 0 0 15%
+
+        .search__input
+            flex-basis: 25%
+
+.alert
+    display: flex
+    flex-wrap: wrap
+    align-items: center
+    gap: rem(10px)
+    border: none
+    border-radius: rem(12px)
+    background-color: #fff
+    padding: rem(18px) rem(32px)
+
+.alert-warning
+    svg
+        flex: 0 0 auto
+        width: rem(20px)
+        fill: #FFAA00
+
+    span
+        font-size: rem(18px)
+        color: #FFAA00
+
+        [dir="rtl"] &
+            font-family: 'NotoSansArabic_Medium', sans-serif
+
+        [dir="ltr"] &
+            font-family: 'NotoSans_Medium', sans-serif
+
+    .btn
+        padding: 0.475rem 2.5rem
+        margin-inline-start: auto

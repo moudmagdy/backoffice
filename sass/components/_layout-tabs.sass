@@ -11,7 +11,7 @@
         @media (min-width: 1200px)
             order: initial
             margin: rem(-12.5px) 0
-            margin-inline-start: rem(60px)
+            margin-inline-start: rem(50px)
 
     @media (max-width: 1200px)
         flex: 1 1 100%
@@ -30,14 +30,15 @@
     a
         position: relative
         +flex-center
+        gap: rem(10px)
         flex: 1 1 100%
         font-size: rem(14px)
-        color: #212529
+        color: #A3AAB2
         cursor: pointer
         text-decoration: none
         white-space: nowrap
         transition: all 0.2s ease-in-out
-        padding: rem(20px) rem(15px)
+        padding: rem(20px) rem(12px)
         -webkit-user-drag: none
         user-drag: none
 
@@ -46,6 +47,9 @@
 
         [dir="ltr"] &
             font-family: 'NotoSans_Medium', sans-serif
+
+        svg
+            fill: #A3AAB2
 
         &::after
             content: ""
@@ -64,6 +68,9 @@
         &.active--tab
             background-color: rgba(24, 119, 242, 0.05)
             +var(color, color-brand)
+
+            svg
+                +var(fill, color-brand)
 
             &::after
                 width: 100%
