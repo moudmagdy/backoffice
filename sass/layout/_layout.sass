@@ -93,7 +93,7 @@ main
     @media (max-width: 768px)
         padding: rem(20px) rem(15px)
 
-    header
+    & > header
         display: flex
         flex-wrap: wrap
         align-items: center
@@ -125,10 +125,14 @@ main
                 flex-basis: 100%
                 margin-top: rem(15px)
 
+    & > header
+        & + section
+            border-radius: 0 0 rem(12px) rem(12px)
+
     & > section
         flex: 1 1 auto
         background-color: $color-white
-        border-radius: 0 0 rem(12px) rem(12px)
+        border-radius: rem(12px)
         overflow: hidden
         overflow-y: auto
         +scrollbar
@@ -136,7 +140,6 @@ main
 
         & + section
             flex: 0 1 50%
-            border-radius: rem(12px)
             margin-top: rem(15px)
 
             &.has--tabs

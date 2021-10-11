@@ -1,3 +1,47 @@
+.subscription-page
+    table
+        .show-invoice
+            +var(color, color-brand)
+
+    .current-package
+        padding: rem(15px)
+
+        .package-details
+            display: flex
+            justify-content: space-between
+            gap: rem(15px)
+
+            &:first-child
+                box-shadow: inset 0 rem(-0.5px) rem(1px) #edeff4
+
+            a
+                flex: 0 0 auto
+
+        .package__item
+            display: flex
+            flex-direction: column
+            gap: rem(8px)
+
+        .package__item__title
+            font-size: rem(12px)
+            color: #A3AAB2
+
+            [dir="rtl"] &
+                font-family: 'NotoSansArabic_Medium', sans-serif
+
+            [dir="ltr"] &
+                font-family: 'NotoSans_Medium', sans-serif
+
+        .package__item__data
+            font-size: rem(14px)
+            +var(color, color-brand)
+
+            [dir="rtl"] &
+                font-family: 'NotoSansArabic_SemiBold', sans-serif
+
+            [dir="ltr"] &
+                font-family: 'NotoSans_SemiBold', sans-serif
+
 .subscribe-page
     overflow-y: auto
     +scrollbar

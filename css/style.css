@@ -1387,7 +1387,7 @@ main header .main-menu__toggle:hover svg {
     padding: 1.25rem 0.9375rem;
   }
 }
-.single-column-layout header {
+.single-column-layout > header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1407,37 +1407,40 @@ main header .main-menu__toggle:hover svg {
   -o-transition: min-height 0.3s;
   transition: min-height 0.3s;
 }
-.single-column-layout header.has--tabs {
+.single-column-layout > header.has--tabs {
   -webkit-box-shadow: inset 0 -0.5px 1px #edeff4;
           box-shadow: inset 0 -0.5px 1px #edeff4;
 }
-.single-column-layout header h1 {
+.single-column-layout > header h1 {
   font-size: 1.125rem;
   margin-bottom: 0;
 }
-[dir=rtl] .single-column-layout header h1 {
+[dir=rtl] .single-column-layout > header h1 {
   font-family: "NotoSansArabic_Medium", sans-serif;
 }
-[dir=ltr] .single-column-layout header h1 {
+[dir=ltr] .single-column-layout > header h1 {
   font-family: "NotoSans_Medium", sans-serif;
 }
-.single-column-layout header .page__navigation {
+.single-column-layout > header .page__navigation {
   -ms-flex-preferred-size: 30%;
       flex-basis: 30%;
 }
 @media (max-width: 768px) {
-  .single-column-layout header .page__navigation {
+  .single-column-layout > header .page__navigation {
     -ms-flex-preferred-size: 100%;
         flex-basis: 100%;
     margin-top: 0.9375rem;
   }
+}
+.single-column-layout > header + section {
+  border-radius: 0 0 0.75rem 0.75rem;
 }
 .single-column-layout > section {
   -webkit-box-flex: 1;
       -ms-flex: 1 1 auto;
           flex: 1 1 auto;
   background-color: #fff;
-  border-radius: 0 0 0.75rem 0.75rem;
+  border-radius: 0.75rem;
   overflow: hidden;
   overflow-y: auto;
   scrollbar-color: #61a0f2 rgba(0, 0, 0, 0.08);
@@ -1462,7 +1465,6 @@ main header .main-menu__toggle:hover svg {
   -webkit-box-flex: 0;
       -ms-flex: 0 1 50%;
           flex: 0 1 50%;
-  border-radius: 0.75rem;
   margin-top: 0.9375rem;
 }
 .single-column-layout > section + section.has--tabs {
@@ -5561,6 +5563,10 @@ section .page-card:nth-last-child(-n+2) {
     height: auto;
   }
 }
+.product-page .single-column-layout > header {
+  -webkit-box-shadow: inset 0 -0.5px 1px #edeff4;
+          box-shadow: inset 0 -0.5px 1px #edeff4;
+}
 @media (max-width: 1200px) {
   .product-page .single-column-layout > section {
     overflow: hidden;
@@ -7083,6 +7089,63 @@ section .page-card:nth-last-child(-n+2) {
 }
 .shifts-reports-page .shift-time__item span {
   font-size: 0.875rem;
+}
+
+.subscription-page table .show-invoice {
+  color: #1877F2;
+  color: var(--color-brand);
+}
+.subscription-page .current-package {
+  padding: 0.9375rem;
+}
+.subscription-page .current-package .package-details {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 0.9375rem;
+}
+.subscription-page .current-package .package-details:first-child {
+  -webkit-box-shadow: inset 0 -0.03125rem 0.0625rem #edeff4;
+          box-shadow: inset 0 -0.03125rem 0.0625rem #edeff4;
+}
+.subscription-page .current-package .package-details a {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
+}
+.subscription-page .current-package .package__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 0.5rem;
+}
+.subscription-page .current-package .package__item__title {
+  font-size: 0.75rem;
+  color: #A3AAB2;
+}
+[dir=rtl] .subscription-page .current-package .package__item__title {
+  font-family: "NotoSansArabic_Medium", sans-serif;
+}
+[dir=ltr] .subscription-page .current-package .package__item__title {
+  font-family: "NotoSans_Medium", sans-serif;
+}
+.subscription-page .current-package .package__item__data {
+  font-size: 0.875rem;
+  color: #1877F2;
+  color: var(--color-brand);
+}
+[dir=rtl] .subscription-page .current-package .package__item__data {
+  font-family: "NotoSansArabic_SemiBold", sans-serif;
+}
+[dir=ltr] .subscription-page .current-package .package__item__data {
+  font-family: "NotoSans_SemiBold", sans-serif;
 }
 
 .subscribe-page {
