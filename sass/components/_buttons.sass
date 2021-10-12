@@ -218,8 +218,8 @@
         background-color: #272727
 
 .btn-link
-    color: #65676B
+    +var(color, color-brand)
     text-decoration: none
 
     &:hover
-        color: darken(#65676B, 10%)
+        color: darken($color-brand, 10%)

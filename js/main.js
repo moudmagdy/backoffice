@@ -115,13 +115,14 @@ if (document.querySelector('.swiper')) {
     var swiper = new Swiper('.swiper', {
         slidesPerView: 1,
         loop: true,
+        grabCursor: true,
         autoplay: {
             delay: 2500,
-            disableOnInteraction: false,
+            disableOnInteraction: false
         },
         pagination: {
             el: '.swiper-pagination',
-            clickable: true,
+            clickable: true
         }
     });
 }
