@@ -302,15 +302,18 @@ body
     background-color: #fff
     padding: rem(18px) rem(32px)
 
-.alert-warning
+    @media (max-width: 576px)
+        flex-direction: column
+
     svg
         flex: 0 0 auto
         width: rem(20px)
-        fill: #FFAA00
 
     span
         font-size: rem(18px)
-        color: #FFAA00
+
+        @media (max-width: 576px)
+            text-align: center
 
         [dir="rtl"] &
             font-family: 'NotoSansArabic_Medium', sans-serif
@@ -321,3 +324,20 @@ body
     .btn
         padding: 0.475rem 2.5rem
         margin-inline-start: auto
+
+        @media (max-width: 576px)
+            margin: rem(10px) auto 0
+
+.alert-primary
+    svg
+        +var(fill, color-brand)
+
+    span
+        +var(color, color-brand)
+
+.alert-warning
+    svg
+        fill: #FFAA00
+
+    span
+        color: #FFAA00
