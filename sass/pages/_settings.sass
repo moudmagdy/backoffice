@@ -1,0 +1,90 @@
+.settings-page
+    min-height: 100%
+    overflow-y: auto
+    +scrollbar
+
+    & > section
+        .main-menu__toggle
+            align-self: flex-start
+            display: none
+            margin-bottom: rem(30px)
+
+            svg
+                +var(fill, color-text-primary)
+
+            &:hover
+                svg
+                    fill: $color-text-primary
+
+            @media (max-width: 1024px)
+                display: flex
+
+    .code__inputs
+        gap: rem(10px)
+
+        [dir="rtl"] &
+            justify-content: flex-end
+
+        [dir="ltr"] &
+            justify-content: flex-start
+
+        .form-control
+            width: rem(45px)
+            height: auto
+            line-height: 1
+
+            &[type="password"]
+                font-size: rem(48px)
+
+            &[type="text"]
+                font-size: rem(18px)
+
+.form-container
+    max-width: 1200px
+    padding: 1.25rem 0.9375rem
+    margin: auto
+
+.form__card
+    border-radius: rem(12px)
+    box-shadow: 0 rem(1px) rem(3px) rgba(0, 0, 0, 0.08)
+
+    &:not(:last-child)
+        margin-bottom: rem(24px)
+
+    &__header,
+    &__body,
+    &__footer
+        background-color: #fff
+
+    &__header
+        border-radius: rem(12px) rem(12px) 0 0
+        padding: rem(10px) rem(16px)
+
+        .collapse__toggle
+            +var(color, color-brand)
+            border-radius: rem(6px)
+
+            &::before
+                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18.4 9.9'%3E%3Cpath fill='%231877F2' d='M0.7,9.9L0,9.2L9.2,0l9.2,9.2l-0.7,0.7L9.2,1.4L0.7,9.9z'/%3E%3C/svg%3E")
+
+            &:hover
+                background-color: #F5F5F5
+
+    &__body
+        border-top: rem(1px) solid #ececec
+        padding: rem(20px) rem(24px)
+
+    &__footer
+        display: flex
+        justify-content: flex-end
+        border-top: rem(1px) solid #ececec
+        border-radius: 0 0 rem(12px) rem(12px)
+        padding: rem(12px) rem(24px)
+
+        .btn
+            padding-inline: 3rem
+
+    &.collapsed
+        .form__card__header
+            border-radius: rem(12px)
+            transition: border-radius 350ms ease 175ms

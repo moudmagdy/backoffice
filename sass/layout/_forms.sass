@@ -99,7 +99,7 @@ button,
         &:checked
             +var(background-color, color-brand)
             +var(border-color, color-brand)
-    
+
     &:not(.form-switch &, &[type="radio"])
         border-radius: rem(5px)
 
@@ -418,3 +418,69 @@ button,
         & > *
             border-start-start-radius: 0 !important
             border-end-start-radius: 0 !important
+
+.password__field
+    &:not(.passcode--field)
+        position: relative
+        display: flex
+        align-items: center
+
+    &:not(.passcode--field)
+        .show__password
+            position: absolute
+            inset-inline-end: 0.95rem
+
+    .show__password
+        +flex-center
+
+        svg
+            fill: #C6CFD9
+            transition: fill 0.3s
+
+            &:last-child
+                display: none
+
+        &:hover
+            svg
+                fill: #8E949A
+
+    &.password--shown
+        .show__password
+            svg
+                fill: #060505
+
+                &:first-child
+                    display: none
+
+                &:last-child
+                    display: block
+
+    &:not(.passcode--field)
+        [type="password"]
+            padding-inline-end: calc(0.95rem + 18px + 0.95rem)
+
+.passcode--field
+    display: flex
+    gap: rem(30px)
+
+.code__inputs
+    display: flex
+    justify-content: space-between
+    gap: rem(25px)
+    max-width: max-content
+
+    [dir="rtl"] &
+        direction: ltr
+
+    .form-control
+        width: rem(65px)
+        height: rem(78px)
+        font-size: rem(30px)
+        text-align: center
+        padding: 0.725rem 0.65rem
+
+        [dir="rtl"] &
+            font-family: 'NotoSansArabic_SemiBold', sans-serif
+
+        [dir="ltr"] &
+            font-family: 'NotoSans_SemiBold', sans-serif
