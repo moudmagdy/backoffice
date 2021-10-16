@@ -7,13 +7,13 @@
     <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
     <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
     <link rel="icon" type="image/png" href="images/favicon.png">
-    <title>إضافة منتج - كاشير</title>
+    <title>الملف الشخصي - كاشير</title>
     <link rel="stylesheet" href="css/bootstrap.rtl.min.css">
     <link rel="stylesheet" href="css/style.min.css">
 </head>
 
 <body>
-    <main class="add-product-page">
+    <main class="settings-page">
         <div class="main-menu">
             <div class="main-menu__header">
                 <a href="#" class="main-menu__toggle">
@@ -32,8 +32,8 @@
                             <span>الرئيسية</span>
                         </a>
                     </li>
-                    <li class="has--submenu submenu--opened">
-                        <a href="#" class="active">
+                    <li class="has--submenu">
+                        <a href="#">
                             <svg width="34" height="34" viewBox="0 0 34 34">
                                 <path d="M3.4,5.2v23.7h27.2V5.2H3.4z M1.7,1.8h30.6c0.9,0,1.7,0.8,1.7,1.7v27.1c0,0.9-0.8,1.7-1.7,1.7c0,0,0,0,0,0H1.7 c-0.9,0-1.7-0.8-1.7-1.7c0,0,0,0,0,0V3.5C0,2.5,0.8,1.8,1.7,1.8C1.7,1.8,1.7,1.8,1.7,1.8z M6.8,8.5h5.1v16.9H6.8L6.8,8.5z M13.6,8.5 H17v16.9h-3.4L13.6,8.5z M18.7,8.5h1.7v16.9h-1.7V8.5z M22.1,8.5h5.1v16.9h-5.1V8.5z"></path>
                             </svg>
@@ -41,7 +41,7 @@
                         </a>
                         <ol class="submenu">
                             <li>
-                                <a href="products.html" class="active">المنتجات</a>
+                                <a href="products.html">المنتجات</a>
                             </li>
                             <li>
                                 <a href="catalog-settings.html">اعدادات المنتجات</a>
@@ -196,44 +196,19 @@
                     </svg>
                     <span>الإشعارات</span>
                 </a>
-                <a href="" class="main-menu__profile">
+                <a href="" class="main-menu__profile active">
                     <img src="https://www.fillmurray.com/36/36" alt="">
                     <span>حمدي النعسان</span>
                 </a>
             </div>
         </div>
-        <div class="single-column-layout">
-            <header>
-                <a href="#" class="main-menu__toggle">
-                    <svg width="34" height="34" viewBox="0 0 34 34">
-                        <path d="M0,1.1h34v4H0V1.1z M0,15h34v4H0V15z M0,28.9h34v4H0V28.9z"></path>
-                    </svg>
-                </a>
-                <h1>إضافة منتج</h1>
-                <a href="" class="back-btn ms-auto">
-                    <svg width="20" height="20" viewBox="0 0 20 20">
-                        <path d="M8.5,6c-3.3,0-6,2.7-6,6s2.7,6,6,6h9v2h-9c-4.4,0-8-3.6-8-8s3.6-8,8-8h5V0l6,5l-6,5V6H8.5z"></path>
-                    </svg>
-                    <span>رجــوع</span>
-                </a>
-            </header>
-            <section class="product-types__container">
-                <div class="product-types">
-                    <div class="product-types__item selected">
-                        <h3>منتج اساسى</h3>
-                        <p>منتج ليس له متغيرات</p>
-                    </div>
-                    <div class="product-types__item">
-                        <h3>منتج متنوع</h3>
-                        <p>منتج لديه متغيرات</p>
-                    </div>
-                    <div class="product-types__item">
-                        <h3>منتج مركب</h3>
-                        <p>منتج مكون من مجموعه منتجات</p>
-                    </div>
-                </div>
-            </section>
-        </div>
+        <section>
+            <a href="#" class="main-menu__toggle">
+                <svg width="34" height="34" viewBox="0 0 34 34">
+                    <path d="M0,1.1h34v4H0V1.1z M0,15h34v4H0V15z M0,28.9h34v4H0V28.9z"></path>
+                </svg>
+            </a>
+        </section>
     </main>
     <div class="page-preloader">
         <div class="loading-bar">
@@ -248,8 +223,9 @@
     </div>
     <script src="js/popper.min.js" defer></script>
     <script src="js/bootstrap.min.js" defer></script>
-    <script src="js/main.js" defer></script>
     <script src="js/components/main-menu.module.js" type="module"></script>
+    <script src="js/components/collapsible.module.js" type="module"></script>
+    <script src="js/main.js" defer></script>
 </body>
 
 </html>

@@ -212,9 +212,34 @@
                                 [dir="ltr"] &
                                     transform: scaleX(-1) rotate(-90deg)
 
-    &__notifications
+    &__notifications,
+    &__profile
         position: relative
 
+        &::before
+            content: ""
+            position: absolute
+            top: 0
+            inset-inline-start: 0
+            width: rem(4px)
+            height: 100%
+            background-color: rgba(255, 255, 255, 0.4)
+            opacity: 0
+            transition: all 0.3s
+
+        &:hover
+            &::before
+                opacity: 1
+
+        &.active
+            color: $color-white
+            background-color: rgba(255, 255, 255, 0.08)
+
+            &::before
+                background-color: $color-white
+                opacity: 1
+
+    &__notifications
         svg
             width: rem(22px)
             height: rem(22px)
