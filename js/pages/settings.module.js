@@ -47,3 +47,16 @@ if (passcodeInputs) {
         });
     });
 }
+
+const userPhotoInput = document.querySelector('.user-photo__input');
+const userPhotoIMG = document.querySelector('.user-photo__img');
+
+function loadIMG(e) {
+    let reader = new FileReader();
+    reader.onload = function () {
+        userPhotoIMG.src = reader.result;
+    };
+    reader.readAsDataURL(e.target.files[0]);
+}
+
+userPhotoInput.addEventListener('click', loadIMG);

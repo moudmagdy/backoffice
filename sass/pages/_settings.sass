@@ -88,3 +88,41 @@
         .form__card__header
             border-radius: rem(12px)
             transition: border-radius 350ms ease 175ms
+
+.user-photo
+    position: relative
+    +flex-center
+    width: rem(120px)
+    height: rem(120px)
+    background-color: #F5F5F5
+    box-shadow: inset 0 0 0 3px #B4D0F3
+    border-radius: 50%
+    overflow: hidden
+
+    &__img
+        width: 100%
+        height: 100%
+        object-fit: cover
+
+    &__input
+        display: none
+
+    &__label
+        position: absolute
+        left: 0
+        top: 100%
+        display: flex
+        justify-content: center
+        align-items: flex-start
+        width: rem(120px)
+        height: rem(120px)
+        background-color: rgba(6, 5, 5, 0.36)
+        border-radius: 50%
+        box-shadow: inset 0 0 0 3px #b4d0f3
+        cursor: pointer
+        padding: rem(12px)
+        transform: translateY(-40px)
+
+        svg
+            fill: #fff
+            width: rem(15px)
