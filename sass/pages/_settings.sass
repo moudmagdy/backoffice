@@ -5,9 +5,9 @@
 
     & > section
         .main-menu__toggle
-            align-self: flex-start
             display: none
-            margin-bottom: rem(30px)
+            align-self: flex-start
+            margin: rem(15px) rem(15px) rem(10px) 0
 
             svg
                 +var(fill, color-text-primary)
@@ -17,7 +17,7 @@
                     fill: $color-text-primary
 
             @media (max-width: 1024px)
-                display: flex
+                display: inline-flex
 
     .code__inputs
         gap: rem(10px)
@@ -38,6 +38,41 @@
 
             &[type="text"]
                 font-size: rem(18px)
+
+    .user-data
+        display: flex
+        flex-wrap: wrap
+        gap: rem(25px)
+        padding-bottom: rem(20px)
+        border-bottom: rem(1px) solid #ececec
+        margin-bottom: rem(20px)
+
+        &__item
+            display: flex
+            align-items: center
+            gap: rem(15px)
+
+            &__label
+                font-size: rem(14px)
+
+                [dir="rtl"] &
+                    font-family: 'NotoSansArabic_SemiBold', sans-serif
+
+                [dir="ltr"] &
+                    font-family: 'NotoSans_SemiBold', sans-serif
+
+            &__details
+                font-size: rem(14px)
+                color: #4D4D4D
+                background-color: #F5F5F5
+                border-radius: rem(6px)
+                padding: 8px 12px
+
+                [dir="rtl"] &
+                    font-family: 'NotoSansArabic_Medium', sans-serif
+
+                [dir="ltr"] &
+                    font-family: 'NotoSans_Medium', sans-serif
 
 .form-container
     max-width: 1200px
@@ -90,18 +125,28 @@
             transition: border-radius 350ms ease 175ms
 
 .user-photo
+    flex: 0 0 auto
     position: relative
     +flex-center
     width: rem(120px)
     height: rem(120px)
     background-color: #F5F5F5
-    box-shadow: inset 0 0 0 3px #B4D0F3
     border-radius: 50%
     overflow: hidden
+    margin-block: rem(20px)
+
+    &::after
+        content: ""
+        position: absolute
+        inset: 0
+        border-radius: 50%
+        box-shadow: inset 0 0 0 rem(3px) #B4D0F3
+        pointer-events: none
 
     &__img
-        width: 100%
-        height: 100%
+        width: calc(100% - #{rem(6px)})
+        height: calc(100% - #{rem(6px)})
+        border-radius: 50%
         object-fit: cover
 
     &__input

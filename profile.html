@@ -216,19 +216,53 @@
                         </div>
                         <div class="collapse__container">
                             <div class="form__card__body">
-                                <div class="user-photo">
-                                    <img src="images/avatar.png" alt="" class="user-photo__img">
-                                    <input type="file" name="user_photo" id="user_photo" accept=".jpg, .jpeg, .png" class="user-photo__input">
-                                    <label for="user_photo" class="user-photo__label">
-                                        <svg viewBox="0 0 20 18">
-                                            <path d="M2,16h16V9h2v8c0,0.6-0.4,1-1,1H1c-0.6,0-1-0.4-1-1V9h2V16z M11,6v7H9V6H4l6-6l6,6H11z"></path>
-                                        </svg>
-                                    </label>
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="user-data">
+                                            <div class="user-data__item">
+                                                <span class="user-data__item__label">الفرع</span>
+                                                <span class="user-data__item__details">كل الفروع</span>
+                                            </div>
+                                            <div class="user-data__item">
+                                                <span class="user-data__item__label">الادوار</span>
+                                                <span class="user-data__item__details">مدير</span>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-12 col-sm-6">
-                                        <label class="form-label" for="first_name">الاسم الاول</label>
-                                        <input class="form-control" type="text" name="" id="first_name">
+                                    <div class="col-12 col-md-2 d-flex order-md-last justify-content-md-end">
+                                        <div class="user-photo">
+                                            <img src="images/avatar.png" alt="" class="user-photo__img">
+                                            <input type="file" name="user_photo" id="user_photo" accept=".jpg, .jpeg, .png" class="user-photo__input">
+                                            <label for="user_photo" class="user-photo__label">
+                                                <svg viewBox="0 0 20 18">
+                                                    <path d="M2,16h16V9h2v8c0,0.6-0.4,1-1,1H1c-0.6,0-1-0.4-1-1V9h2V16z M11,6v7H9V6H4l6-6l6,6H11z"></path>
+                                                </svg>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-md-10">
+                                        <div class="row">
+                                            <div class="col-12 col-md-6 mb-3">
+                                                <label class="form-label" for="first_name">الاسم الاول</label>
+                                                <input class="form-control" type="text" name="" id="first_name">
+                                            </div>
+                                            <div class="col-12 col-md-6 mb-3">
+                                                <label class="form-label" for="family_name">اسم العائلة</label>
+                                                <input class="form-control" type="text" name="" id="family_name">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-12 col-md-6 mb-3">
+                                                <label class="form-label" for="first_name">رقم البطاقه</label>
+                                                <input class="form-control" type="number" name="" id="first_name">
+                                            </div>
+                                            <div class="col-12 col-md-6 mb-3">
+                                                <label class="form-label" for="family_name">الايميل</label>
+                                                <input class="form-control" type="email" name="" id="family_name">
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

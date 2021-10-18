@@ -59,4 +59,4 @@ function loadIMG(e) {
     reader.readAsDataURL(e.target.files[0]);
 }
 
-userPhotoInput.addEventListener('click', loadIMG);
+userPhotoInput.addEventListener('change', loadIMG);
