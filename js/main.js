@@ -96,7 +96,7 @@ if (tableRadio) {
 }
 
 const paymentBtn = document.querySelector('[data-target="payment"]');
-const paymentBackBtn = document.querySelector('.payment .back-btn');
+const paymentBackBtns = document.querySelectorAll('.payment .back-btn');
 
 if (paymentBtn) {
     paymentBtn.addEventListener('click', (e) => {
@@ -104,10 +104,12 @@ if (paymentBtn) {
         document.querySelector('body').classList.add('payment--shown');
     });
 }
-if (paymentBackBtn) {
-    paymentBackBtn.addEventListener('click', (e) => {
-        e.preventDefault();
-        document.querySelector('body').classList.remove('payment--shown');
+if (paymentBackBtns) {
+    paymentBackBtns.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            document.querySelector('body').classList.remove('payment--shown');
+        });
     });
 }
 
