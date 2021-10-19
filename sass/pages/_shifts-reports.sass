@@ -152,14 +152,19 @@
 
     .shift-time
         display: flex
-        flex-wrap: wrap
-        gap: rem(20px) rem(100px)
+        gap: rem(100px)
         padding: rem(20px) rem(20px) 0
         margin-bottom: rem(15px)
+
+        @media (max-width: 576px)
+            gap: rem(20px)
 
         &__item
             display: flex
             gap: rem(15px)
+
+            @media (max-width: 576px)
+                flex: 1 1 50%
 
             svg
                 width: rem(30px)
@@ -171,3 +176,8 @@
 
             span
                 font-size: rem(14px)
+
+                &:last-child
+                    @media (max-width: 576px)
+                        display: flex
+                        flex-direction: column
