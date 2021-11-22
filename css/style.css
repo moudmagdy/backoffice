@@ -8496,6 +8496,9 @@ section .page-card:nth-last-child(-n+2) {
   width: 0.9375rem;
 }
 
+.payments-page .single-column-layout header {
+  gap: 1.875rem;
+}
 .payments-page .layout__tabs {
   -webkit-margin-start: auto;
           margin-inline-start: auto;
