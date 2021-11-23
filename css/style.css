@@ -8503,3 +8503,54 @@ section .page-card:nth-last-child(-n+2) {
   -webkit-margin-start: auto;
           margin-inline-start: auto;
 }
+.payments-page .service-info {
+  padding: 0;
+}
+.payments-page .service-balance {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 0.9375rem;
+  border: 0.0625rem solid #E4E6EB;
+  border-radius: 0.75rem;
+  padding: 0.625rem 0.9375rem;
+  margin-bottom: 0.9375rem;
+}
+.payments-page .service-balance .service-icon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 3.75rem;
+  height: 3.75rem;
+  border-radius: 50%;
+  background-color: #F5F5F5;
+}
+.payments-page .service-balance .service-icon svg {
+  width: 1.875rem;
+  height: 1.875rem;
+}
+.payments-page .service-balance .service-icon img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 50%;
+}
+.payments-page .balance-label {
+  color: #818B97;
+}
+[dir=rtl] .payments-page .balance-label {
+  font-family: "NotoSansArabic_Medium", sans-serif;
+}
+[dir=ltr] .payments-page .balance-label {
+  font-family: "NotoSans_Medium", sans-serif;
+}

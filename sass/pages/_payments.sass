@@ -5,3 +5,45 @@
 
     .layout__tabs
         margin-inline-start: auto
+
+    .service-info
+        padding: 0
+
+    .service-balance
+        display: inline-flex
+        align-items: center
+        gap: rem(15px)
+        border: rem(1px) solid #E4E6EB
+        border-radius: rem(12px)
+        padding: rem(10px) rem(15px)
+        margin-bottom: rem(15px)
+
+        .service-icon
+            +flex-center
+            width: rem(60px)
+            height: rem(60px)
+            border-radius: 50%
+            background-color: #F5F5F5
+
+            svg
+                width: rem(30px)
+                height: rem(30px)
+
+            img
+                width: 100%
+                height: 100%
+                object-fit: cover
+                border-radius: 50%
+
+    .balance-label
+        color: #818B97
+
+        [dir="rtl"] &
+            font-family: 'NotoSansArabic_Medium', sans-serif
+
+        [dir="ltr"] &
+            font-family: 'NotoSans_Medium', sans-serif
+
+    .balance-details
+        .balance-amount
+        .balance-currency
