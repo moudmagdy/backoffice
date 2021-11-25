@@ -7,7 +7,10 @@
         margin-inline-start: auto
 
     .service-info
-        padding: 0
+        display: flex
+        justify-content: space-between
+        gap: rem(30px)
+        padding: rem(15px) rem(22px)
 
     .service-balance
         display: inline-flex
@@ -16,7 +19,6 @@
         border: rem(1px) solid #E4E6EB
         border-radius: rem(12px)
         padding: rem(10px) rem(15px)
-        margin-bottom: rem(15px)
 
         .service-icon
             +flex-center
@@ -35,15 +37,38 @@
                 object-fit: cover
                 border-radius: 50%
 
-    .balance-label
-        color: #818B97
-
-        [dir="rtl"] &
-            font-family: 'NotoSansArabic_Medium', sans-serif
-
-        [dir="ltr"] &
-            font-family: 'NotoSans_Medium', sans-serif
-
     .balance-details
-        .balance-amount
+        display: flex
+        flex-wrap: wrap
+        align-items: center
+        gap: rem(5px)
+
+        .balance-label
+            flex: 1 1 100%
+            color: #818B97
+            font-size: rem(12px)
+
+            [dir="rtl"] &
+                font-family: 'NotoSansArabic_Medium', sans-serif
+
+            [dir="ltr"] &
+                font-family: 'NotoSans_Medium', sans-serif
+
+        .balance-amount,
         .balance-currency
+            color: #060505
+
+            &.profit
+                color: #2BAB5A
+
+        .balance-amount
+            font-size: rem(22px)
+
+            [dir="rtl"] &
+                font-family: 'NotoSansArabic_SemiBold', sans-serif
+
+            [dir="ltr"] &
+                font-family: 'NotoSans_SemiBold', sans-serif
+
+        .balance-currency
+            font-size: rem(20px)
