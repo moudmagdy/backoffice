@@ -631,10 +631,132 @@
                     </div>
                     <div class="layout__tab__content" data-tab="shifts_record"></div>
                     <div class="layout__tab__content" data-tab="shipping_requests">
-
+                        <div class="table-filters">
+                            <select class="form-select">
+                                <option value="1" selected>كل الطلبات</option>
+                                <option value="2">تحت الطلب</option>
+                                <option value="3">تم الشحن</option>
+                                <option value="4">مرفوض</option>
+                            </select>
+                            <select class="form-select">
+                                <option value="1" selected>كل الفروع</option>
+                            </select>
+                            <select class="form-select">
+                                <option value="1" selected>كل الأجهـزة</option>
+                            </select>
+                        </div>
+                        <div class="scrollable-content">
+                            <div class="table__container">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>رقم الطلب</th>
+                                            <th>تاريخ الطلب</th>
+                                            <th>الجهاز</th>
+                                            <th>الرصيد المطلوب</th>
+                                            <th>حالة الطلب</th>
+                                            <th>التعليق</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <span class="fw-bold">1006</span>
+                                            </td>
+                                            <td>
+                                                <span>9/6/2020</span>
+                                            </td>
+                                            <td>
+                                                <span>مدينة نصر-الرئيسي</span>
+                                            </td>
+                                            <td>
+                                                <span>360.00</span>
+                                            </td>
+                                            <td>
+                                                <span class="order-status">تحت الطلب</span>
+                                            </td>
+                                            <td>
+                                                <span>-</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <span class="fw-bold">1006</span>
+                                            </td>
+                                            <td>
+                                                <span>9/6/2020</span>
+                                            </td>
+                                            <td>
+                                                <span>مدينة نصر-الرئيسي</span>
+                                            </td>
+                                            <td>
+                                                <span>360.00</span>
+                                            </td>
+                                            <td>
+                                                <span class="order-status success">تم الشحن</span>
+                                            </td>
+                                            <td>
+                                                <span>-</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <span class="fw-bold">1006</span>
+                                            </td>
+                                            <td>
+                                                <span>9/6/2020</span>
+                                            </td>
+                                            <td>
+                                                <span>مدينة نصر-الرئيسي</span>
+                                            </td>
+                                            <td>
+                                                <span>360.00</span>
+                                            </td>
+                                            <td>
+                                                <span class="order-status failed">مرفوض</span>
+                                            </td>
+                                            <td>
+                                                <span>-</span>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
                     </div>
                     <div class="layout__tab__content" data-tab="settings">
-
+                        <div class="statistics-panel">
+                            <ul class="service-statistics">
+                                <li>
+                                    <div class="service-icon">
+                                        <img src="images/services/bee.jpg" alt="">
+                                    </div>
+                                </li>
+                                <li>
+                                    <span class="state-label">رصيد كل الفروع</span>
+                                    <span class="state-data">15000.00</span>
+                                </li>
+                                <li>
+                                    <span class="state-label">حالة الخدمة</span>
+                                    <span class="state-data">تعمل</span>
+                                </li>
+                                <li>
+                                    <span class="state-label">عدد الاجهزة</span>
+                                    <span class="state-data">12</span>
+                                </li>
+                            </ul>
+                            <ul class="service-actions">
+                                <li>
+                                    <a href="" class="btn btn-outline-primary">إضافة جهــاز</a>
+                                </li>
+                                <li>
+                                    <a href="" class="btn btn-outline-primary">مسح الخدمة</a>
+                                </li>
+                                <li>
+                                    <a href="" class="btn btn-outline-primary">ايقاف مؤقت للخدمة</a>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </section>
