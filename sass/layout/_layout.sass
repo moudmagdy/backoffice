@@ -139,6 +139,21 @@ main
         +scrollbar
         box-shadow: 0 rem(1px) rem(3px) rgba(0, 0, 0, 0.08)
 
+        .sub-title
+            display: flex
+            align-items: center
+            gap: rem(10px)
+            font-size: rem(18px)
+            padding: 0 rem(22px)
+            margin-block: rem(25px) rem(10px)
+
+            &::before
+                content: ""
+                width: rem(20px)
+                height: rem(5px)
+                border-radius: rem(2.5px)
+                +var(background-color, color-brand)
+
         & + section
             flex: 0 1 50%
             margin-top: rem(15px)

@@ -95,13 +95,15 @@ if (tableRadio) {
     tableRadio.forEach(radio => radio.addEventListener('change', selectTableRow));
 }
 
-const paymentBtn = document.querySelector('[data-target="payment"]');
+const paymentBtns = document.querySelectorAll('[data-target="payment"]');
 const paymentBackBtns = document.querySelectorAll('.payment .back-btn');
 
-if (paymentBtn) {
-    paymentBtn.addEventListener('click', (e) => {
-        e.preventDefault();
-        document.querySelector('body').classList.add('payment--shown');
+if (paymentBtns) {
+    paymentBtns.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            document.querySelector('body').classList.add('payment--shown');
+        });
     });
 }
 if (paymentBackBtns) {

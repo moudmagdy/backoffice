@@ -9,6 +9,7 @@
     <link rel="icon" type="image/png" href="images/favicon.png">
     <title>متجـر الخدمات - كاشير</title>
     <link rel="stylesheet" href="css/bootstrap.rtl.min.css">
+    <link rel="stylesheet" href="css/swiper-bundle.min.css">
     <link rel="stylesheet" href="css/style.min.css">
 </head>
 
@@ -305,7 +306,7 @@
                             <div class="service__price">
                                 <span>مجانى</span>
                             </div>
-                            <button type="button" class="service__btn">اضافة</button>
+                            <button type="button" class="service__btn side-panel--btn" data-panel="bee">اضافة</button>
                         </div>
                     </div>
                     <div class="service">
@@ -433,6 +434,55 @@
                 <button type="button" class="btn btn-primary btn-lg justify-content-between" data-target="payment">
                     <span>دفع واضافة الى خدماتى</span>
                     <span>160.00</span>
+                </button>
+            </div>
+        </div>
+        <div class="side-panel" data-panel="bee">
+            <div class="side-panel__header">
+                <h4 class="side-panel__title">اضافة خدمة</h4>
+                <a href="#" class="side-panel__close-btn side-panel__dismiss--btn">
+                    <svg width="18" height="18" viewBox="0 0 18 18">
+                        <path d="M9.7,9l8.3,8.3L17.3,18L9,9.7L0.7,18L0,17.3L8.3,9L0,0.7L0.7,0L9,8.3L17.3,0L18,0.7L9.7,9z"></path>
+                    </svg>
+                </a>
+            </div>
+            <div class="side-panel__body">
+                <div class="service__info">
+                    <div class="service__icon">
+                        <img src="images/services/bee.jpg" alt="">
+                    </div>
+                    <h3 class="service__title">بـي</h3>
+                    <div class="service__price">
+                        <span>مجـانـا</span>
+                    </div>
+                    <div class="swiper mb-3">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <img src="images/Nivea_1.jpg" alt="">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="images/Nivea_2.jpg" alt="">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="images/Nivea_3.jpg" alt="">
+                            </div>
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                    <ul class="service__details">
+                        <li>بى لخدمات الدفع الالكترونى</li>
+                        <li>بى لخدمات الدفع الالكترونى</li>
+                        <li>بى لخدمات الدفع الالكترونى</li>
+                        <li>بى لخدمات الدفع الالكترونى</li>
+                        <li>بى لخدمات الدفع الالكترونى</li>
+                        <li>بى لخدمات الدفع الالكترونى</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="side-panel__bottom-bar">
+                <button type="button" class="btn btn-primary btn-lg justify-content-between" data-target="payment">
+                    <span>دفع واضافة الى خدماتى</span>
+                    <span>مجانى</span>
                 </button>
             </div>
         </div>
@@ -590,6 +640,7 @@
     </div>
     <script src="js/popper.min.js" defer></script>
     <script src="js/bootstrap.min.js" defer></script>
+    <script src="js/swiper-bundle.min.js" defer></script>
     <script src="js/components/main-menu.module.js" type="module"></script>
     <script src="js/components/side-panel.module.js" type="module" defer></script>
     <script src="js/main.js" defer></script>
