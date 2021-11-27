@@ -102,55 +102,6 @@
             color: inherit
             font-size: rem(12px)
 
-        .received-amount
-            display: flex
-            align-items: center
-            gap: rem(24px)
-            height: rem(72px)
-            max-width: rem(390px)
-            border: rem(2px) solid $color-brand
-            border-radius: rem(8px)
-            padding: rem(15px) rem(10px)
-
-            input[type="number"]
-                width: 100%
-                font-size: rem(24px)
-                background-color: transparent
-                border: none
-                padding: 0
-
-                [dir="rtl"] &
-                    font-family: 'NotoSansArabic_Medium', sans-serif
-
-                [dir="ltr"] &
-                    font-family: 'NotoSans_Medium', sans-serif
-
-                &::placeholder
-                    color: #C6CFD9
-                    font-size: rem(24px)
-
-            .currency
-                +var(color, color-brand)
-
-                [dir="rtl"] &
-                    font-family: 'NotoSansArabic_Medium', sans-serif
-
-                [dir="ltr"] &
-                    font-family: 'NotoSans_Medium', sans-serif
-
-            .amount
-                font-size: rem(14px)
-                color: #465479
-                background-color: #F5F5F5
-                border-radius: rem(7px)
-                padding: 0.6rem 0.755rem
-
-                [dir="rtl"] &
-                    font-family: 'NotoSansArabic_Medium', sans-serif
-
-                [dir="ltr"] &
-                    font-family: 'NotoSans_Medium', sans-serif
-
     .btn-lg
         display: flex
         align-items: center
@@ -163,6 +114,60 @@
         &:only-of-type
             width: 100%
             padding: 0.625rem 3.5rem
+
+.received-amount
+    display: flex
+    align-items: center
+    gap: rem(24px)
+    height: rem(72px)
+    max-width: rem(390px)
+    border: rem(2px) solid #C6CFD9
+    border-radius: rem(12px)
+    padding: rem(15px) rem(10px)
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out
+
+    &:focus-within
+        +var(border-color, color-brand)
+        box-shadow: 0 0 0 0.25rem lighten($color-brand, 40%)
+
+    input[type="number"]
+        width: 100%
+        font-size: rem(24px)
+        background-color: transparent
+        border: none
+        padding: 0
+
+        [dir="rtl"] &
+            font-family: 'NotoSansArabic_Medium', sans-serif
+
+        [dir="ltr"] &
+            font-family: 'NotoSans_Medium', sans-serif
+
+        &::placeholder
+            color: #C6CFD9
+            font-size: rem(24px)
+
+    .currency
+        +var(color, color-brand)
+
+        [dir="rtl"] &
+            font-family: 'NotoSansArabic_Medium', sans-serif
+
+        [dir="ltr"] &
+            font-family: 'NotoSans_Medium', sans-serif
+
+    .amount
+        font-size: rem(14px)
+        color: #465479
+        background-color: #F5F5F5
+        border-radius: rem(7px)
+        padding: 0.6rem 0.755rem
+
+        [dir="rtl"] &
+            font-family: 'NotoSansArabic_Medium', sans-serif
+
+        [dir="ltr"] &
+            font-family: 'NotoSans_Medium', sans-serif
 
 .key__buttons
     display: flex

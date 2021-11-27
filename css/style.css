@@ -423,7 +423,8 @@ body::before {
   color: #fff;
 }
 
-.header__dropdown .dropdown-toggle {
+.header__dropdown .dropdown-toggle,
+.table__dropdown .dropdown-toggle {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -441,20 +442,25 @@ body::before {
   -o-transition: background-color 0.3s;
   transition: background-color 0.3s;
 }
-.header__dropdown .dropdown-toggle svg {
+.header__dropdown .dropdown-toggle svg,
+.table__dropdown .dropdown-toggle svg {
   fill: #4D4D4D;
   width: 1rem;
   height: auto;
 }
-.header__dropdown .dropdown-toggle:hover {
+.header__dropdown .dropdown-toggle:hover,
+.table__dropdown .dropdown-toggle:hover {
   background-color: #F5F5F5;
 }
-.header__dropdown .dropdown-toggle.show {
+.header__dropdown .dropdown-toggle.show,
+.table__dropdown .dropdown-toggle.show {
   background-color: #F5F5F5;
 }
-.header__dropdown .dropdown-toggle.show svg {
+.header__dropdown .dropdown-toggle.show svg,
+.table__dropdown .dropdown-toggle.show svg {
   fill: #1877F2;
 }
+
 .header__dropdown .dropdown-menu {
   min-width: 225px;
 }
@@ -1529,6 +1535,7 @@ main header .main-menu__toggle:hover svg {
           box-shadow: inset 0 -0.03125rem 0.0625rem #edeff4;
 }
 .single-column-layout header h1 {
+  line-height: 2.2223;
   font-size: 1.125rem;
   margin-bottom: 0;
 }
@@ -4812,76 +4819,6 @@ table.table--with-gaps tbody tr.selected {
   color: inherit;
   font-size: 0.75rem;
 }
-.payment-methods__content .received-amount {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  gap: 1.5rem;
-  height: 4.5rem;
-  max-width: 24.375rem;
-  border: 0.125rem solid #1877F2;
-  border-radius: 0.5rem;
-  padding: 0.9375rem 0.625rem;
-}
-.payment-methods__content .received-amount input[type=number] {
-  width: 100%;
-  font-size: 1.5rem;
-  background-color: transparent;
-  border: none;
-  padding: 0;
-}
-[dir=rtl] .payment-methods__content .received-amount input[type=number] {
-  font-family: "NotoSansArabic_Medium", sans-serif;
-}
-[dir=ltr] .payment-methods__content .received-amount input[type=number] {
-  font-family: "NotoSans_Medium", sans-serif;
-}
-.payment-methods__content .received-amount input[type=number]::-webkit-input-placeholder {
-  color: #C6CFD9;
-  font-size: 1.5rem;
-}
-.payment-methods__content .received-amount input[type=number]::-moz-placeholder {
-  color: #C6CFD9;
-  font-size: 1.5rem;
-}
-.payment-methods__content .received-amount input[type=number]:-ms-input-placeholder {
-  color: #C6CFD9;
-  font-size: 1.5rem;
-}
-.payment-methods__content .received-amount input[type=number]::-ms-input-placeholder {
-  color: #C6CFD9;
-  font-size: 1.5rem;
-}
-.payment-methods__content .received-amount input[type=number]::placeholder {
-  color: #C6CFD9;
-  font-size: 1.5rem;
-}
-.payment-methods__content .received-amount .currency {
-  color: #1877F2;
-  color: var(--color-brand);
-}
-[dir=rtl] .payment-methods__content .received-amount .currency {
-  font-family: "NotoSansArabic_Medium", sans-serif;
-}
-[dir=ltr] .payment-methods__content .received-amount .currency {
-  font-family: "NotoSans_Medium", sans-serif;
-}
-.payment-methods__content .received-amount .amount {
-  font-size: 0.875rem;
-  color: #465479;
-  background-color: #F5F5F5;
-  border-radius: 0.4375rem;
-  padding: 0.6rem 0.755rem;
-}
-[dir=rtl] .payment-methods__content .received-amount .amount {
-  font-family: "NotoSansArabic_Medium", sans-serif;
-}
-[dir=ltr] .payment-methods__content .received-amount .amount {
-  font-family: "NotoSans_Medium", sans-serif;
-}
 .payment-methods .btn-lg {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -4900,6 +4837,88 @@ table.table--with-gaps tbody tr.selected {
 .payment-methods .btn-lg:only-of-type {
   width: 100%;
   padding: 0.625rem 3.5rem;
+}
+
+.received-amount {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 1.5rem;
+  height: 4.5rem;
+  max-width: 24.375rem;
+  border: 0.125rem solid #C6CFD9;
+  border-radius: 0.75rem;
+  padding: 0.9375rem 0.625rem;
+  -webkit-transition: border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+  transition: border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+  -o-transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+}
+.received-amount:focus-within {
+  border-color: #1877F2;
+  border-color: var(--color-brand);
+  -webkit-box-shadow: 0 0 0 0.25rem #d9e9fd;
+          box-shadow: 0 0 0 0.25rem #d9e9fd;
+}
+.received-amount input[type=number] {
+  width: 100%;
+  font-size: 1.5rem;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+}
+[dir=rtl] .received-amount input[type=number] {
+  font-family: "NotoSansArabic_Medium", sans-serif;
+}
+[dir=ltr] .received-amount input[type=number] {
+  font-family: "NotoSans_Medium", sans-serif;
+}
+.received-amount input[type=number]::-webkit-input-placeholder {
+  color: #C6CFD9;
+  font-size: 1.5rem;
+}
+.received-amount input[type=number]::-moz-placeholder {
+  color: #C6CFD9;
+  font-size: 1.5rem;
+}
+.received-amount input[type=number]:-ms-input-placeholder {
+  color: #C6CFD9;
+  font-size: 1.5rem;
+}
+.received-amount input[type=number]::-ms-input-placeholder {
+  color: #C6CFD9;
+  font-size: 1.5rem;
+}
+.received-amount input[type=number]::placeholder {
+  color: #C6CFD9;
+  font-size: 1.5rem;
+}
+.received-amount .currency {
+  color: #1877F2;
+  color: var(--color-brand);
+}
+[dir=rtl] .received-amount .currency {
+  font-family: "NotoSansArabic_Medium", sans-serif;
+}
+[dir=ltr] .received-amount .currency {
+  font-family: "NotoSans_Medium", sans-serif;
+}
+.received-amount .amount {
+  font-size: 0.875rem;
+  color: #465479;
+  background-color: #F5F5F5;
+  border-radius: 0.4375rem;
+  padding: 0.6rem 0.755rem;
+}
+[dir=rtl] .received-amount .amount {
+  font-family: "NotoSansArabic_Medium", sans-serif;
+}
+[dir=ltr] .received-amount .amount {
+  font-family: "NotoSans_Medium", sans-serif;
 }
 
 .key__buttons {
@@ -8500,8 +8519,33 @@ section .page-card:nth-last-child(-n+2) {
   width: 0.9375rem;
 }
 
+@media (max-width: 768px) {
+  .payments-page {
+    overflow: auto;
+    scrollbar-color: #61a0f2 rgba(0, 0, 0, 0.08);
+    scrollbar-width: thin;
+  }
+  .payments-page::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  .payments-page::-webkit-scrollbar-thumb {
+    background-color: #61a0f2;
+  }
+  .payments-page::-webkit-scrollbar-track {
+    background-color: rgba(0, 0, 0, 0.08);
+  }
+  .payments-page::-webkit-scrollbar-corner {
+    background-color: transparent;
+  }
+}
+@media (max-width: 768px) {
+  .payments-page .single-column-layout {
+    height: auto;
+  }
+}
 .payments-page .single-column-layout header {
-  gap: 1.875rem;
+  gap: 0 1.875rem;
 }
 .payments-page .layout__tabs {
   -webkit-margin-start: auto;
@@ -8517,6 +8561,13 @@ section .page-card:nth-last-child(-n+2) {
   gap: 1.875rem;
   padding: 0.9375rem 1.375rem;
 }
+@media (max-width: 768px) {
+  .payments-page .service-info {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    gap: 0.9375rem;
+  }
+}
 .payments-page .service-balance {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
@@ -8528,6 +8579,12 @@ section .page-card:nth-last-child(-n+2) {
   border: 0.0625rem solid #E4E6EB;
   border-radius: 0.75rem;
   padding: 0.625rem 0.9375rem;
+}
+@media (max-width: 768px) {
+  .payments-page .service-balance {
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+  }
 }
 .payments-page .service-balance .service-icon {
   display: -webkit-box;
@@ -8554,6 +8611,10 @@ section .page-card:nth-last-child(-n+2) {
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 50%;
+}
+.payments-page .service-balance .btn {
+  -webkit-margin-start: auto;
+          margin-inline-start: auto;
 }
 .payments-page .balance-details {
   display: -webkit-box;
@@ -8633,6 +8694,13 @@ section .page-card:nth-last-child(-n+2) {
           box-shadow: inset 0 -0.03125rem 0.0625rem #edeff4;
   padding: 0.9375rem 1.375rem;
 }
+@media (max-width: 992px) {
+  .payments-page .statistics-panel {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    gap: 1.875rem;
+  }
+}
 .payments-page .statistics-panel .service-icon {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -8667,6 +8735,12 @@ section .page-card:nth-last-child(-n+2) {
   list-style: none;
   padding: 0;
   margin: 0;
+}
+@media (max-width: 992px) {
+  .payments-page .statistics-panel .service-actions {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
 }
 .payments-page .statistics-panel .service-statistics {
   -webkit-box-flex: 1;
@@ -8715,4 +8789,15 @@ section .page-card:nth-last-child(-n+2) {
 }
 [dir=ltr] .payments-page .statistics-panel .service-statistics .state-data {
   font-family: "NotoSans_SemiBold", sans-serif;
+}
+.payments-page .side-panel__body .panel-img {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 12.5rem;
+  height: 12.5rem;
+  margin-inline: auto;
+}
+.payments-page .received-amount {
+  max-width: none;
 }

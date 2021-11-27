@@ -9,7 +9,6 @@
     <link rel="icon" type="image/png" href="images/favicon.png">
     <title>خدمة بي - كاشير</title>
     <link rel="stylesheet" href="css/bootstrap.rtl.min.css">
-    <link rel="stylesheet" href="css/datepicker-bs5.min.css">
     <link rel="stylesheet" href="css/style.min.css">
 </head>
 
@@ -242,7 +241,7 @@
                                 <svg width="15" height="13.9" viewBox="0 0 15 13.9">
                                     <path d="M14.8,12.7l-2.4-2.4c1.6-2.6,1.3-6-0.9-8.3C8.8-0.7,4.6-0.7,2,2C0.7,3.2,0,4.9,0,6.7s0.7,3.5,2,4.7 c1.3,1.3,2.9,2,4.7,2s3.5-0.7,4.7-2c0,0,0.1-0.1,0.1-0.1l2.3,2.3c0.1,0.1,0.3,0.2,0.5,0.2s0.4-0.1,0.5-0.2 C15.1,13.4,15.1,12.9,14.8,12.7z M6.7,12C5.3,12,4,11.4,3,10.4c-1-1-1.6-2.3-1.6-3.7S2,4,3,2.9c1-1,2.3-1.6,3.7-1.6s2.7,0.6,3.7,1.6 c2.1,2.1,2.1,5.4,0,7.5C9.4,11.4,8.1,12,6.7,12z"></path>
                                 </svg>
-                                <input type="search" name="search" placeholder="ابحث برقم الفاتورة أو نوع العملية ">
+                                <input type="search" name="search" placeholder="ابحث برقم الفاتورة أو نوع العملية">
                             </div>
                             <select class="form-select">
                                 <option value="1" selected>كل الفروع</option>
@@ -267,7 +266,7 @@
                                     <span class="balance-amount">00.00</span>
                                     <span class="balance-currency">جـ</span>
                                 </div>
-                                <a href="" class="btn btn-primary">طلب رصيـد</a>
+                                <a href="#" class="btn btn-primary side-panel--btn" data-panel="credit-request">طلب رصيـد</a>
                             </div>
                             <div class="service-balance">
                                 <div class="balance-details">
@@ -757,9 +756,119 @@
                                 </li>
                             </ul>
                         </div>
+                        <div class="table-filters">
+                            <select class="form-select">
+                                <option value="1" selected>كل الفروع</option>
+                            </select>
+                        </div>
+                        <div class="scrollable-content">
+                            <div class="table__container">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>الجهاز</th>
+                                            <th>رقم الحساب</th>
+                                            <th>الرصيد الحالى</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <span class="fw-bold">مدينة نصر - الرئيسي</span>
+                                            </td>
+                                            <td>
+                                                <span class="fw-bold">10255252255</span>
+                                            </td>
+                                            <td>
+                                                <span>2750.00</span>
+                                            </td>
+                                            <td>
+                                                <div class="table__actions justify-content-end">
+                                                    <button type="button" class="btn btn-primary side-panel--btn" data-panel="credit-request">طلب رصيـد</button>
+                                                    <div class="dropdown table__dropdown">
+                                                        <a class="dropdown-toggle" href="#" role="button" id="" data-bs-toggle="dropdown" aria-expanded="false">
+                                                            <svg width="10" height="2" viewBox="0 0 10 2">
+                                                                <path d="M10,1c0,0.6-0.4,1-1,1S8,1.6,8,1s0.4-1,1-1S10,0.4,10,1z M6,1c0,0.6-0.4,1-1,1S4,1.6,4,1s0.4-1,1-1 S6,0.4,6,1z M2,1c0,0.6-0.4,1-1,1S0,1.6,0,1s0.4-1,1-1S2,0.4,2,1z"></path>
+                                                            </svg>
+                                                        </a>
+                                                        <ul class="dropdown-menu" aria-labelledby="">
+                                                            <li>
+                                                                <a class="dropdown-item" href="#">
+                                                                    <span>استرجاع الفاتورة</span>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a class="dropdown-item" href="#">
+                                                                    <span>استرجاع الجهاز للصيانة</span>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a class="dropdown-item" href="#">
+                                                                    <span>طباعة الفاتورة</span>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a class="dropdown-item" href="#">
+                                                                    <span>تعديل الطلب</span>
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
+        </div>
+        <div class="side-panel" data-panel="credit-request">
+            <div class="side-panel__header">
+                <h4 class="side-panel__title">طلب شحن</h4>
+                <a href="#" class="side-panel__close-btn side-panel__dismiss--btn">
+                    <svg width="18" height="18" viewBox="0 0 18 18">
+                        <path d="M9.7,9l8.3,8.3L17.3,18L9,9.7L0.7,18L0,17.3L8.3,9L0,0.7L0.7,0L9,8.3L17.3,0L18,0.7L9.7,9z"></path>
+                    </svg>
+                </a>
+            </div>
+            <div class="side-panel__body">
+                <img class="panel-img" src="images/credit-request.png" alt="">
+            </div>
+            <div class="side-panel__bottom-bar">
+                <form>
+                    <div class="row">
+                        <div class="col-6 mb-3">
+                            <label class="form-label" for="branch">الفرع</label>
+                            <select class="form-select" name="" id="branch">
+                                <option value="" selected>اختر فرع</option>
+                            </select>
+                        </div>
+                        <div class="col-6 mb-3">
+                            <label class="form-label" for="device">الجهاز</label>
+                            <select class="form-select" name="" id="device">
+                                <option value="" selected>اختر جهاز</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 mb-3">
+                            <label class="form-label" for="required_balance">الرصيد المطلوب</label>
+                            <div class="received-amount">
+                                <input id="required_balance" type="number" placeholder="00.00">
+                                <span class="currency">جـ.م</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <button type="submit" class="btn btn-primary btn-lg">طـلب شحـن</button>
+                        </div>
+                </form>
+            </div>
         </div>
     </main>
     <div class="page-preloader">
@@ -775,9 +884,10 @@
     </div>
     <script src="js/popper.min.js" defer></script>
     <script src="js/bootstrap.min.js" defer></script>
-    <script src="js/main.js" defer></script>
     <script src="js/components/main-menu.module.js" type="module"></script>
     <script src="js/components/layout-tabs.module.js" type="module"></script>
+    <script src="js/components/side-panel.module.js" type="module" defer></script>
+    <script src="js/main.js" defer></script>
 </body>
 
 </html>
