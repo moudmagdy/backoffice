@@ -480,10 +480,37 @@
                 </div>
             </div>
             <div class="side-panel__bottom-bar">
-                <button type="button" class="btn btn-primary btn-lg justify-content-between" data-target="payment">
+                <button type="button" class="btn btn-primary btn-lg justify-content-between side-panel--btn" data-panel="devices-activation">
                     <span>دفع واضافة الى خدماتى</span>
                     <span>مجانى</span>
                 </button>
+            </div>
+        </div>
+        <div class="side-panel" data-panel="devices-activation">
+            <div class="side-panel__header">
+                <h4 class="side-panel__title">تفعيل الأجهزة</h4>
+                <a href="#" class="side-panel__close-btn side-panel__dismiss--btn">
+                    <svg width="18" height="18" viewBox="0 0 18 18">
+                        <path d="M9.7,9l8.3,8.3L17.3,18L9,9.7L0.7,18L0,17.3L8.3,9L0,0.7L0.7,0L9,8.3L17.3,0L18,0.7L9.7,9z"></path>
+                    </svg>
+                </a>
+            </div>
+            <div class="side-panel__body">
+                <div class="checkbox-list">
+                    <div class="checkbox-list__group collapsible mb-3">
+                        <div class="checkbox-list__group__header">
+                            <a href="#" class="collapse__toggle" aria-expanded="true">فــرع المهندسين</a>
+                        </div>
+                        <div class="collapse__container">
+                            <div class="checkbox-list__group__item">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="side-panel__bottom-bar">
+                <button type="button" class="btn btn-primary btn-lg">تفعيل (5) أجهزة</button>
             </div>
         </div>
         <div class="payment" tabindex="-1">
@@ -643,6 +670,7 @@
     <script src="js/swiper-bundle.min.js" defer></script>
     <script src="js/components/main-menu.module.js" type="module"></script>
     <script src="js/components/side-panel.module.js" type="module" defer></script>
+    <script src="js/components/collapsible.module.js" type="module" defer></script>
     <script src="js/main.js" defer></script>
     <script src="js/pages/subscription.module.js" type="module"></script>
 </body>
