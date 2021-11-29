@@ -5435,6 +5435,15 @@ table.table--with-gaps tbody tr.selected {
 .login-page .password__field .show__password:hover svg {
   fill: #8E949A;
 }
+.is-invalid .login-page .password__field .show__password {
+  inset-inline-end: 2rem;
+}
+.is-invalid .login-page .password__field .show__password svg {
+  fill: #dc3545;
+}
+.is-invalid .login-page .password__field .show__password:hover svg {
+  fill: #bd2130;
+}
 .login-page .password__field.password--shown .show__password svg {
   fill: #060505;
 }

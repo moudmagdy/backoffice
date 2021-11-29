@@ -125,6 +125,16 @@
                 svg
                     fill: #8E949A
 
+            .is-invalid &
+                inset-inline-end: 2rem
+
+                svg
+                    fill: #dc3545
+
+                &:hover
+                    svg
+                        fill: darken(#dc3545, 10%)
+
         &.password--shown
             .show__password
                 svg
