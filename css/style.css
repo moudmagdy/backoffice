@@ -104,7 +104,7 @@ fieldset legend {
 }
 
 label {
-  font-size: 0.875rem !important;
+  font-size: 0.875rem;
 }
 [dir=rtl] label {
   font-family: "NotoSansArabic_Medium", sans-serif;
@@ -2184,9 +2184,9 @@ main header .main-menu__toggle:hover svg {
       -ms-flex-align: center;
           align-items: center;
   gap: 0.625rem;
-  font-size: 14px;
-  border-width: 2px;
-  border-radius: 20px;
+  font-size: 0.875rem;
+  border-width: 0.125rem;
+  border-radius: 1.25rem;
   white-space: nowrap;
   padding: 0.475rem 1.25rem;
 }
@@ -2207,7 +2207,7 @@ main header .main-menu__toggle:hover svg {
 }
 
 .btn-lg {
-  border-radius: 24px;
+  border-radius: 1.5rem;
   padding: 0.725rem 3rem;
 }
 
@@ -4146,9 +4146,9 @@ table.table--with-gaps tbody tr.selected {
 }
 
 .collapse__toggle {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -5166,21 +5166,88 @@ table.table--with-gaps tbody tr.selected {
   display: none;
 }
 
+.select-all-btn input[type=checkbox] {
+  display: none;
+}
+.select-all-btn input[type=checkbox]:checked ~ .btn {
+  color: #fff;
+  background-color: #1877F2;
+  background-color: var(--color-brand);
+  border-color: #1877F2;
+  border-color: var(--color-brand);
+}
+
+.checkbox-list__group {
+  margin-bottom: 0.9375rem;
+}
+.checkbox-list__group .collapse__container {
+  overflow: hidden;
+  scrollbar-color: transparent transparent;
+  scrollbar-width: thin;
+}
+.checkbox-list__group .collapse__container::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+.checkbox-list__group .collapse__container::-webkit-scrollbar-thumb {
+  background-color: transparent;
+}
+.checkbox-list__group .collapse__container::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+.checkbox-list__group .collapse__container::-webkit-scrollbar-corner {
+  background-color: transparent;
+}
+
 .checkbox-list__group__header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 0.9375rem;
   background-color: #F5F5F5;
   border-radius: 0.75rem 0.75rem 0 0;
-  padding: 0.625rem 1rem;
+  padding: 0.75rem 1.25rem;
 }
 .checkbox-list__group__header .collapse__toggle {
   border-radius: 0.375rem;
+  -webkit-transition: background-color 0.3s ease-in-out;
+  -o-transition: background-color 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out;
 }
 .checkbox-list__group__header .collapse__toggle:hover {
   background-color: #fff;
 }
 
 .checkbox-list__group__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 0.9375rem;
   -webkit-box-shadow: inset 0 -0.0625rem 0.0625rem 0 #edeff4;
           box-shadow: inset 0 -0.0625rem 0.0625rem 0 #edeff4;
+  padding: 0.75rem 1.25rem;
+}
+
+.checkbox-list__item__title {
+  font-size: 0.875rem;
+}
+[dir=rtl] .checkbox-list__item__title {
+  font-family: "NotoSansArabic_Medium", sans-serif;
+}
+[dir=ltr] .checkbox-list__item__title {
+  font-family: "NotoSans_Medium", sans-serif;
 }
 
 .login-page {

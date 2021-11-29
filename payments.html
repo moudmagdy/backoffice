@@ -746,7 +746,7 @@
                             </ul>
                             <ul class="service-actions">
                                 <li>
-                                    <a href="" class="btn btn-outline-primary">إضافة جهــاز</a>
+                                    <a href="#" class="btn btn-outline-primary side-panel--btn" data-panel="devices-activation">إضافة جهــاز</a>
                                 </li>
                                 <li>
                                     <a href="" class="btn btn-outline-primary">مسح الخدمة</a>
@@ -871,6 +871,115 @@
                 </form>
             </div>
         </div>
+        <div class="side-panel" data-panel="devices-activation">
+            <div class="side-panel__header">
+                <h4 class="side-panel__title">تفعيل الأجهزة</h4>
+                <a href="#" class="side-panel__close-btn side-panel__dismiss--btn">
+                    <svg width="18" height="18" viewBox="0 0 18 18">
+                        <path d="M9.7,9l8.3,8.3L17.3,18L9,9.7L0.7,18L0,17.3L8.3,9L0,0.7L0.7,0L9,8.3L17.3,0L18,0.7L9.7,9z"></path>
+                    </svg>
+                </a>
+            </div>
+            <div class="side-panel__body">
+                <div class="row">
+                    <div class="col-12 d-flex justify-content-end mb-3">
+                        <div class="select-all-btn">
+                            <input type="checkbox" id="select_all">
+                            <label class="btn btn-secondary" for="select_all">اختيار كل الأجهزة</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="checkbox-list">
+                    <div class="checkbox-list__group collapsible">
+                        <div class="checkbox-list__group__header">
+                            <a href="#" class="collapse__toggle multi-collapse" aria-expanded="true">فــرع المهندسين</a>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="">
+                            </div>
+                        </div>
+                        <div class="collapse__container">
+                            <div class="checkbox-list__group__item">
+                                <span class="checkbox-list__item__title">جهاز 1</span>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="">
+                                </div>
+                            </div>
+                            <div class="checkbox-list__group__item">
+                                <span class="checkbox-list__item__title">جهاز 2</span>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="">
+                                </div>
+                            </div>
+                            <div class="checkbox-list__group__item">
+                                <span class="checkbox-list__item__title">جهاز 3</span>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="checkbox-list__group collapsible">
+                        <div class="checkbox-list__group__header">
+                            <a href="#" class="collapse__toggle multi-collapse" aria-expanded="true">فــرع شبـــرا</a>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="">
+                            </div>
+                        </div>
+                        <div class="collapse__container">
+                            <div class="checkbox-list__group__item">
+                                <span class="checkbox-list__item__title">جهاز 1</span>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="">
+                                </div>
+                            </div>
+                            <div class="checkbox-list__group__item">
+                                <span class="checkbox-list__item__title">جهاز 2</span>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="">
+                                </div>
+                            </div>
+                            <div class="checkbox-list__group__item">
+                                <span class="checkbox-list__item__title">جهاز 3</span>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="checkbox-list__group collapsible">
+                        <div class="checkbox-list__group__header">
+                            <a href="#" class="collapse__toggle multi-collapse" aria-expanded="true">فــرع مدينة نصر 1</a>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="">
+                            </div>
+                        </div>
+                        <div class="collapse__container">
+                            <div class="checkbox-list__group__item">
+                                <span class="checkbox-list__item__title">جهاز 1</span>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="">
+                                </div>
+                            </div>
+                            <div class="checkbox-list__group__item">
+                                <span class="checkbox-list__item__title">جهاز 2</span>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="">
+                                </div>
+                            </div>
+                            <div class="checkbox-list__group__item">
+                                <span class="checkbox-list__item__title">جهاز 3</span>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="side-panel__bottom-bar">
+                <button type="button" class="btn btn-primary btn-lg">تفعيل (5) أجهزة</button>
+            </div>
+        </div>
     </main>
     <div class="page-preloader">
         <div class="loading-bar">
@@ -888,6 +997,7 @@
     <script src="js/components/main-menu.module.js" type="module"></script>
     <script src="js/components/layout-tabs.module.js" type="module"></script>
     <script src="js/components/side-panel.module.js" type="module" defer></script>
+    <script src="js/components/collapsible.module.js" type="module" defer></script>
     <script src="js/main.js" defer></script>
 </body>
 
