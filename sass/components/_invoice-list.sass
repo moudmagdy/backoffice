@@ -48,7 +48,13 @@
                 font-family: 'NotoSans_Medium', sans-serif
 
     &__total-price
+        display: flex
+        justify-content: flex-end
+        min-width: rem(60px)
         font-size: rem(14px)
+        white-space: nowrap
+        overflow: hidden
+        text-overflow: ellipsis
 
         [dir="rtl"] &
             font-family: 'NotoSansArabic_SemiBold', sans-serif

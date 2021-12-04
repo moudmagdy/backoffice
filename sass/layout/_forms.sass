@@ -488,3 +488,123 @@ button,
 .error-msg
     display: block
     font-size: rem(12px)
+
+.iti__flag-container
+    direction: ltr
+
+    .dropdown-toggle
+        transition: background-color 0.3s ease-in-out
+
+    .dropdown-menu
+        border: none !important
+        overflow: hidden
+        padding: 0 !important
+
+.iti__selected-flag
+    width: auto !important
+    gap: rem(5px)
+    border-radius: rem(12px) 0 0 rem(12px)
+    padding: 0.725rem 0.75rem !important
+
+.selected-dial-code
+    font-size: rem(14px)
+    color: #212529
+    margin-left: 0 !important
+
+.iti__arrow
+    width: 0
+    height: 0
+    border-left: rem(5px) solid transparent !important
+    border-right: rem(5px) solid transparent !important
+    border-top: rem(5px) solid #c6cfd9 !important
+    margin-left: 0 !important
+
+.iti
+    .search-container
+        cursor: default
+        padding: rem(10px)
+
+        input
+            line-height: 1.2
+            font-size: rem(14px)
+            border: rem(2px) solid #C6CFD9 !important
+            border-radius: rem(12px)
+            padding: 0.725rem 0.75rem !important
+
+    .form-control
+        padding: 0.725rem 0.75rem !important
+        padding-inline-start: calc(85px + 0.75rem) !important
+
+.iti__country
+    display: flex
+    align-items: center
+    gap: rem(5px)
+    padding-block: rem(8px) !important
+
+.iti__divider
+    padding-bottom: rem(1px) !important
+    margin-bottom: 0 !important
+    border-color: #f0f0f0 !important
+
+.iti__flag-box,
+.iti__country-name
+    margin-right: 0
+
+.iti__country-name,
+.iti__dial-code
+    font-size: rem(14px)
+
+.iti__dial-code
+    margin-inline-start: auto
+
+.iti__country-list
+    box-shadow: 0 rem(1px) rem(4px) rgba(0, 0, 0, 0.2) !important
+    +scrollbar
+
+.iti__flag
+    border-radius: rem(2px)
+
+.form-control.is-invalid,
+.was-validated .form-control:invalid,
+.form-select.is-invalid:not([multiple]):not([size]),
+.form-select.is-invalid:not([multiple])[size="1"],
+.was-validated .form-select:invalid:not([multiple]):not([size]),
+.was-validated .form-select:invalid:not([multiple])[size="1"]
+    background-image: none
+
+.ng-select
+    // padding: 0
+
+    // .ng-input
+    //     & > input[type="text"]
+    //         padding: 0.725rem 0.75rem
+    //         padding-inline-end: 2rem
+
+.ng-dropdown-panel
+    top: 100%
+    left: 0
+    display: flex
+    flex-direction: column
+    gap: rem(10px)
+    background-color: #fff
+    border-radius: rem(12px)
+    box-shadow: 0 0 rem(5px) rgba(0, 0, 0, 0.15)
+    padding: rem(8px) 0
+    transition: all 0.2s ease-in-out
+
+    .ng-dropdown-panel-items
+        .ng-option
+            display: flex !important
+            align-items: center
+            padding: rem(8px) rem(12px)
+
+            &:hover
+                background-color: rgba(0, 0, 0, 0.03)
+
+    .ng-dropdown-footer
+        display: flex
+        padding: 0 rem(12px)
+
+        .btn
+            width: 100%
+            justify-content: center

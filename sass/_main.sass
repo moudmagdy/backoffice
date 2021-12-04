@@ -24,6 +24,9 @@ body
     &:focus
         outline: none
 
+a
+    cursor: pointer
+
 ::selection
     +var(background-color, color-brand)
     color: #fff
@@ -266,6 +269,28 @@ body
 .bs-tooltip-top .tooltip-arrow::before,
 .bs-tooltip-auto[data-popper-placement^=top] .tooltip-arrow::before
     +var(border-top-color, color-brand)
+
+.bs-tooltip-bottom .tooltip-arrow::before,
+.bs-tooltip-auto[data-popper-placement^=bottom] .tooltip-arrow::before
+    +var(border-bottom-color, color-brand)
+
+[dir="ltr"]
+    .bs-tooltip-end .tooltip-arrow::before,
+    .bs-tooltip-auto[data-popper-placement^=right] .tooltip-arrow::before
+        +var(border-right-color, color-brand)
+
+    .bs-tooltip-start .tooltip-arrow::before,
+    .bs-tooltip-auto[data-popper-placement^=left] .tooltip-arrow::before
+        +var(border-left-color, color-brand)
+
+[dir="rtl"]
+    .bs-tooltip-end .tooltip-arrow::before,
+    .bs-tooltip-auto[data-popper-placement^=right] .tooltip-arrow::before
+        +var(border-left-color, color-brand)
+
+    .bs-tooltip-start .tooltip-arrow::before,
+    .bs-tooltip-auto[data-popper-placement^=left] .tooltip-arrow::before
+        +var(border-right-color, color-brand)
 
 .table-filters
     display: flex

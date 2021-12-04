@@ -1,7 +1,7 @@
 .login-page
     display: flex
-    // min-height: 100vh
     background-color: $color-white
+    padding: 0
 
     .page__content
         flex: 1 auto
@@ -96,13 +96,15 @@
         display: inline-flex
         direction: ltr
 
-    [type="number"],
-    [type="tel"]
+    [type="number"]
         [dir="rtl"] &
             direction: rtl
 
         [dir="ltr"] &
             direction: ltr
+
+    [type="tel"]
+        direction: ltr
 
     .password__field
         position: relative
@@ -113,6 +115,7 @@
             position: absolute
             inset-inline-end: 0.95rem
             +flex-center
+            cursor: pointer
 
             svg
                 fill: #C6CFD9
