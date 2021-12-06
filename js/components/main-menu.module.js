@@ -2,6 +2,7 @@ const body = document.querySelector('body');
 const mainMenu = document.querySelector('.main-menu');
 const mainMenuToggles = document.querySelectorAll('.main-menu__toggle');
 const subMenuToggles = document.querySelectorAll('.has--submenu > a');
+const profileMenuToggle = document.querySelector('.main-menu__profile > a');
 
 function openMenuOnMouseEnter() {
     body.classList.add('main-menu--hover-opened');
@@ -22,6 +23,7 @@ function closeMenuOnMouseLeave() {
                 submenu.style.maxHeight = 0;
             });
         }
+        document.querySelector('.main-menu__profile').classList.remove('menu--shown');
     }
 }
 
@@ -40,6 +42,7 @@ function toggleOpenMenu(e) {
                 submenu.style.maxHeight = 0;
             });
         }
+        document.querySelector('.main-menu__profile').classList.remove('menu--shown');
     }
 }
 
@@ -90,7 +93,13 @@ function openSubMenu(e) {
     }
 }
 
+function openProfileMenu(e) {
+    e.preventDefault();
+    this.parentNode.classList.toggle('menu--shown');
+}
+
 mainMenu.addEventListener('mouseenter', openMenuOnMouseEnter);
 mainMenu.addEventListener('mouseleave', closeMenuOnMouseLeave);
 mainMenuToggles.forEach(mainMenuToggle => mainMenuToggle.addEventListener('click', toggleOpenMenu));
 subMenuToggles.forEach(subMenuToggle => subMenuToggle.addEventListener('click', openSubMenu));
+profileMenuToggle.addEventListener('click', openProfileMenu);

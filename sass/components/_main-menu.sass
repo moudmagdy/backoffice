@@ -350,15 +350,39 @@
 
 .profile__menu
     position: absolute
-    inset-inline-start: calc(100% + 10px)
+    inset-inline-start: calc(100% - 10px)
     bottom: rem(10px)
     display: flex
     flex-direction: column
-    width: rem(160px)
+    width: rem(165px)
     background-color: #fff
-    border-radius: rem(12px)
-    box-shadow: 0 0 rem(5px) rgba(0, 0, 0, 0.15)
+    border-top-left-radius: rem(12px)
+    border-top-right-radius: rem(12px)
+    border-end-end-radius: rem(12px)
+    box-shadow: 0 0 rem(10px) rgba(0, 0, 0, 0.25)
+    z-index: 1
+    opacity: 0
+    pointer-events: none
     padding: rem(8px) 0
+    transform: rotate(-25deg)
+    transition: all 0.3s ease-in-out
+
+    [dir="rtl"] &
+        transform-origin: right bottom
+
+    [dir="ltr"] &
+        transform-origin: left bottom
+
+    &::before
+        content: ""
+        position: absolute
+        inset-inline-end: 100%
+        bottom: 0
+        width: 0
+        height: 0
+        border-top: rem(10px) solid transparent
+        border-left: rem(10px) solid #fff
+        z-index: 2
 
     a
         display: flex
@@ -367,15 +391,21 @@
         color: #050505
         text-decoration: none
         font-size: rem(14px)
-        padding: rem(8px) rem(14px)
+        white-space: nowrap
+        padding: rem(10px) rem(16px)
         transition: all 0.3s ease-in-out
 
         &:not(:last-child)
             box-shadow: 0 rem(1px) 0 rem(1px) rgba(0, 0, 0, 0.01)
 
         &:hover
-            background-color: rgba(0, 0, 0, 0.03)
+            background-color: rgba(0, 0, 0, 0.05)
 
         svg
             width: rem(20px)
             fill: #878a90
+
+    .menu--shown &
+        opacity: 1
+        pointer-events: auto
+        transform: rotate(0deg)

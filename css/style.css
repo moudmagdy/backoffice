@@ -2381,7 +2381,7 @@ main header .main-menu__toggle:hover svg {
 
 .profile__menu {
   position: absolute;
-  inset-inline-start: calc(100% + 10px);
+  inset-inline-start: calc(100% - 10px);
   bottom: 0.625rem;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2390,12 +2390,44 @@ main header .main-menu__toggle:hover svg {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  width: 10rem;
+  width: 10.3125rem;
   background-color: #fff;
-  border-radius: 0.75rem;
-  -webkit-box-shadow: 0 0 0.3125rem rgba(0, 0, 0, 0.15);
-          box-shadow: 0 0 0.3125rem rgba(0, 0, 0, 0.15);
+  border-top-left-radius: 0.75rem;
+  border-top-right-radius: 0.75rem;
+  border-end-end-radius: 0.75rem;
+  -webkit-box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.25);
+          box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.25);
+  z-index: 1;
+  opacity: 0;
+  pointer-events: none;
   padding: 0.5rem 0;
+  -webkit-transform: rotate(-25deg);
+      -ms-transform: rotate(-25deg);
+          transform: rotate(-25deg);
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+[dir=rtl] .profile__menu {
+  -webkit-transform-origin: right bottom;
+      -ms-transform-origin: right bottom;
+          transform-origin: right bottom;
+}
+[dir=ltr] .profile__menu {
+  -webkit-transform-origin: left bottom;
+      -ms-transform-origin: left bottom;
+          transform-origin: left bottom;
+}
+.profile__menu::before {
+  content: "";
+  position: absolute;
+  inset-inline-end: 100%;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  border-top: 0.625rem solid transparent;
+  border-left: 0.625rem solid #fff;
+  z-index: 2;
 }
 .profile__menu a {
   display: -webkit-box;
@@ -2408,7 +2440,8 @@ main header .main-menu__toggle:hover svg {
   color: #050505;
   text-decoration: none;
   font-size: 0.875rem;
-  padding: 0.5rem 0.875rem;
+  white-space: nowrap;
+  padding: 0.625rem 1rem;
   -webkit-transition: all 0.3s ease-in-out;
   -o-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
@@ -2418,11 +2451,18 @@ main header .main-menu__toggle:hover svg {
           box-shadow: 0 0.0625rem 0 0.0625rem rgba(0, 0, 0, 0.01);
 }
 .profile__menu a:hover {
-  background-color: rgba(0, 0, 0, 0.03);
+  background-color: rgba(0, 0, 0, 0.05);
 }
 .profile__menu a svg {
   width: 1.25rem;
   fill: #878a90;
+}
+.menu--shown .profile__menu {
+  opacity: 1;
+  pointer-events: auto;
+  -webkit-transform: rotate(0deg);
+      -ms-transform: rotate(0deg);
+          transform: rotate(0deg);
 }
 
 .btn {
@@ -5508,6 +5548,145 @@ table.table--with-gaps tbody tr.selected {
 }
 [dir=ltr] .checkbox-list__item__title {
   font-family: "NotoSans_Medium", sans-serif;
+}
+
+.notifications-panel {
+  position: fixed;
+  top: 0;
+  inset-inline-start: var(--main-menu-width);
+  width: 30rem;
+  height: 100%;
+  background-color: #fff;
+  -webkit-box-shadow: 0 0.1875rem 0.9375rem rgba(0, 0, 0, 0.06);
+          box-shadow: 0 0.1875rem 0.9375rem rgba(0, 0, 0, 0.06);
+  z-index: 998;
+  opacity: 0;
+  pointer-events: none;
+  -webkit-transform: rotate(-25deg);
+      -ms-transform: rotate(-25deg);
+          transform: rotate(-25deg);
+  -webkit-transition: all 0.3s cubic-bezier(0.9, 0.4, 0.2, 1.17);
+  -o-transition: all 0.3s cubic-bezier(0.9, 0.4, 0.2, 1.17);
+  transition: all 0.3s cubic-bezier(0.9, 0.4, 0.2, 1.17);
+}
+[dir=rtl] .notifications-panel {
+  -webkit-transform-origin: right bottom;
+      -ms-transform-origin: right bottom;
+          transform-origin: right bottom;
+}
+[dir=ltr] .notifications-panel {
+  -webkit-transform-origin: left bottom;
+      -ms-transform-origin: left bottom;
+          transform-origin: left bottom;
+}
+.main-menu--opened .notifications-panel, .main-menu--hover-opened .notifications-panel {
+  --main-menu-width: 12.5rem;
+}
+.menu--shown .notifications-panel {
+  opacity: 1;
+  pointer-events: auto;
+  -webkit-transform: rotate(0deg);
+      -ms-transform: rotate(0deg);
+          transform: rotate(0deg);
+}
+
+.notifications-panel__header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 0.3125rem;
+  height: 3.25rem;
+  padding: 0 1.25rem;
+  border-bottom: 0.0625rem solid #eef2fa;
+}
+.notifications-panel__header h2 {
+  font-size: 1rem;
+  margin-bottom: 0;
+}
+
+.notifications-panel__body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 0.3125rem;
+}
+
+.notifications__message {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 0.75rem;
+  background-color: rgba(245, 245, 245, 0.3);
+  padding: 1.125rem 1.375rem;
+  -webkit-padding-end: 1.875rem;
+          padding-inline-end: 1.875rem;
+}
+.notifications__message.new--message {
+  position: relative;
+  background-color: #F5F5F5;
+}
+.notifications__message.new--message::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  inset-inline-end: 0;
+  width: 0.1875rem;
+  height: 100%;
+  background-color: #1877F2;
+  background-color: var(--color-brand);
+}
+
+.notifications__message__header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 0.625rem;
+}
+
+.notifications__message__title {
+  font-size: 1rem;
+  color: #1877F2;
+  color: var(--color-brand);
+  margin-bottom: 0;
+}
+.notifications__message__title svg {
+  width: 1.125rem;
+  height: 1.125rem;
+  fill: currentColor;
+}
+.danger .notifications__message__title {
+  color: #F02849;
+}
+
+.notifications__message__source {
+  font-size: 0.75rem;
+  color: #A3AAB2;
+}
+
+.notifications__message__date {
+  font-size: 0.625rem;
+  color: rgba(0, 0, 0, 0.8);
+  -webkit-margin-start: auto;
+          margin-inline-start: auto;
+}
+
+.notifications__message__details {
+  font-size: 0.875rem;
+  color: #4D4D4D;
 }
 
 .login-page {
