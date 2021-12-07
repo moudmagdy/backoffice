@@ -154,10 +154,9 @@ body::before {
   content: "";
   position: absolute;
   inset: 0;
-  z-index: 999;
   background-color: transparent;
   pointer-events: none;
-  z-index: 1000;
+  z-index: 1;
   -webkit-transition: background-color 0.3s;
   -o-transition: background-color 0.3s;
   transition: background-color 0.3s;
@@ -2269,14 +2268,6 @@ main header .main-menu__toggle:hover svg {
 .main-menu__notifications:hover::before, .main-menu__profile a:hover::before {
   opacity: 1;
 }
-.main-menu__notifications.active, .main-menu__profile a.active {
-  color: #fff;
-  background-color: rgba(255, 255, 255, 0.08);
-}
-.main-menu__notifications.active::before, .main-menu__profile a.active::before {
-  background-color: #fff;
-  opacity: 1;
-}
 .main-menu__notifications svg {
   width: 1.375rem;
   height: 1.375rem;
@@ -2285,7 +2276,7 @@ main header .main-menu__toggle:hover svg {
   -o-transition: fill 0.3s;
   transition: fill 0.3s;
 }
-.main-menu__notifications span {
+.main-menu__notifications span:not(.notifications-count) {
   color: rgba(255, 255, 255, 0.7);
   opacity: 0;
   -webkit-transition: opacity 0.3s;
@@ -2293,24 +2284,55 @@ main header .main-menu__toggle:hover svg {
   transition: opacity 0.3s;
 }
 .main-menu__notifications:hover {
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.08);
 }
 .main-menu__notifications:hover svg {
   fill: rgba(255, 255, 255, 0.8);
 }
-.main-menu__notifications:hover span {
-  color: rgba(255, 255, 255, 0.95);
+.main-menu__notifications:hover span:not(.notifications-count) {
+  color: #fff;
 }
-.main-menu__notifications.has--new::after {
-  content: "";
+.panel--shown .main-menu__notifications {
+  background-color: rgba(255, 255, 255, 0.08);
+}
+.panel--shown .main-menu__notifications svg {
+  fill: #fff;
+}
+.panel--shown .main-menu__notifications span:not(.notifications-count) {
+  color: #fff;
+}
+.panel--shown .main-menu__notifications::before {
+  background-color: #fff;
+  opacity: 1;
+}
+.main-menu__notifications .notifications-count {
   position: absolute;
-  top: 0.75rem;
-  inset-inline-start: 1.375rem;
-  width: 0.625rem;
-  height: 0.625rem;
-  background-color: #4DCDE6;
-  border: 0.125rem solid #1877F2;
-  border-radius: 50%;
+  top: 0.5rem;
+  inset-inline-start: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-width: 1rem;
+  min-height: 1rem;
+  font-size: 0.625rem;
+  color: #fff;
+  background-color: #FF8591;
+  -webkit-box-shadow: 0 0 0 0.125rem #1877F2;
+          box-shadow: 0 0 0 0.125rem #1877F2;
+  border-radius: 0.46875rem;
+  padding: 0 0.25rem;
+}
+[dir=rtl] .main-menu__notifications .notifications-count {
+  font-family: "NotoSansArabic_SemiBold", sans-serif;
+}
+[dir=ltr] .main-menu__notifications .notifications-count {
+  font-family: "NotoSans_SemiBold", sans-serif;
 }
 .main-menu__profile > a img {
   width: 1.375rem;
@@ -2325,10 +2347,20 @@ main header .main-menu__toggle:hover svg {
   transition: opacity 0.3s;
 }
 .main-menu__profile > a:hover {
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.08);
 }
 .main-menu__profile > a:hover span {
   color: rgba(255, 255, 255, 0.95);
+}
+.main-menu__profile.menu--shown > a {
+  background-color: rgba(255, 255, 255, 0.08);
+}
+.main-menu__profile.menu--shown > a span {
+  color: #fff;
+}
+.main-menu__profile.menu--shown > a::before {
+  background-color: #fff;
+  opacity: 1;
 }
 @media (min-width: 992px) {
   .main-menu--hover-opened .main-menu {
@@ -2401,9 +2433,9 @@ main header .main-menu__toggle:hover svg {
   opacity: 0;
   pointer-events: none;
   padding: 0.5rem 0;
-  -webkit-transform: rotate(-25deg);
-      -ms-transform: rotate(-25deg);
-          transform: rotate(-25deg);
+  -webkit-transform: rotate(-10deg);
+      -ms-transform: rotate(-10deg);
+          transform: rotate(-10deg);
   -webkit-transition: all 0.3s ease-in-out;
   -o-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
@@ -4018,6 +4050,7 @@ table.table--with-gaps tbody tr.selected {
 .side-panel--shown::before {
   pointer-events: auto;
   background-color: rgba(6, 5, 5, 0.35);
+  z-index: 1000;
 }
 
 .control-panel {
@@ -5562,9 +5595,9 @@ table.table--with-gaps tbody tr.selected {
   z-index: 998;
   opacity: 0;
   pointer-events: none;
-  -webkit-transform: rotate(-25deg);
-      -ms-transform: rotate(-25deg);
-          transform: rotate(-25deg);
+  -webkit-transform: translateX(calc(100% + var(--main-menu-width)));
+      -ms-transform: translateX(calc(100% + var(--main-menu-width)));
+          transform: translateX(calc(100% + var(--main-menu-width)));
   -webkit-transition: all 0.3s cubic-bezier(0.9, 0.4, 0.2, 1.17);
   -o-transition: all 0.3s cubic-bezier(0.9, 0.4, 0.2, 1.17);
   transition: all 0.3s cubic-bezier(0.9, 0.4, 0.2, 1.17);
@@ -5582,12 +5615,12 @@ table.table--with-gaps tbody tr.selected {
 .main-menu--opened .notifications-panel, .main-menu--hover-opened .notifications-panel {
   --main-menu-width: 12.5rem;
 }
-.menu--shown .notifications-panel {
+.panel--shown .notifications-panel {
   opacity: 1;
   pointer-events: auto;
-  -webkit-transform: rotate(0deg);
-      -ms-transform: rotate(0deg);
-          transform: rotate(0deg);
+  -webkit-transform: translateX(0);
+      -ms-transform: translateX(0);
+          transform: translateX(0);
 }
 
 .notifications-panel__header {
@@ -5687,6 +5720,12 @@ table.table--with-gaps tbody tr.selected {
 .notifications__message__details {
   font-size: 0.875rem;
   color: #4D4D4D;
+}
+
+.panel--shown::before {
+  pointer-events: auto;
+  background-color: rgba(6, 5, 5, 0.35);
+  z-index: 998;
 }
 
 .login-page {

@@ -3,6 +3,7 @@ const mainMenu = document.querySelector('.main-menu');
 const mainMenuToggles = document.querySelectorAll('.main-menu__toggle');
 const subMenuToggles = document.querySelectorAll('.has--submenu > a');
 const profileMenuToggle = document.querySelector('.main-menu__profile > a');
+const notificationsToggle = document.querySelector('.main-menu__notifications');
 
 function openMenuOnMouseEnter() {
     body.classList.add('main-menu--hover-opened');
@@ -96,6 +97,13 @@ function openSubMenu(e) {
 function openProfileMenu(e) {
     e.preventDefault();
     this.parentNode.classList.toggle('menu--shown');
+    document.querySelector('body').classList.remove('panel--shown');
+}
+
+function openNotificationsPanel(e) {
+    e.preventDefault();
+    document.querySelector('body').classList.toggle('panel--shown');
+    document.querySelector('.main-menu__profile').classList.remove('menu--shown');
 }
 
 mainMenu.addEventListener('mouseenter', openMenuOnMouseEnter);
@@ -103,3 +111,4 @@ mainMenu.addEventListener('mouseleave', closeMenuOnMouseLeave);
 mainMenuToggles.forEach(mainMenuToggle => mainMenuToggle.addEventListener('click', toggleOpenMenu));
 subMenuToggles.forEach(subMenuToggle => subMenuToggle.addEventListener('click', openSubMenu));
 profileMenuToggle.addEventListener('click', openProfileMenu);
+notificationsToggle.addEventListener('click', openNotificationsPanel);

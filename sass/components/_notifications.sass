@@ -9,7 +9,7 @@
     z-index: 998
     opacity: 0
     pointer-events: none
-    transform: rotate(-25deg)
+    transform: translateX(calc(100% + var(--main-menu-width)))
     transition: all 0.3s cubic-bezier(0.9, 0.4, 0.2, 1.17)
 
     [dir="rtl"] &
@@ -22,10 +22,10 @@
     .main-menu--hover-opened &
         --main-menu-width: #{rem(200px)}
 
-    .menu--shown &
+    .panel--shown &
         opacity: 1
         pointer-events: auto
-        transform: rotate(0deg)
+        transform: translateX(0)
 
 .notifications-panel__header
     display: flex
@@ -95,3 +95,9 @@
 .notifications__message__details
     font-size: rem(14px)
     color: #4D4D4D
+
+.panel--shown
+    &::before
+        pointer-events: auto
+        background-color: rgba(6, 5, 5, 0.35)
+        z-index: 998

@@ -232,14 +232,6 @@
             &::before
                 opacity: 1
 
-        &.active
-            color: $color-white
-            background-color: rgba(255, 255, 255, 0.08)
-
-            &::before
-                background-color: $color-white
-                opacity: 1
-
     &__notifications
         svg
             width: rem(22px)
@@ -248,30 +240,54 @@
             transition: fill 0.3s
 
         span
-            color: rgba(255, 255, 255, 0.7)
-            opacity: 0
-            transition: opacity 0.3s
+            &:not(.notifications-count)
+                color: rgba(255, 255, 255, 0.7)
+                opacity: 0
+                transition: opacity 0.3s
 
         &:hover
-            background-color: rgba(255, 255, 255, 0.2)
+            background-color: rgba(255, 255, 255, 0.08)
 
             svg
                 fill: rgba(255, 255, 255, 0.8)
 
             span
-                color: rgba(255, 255, 255, 0.95)
+                &:not(.notifications-count)
+                    color: #fff
 
-        &.has--new
-            &::after
-                content: ""
-                position: absolute
-                top: rem(12px)
-                inset-inline-start: rem(22px)
-                width: rem(10px)
-                height: rem(10px)
-                background-color: #4DCDE6
-                border: rem(2px) solid #1877F2
-                border-radius: 50%
+        .panel--shown &
+            background-color: rgba(255, 255, 255, 0.08)
+
+            svg
+                fill: $color-white
+
+            span
+                &:not(.notifications-count)
+                    color: $color-white
+
+            &::before
+                background-color: $color-white
+                opacity: 1
+
+        .notifications-count
+            position: absolute
+            top: rem(8px)
+            inset-inline-start: rem(16px)
+            +flex-center
+            min-width: rem(16px)
+            min-height: rem(16px)
+            font-size: rem(10px)
+            color: #fff
+            background-color: #FF8591
+            box-shadow: 0 0 0 rem(2px) $color-brand
+            border-radius: rem(7.5px)
+            padding: 0 rem(4px)
+
+            [dir="rtl"] &
+                font-family: 'NotoSansArabic_SemiBold', sans-serif
+
+            [dir="ltr"] &
+                font-family: 'NotoSans_SemiBold', sans-serif
 
     &__profile
         & > a
@@ -286,10 +302,21 @@
                 transition: opacity 0.3s
 
             &:hover
-                background-color: rgba(255, 255, 255, 0.2)
+                background-color: rgba(255, 255, 255, 0.08)
 
                 span
                     color: rgba(255, 255, 255, 0.95)
+
+        &.menu--shown
+            & > a
+                background-color: rgba(255, 255, 255, 0.08)
+
+                span
+                    color: $color-white
+
+                &::before
+                    background-color: $color-white
+                    opacity: 1
 
     .main-menu--hover-opened &
         @media (min-width: 992px)
@@ -364,7 +391,7 @@
     opacity: 0
     pointer-events: none
     padding: rem(8px) 0
-    transform: rotate(-25deg)
+    transform: rotate(-10deg)
     transition: all 0.3s ease-in-out
 
     [dir="rtl"] &
