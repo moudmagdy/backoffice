@@ -7,13 +7,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
     <link rel="icon" type="image/png" href="images/favicon.png">
-    <title>خدمة بي - كاشير</title>
+    <title>الصيانة - كاشير</title>
     <link rel="stylesheet" href="css/bootstrap.rtl.min.css">
     <link rel="stylesheet" href="css/style.min.css">
 </head>
 
 <body>
-    <main class="payments-page">
+    <main class="maintenance-page">
         <div class="main-menu">
             <div class="main-menu__header">
                 <a href="#" class="main-menu__toggle">
@@ -163,7 +163,10 @@
                                 <a href="services.html">رئيسية المتجر</a>
                             </li>
                             <li>
-                                <a href="payments.html" class="active">بي</a>
+                                <a href="payments.html">بي</a>
+                            </li>
+                            <li>
+                                <a href="maintenance.html" class="active">الصيــانــة</a>
                             </li>
                         </ol>
                     </li>
@@ -234,12 +237,12 @@
                         <path d="M0,1.1h34v4H0V1.1z M0,15h34v4H0V15z M0,28.9h34v4H0V28.9z"></path>
                     </svg>
                 </a>
-                <h1>خــدمــة بـي</h1>
+                <h1>الصيــانــة</h1>
                 <div class="layout__tabs">
                     <nav class="layout__tabs__nav">
-                        <a href="#" data-tab="operations_record" class="active--tab">سجل العمليات</a>
-                        <a href="#" data-tab="shifts_record">سجل الورديات</a>
-                        <a href="#" data-tab="shipping_requests">طلبات الشحن</a>
+                        <a href="#" data-tab="active-requests" class="active--tab">طلبات نشطة</a>
+                        <a href="#" data-tab="delivered-orders">طلبات مسلمة</a>
+                        <a href="#" data-tab="reports">التقارير</a>
                         <a href="#" data-tab="settings">الاعدادات</a>
                     </nav>
                 </div>
@@ -252,46 +255,51 @@
             </header>
             <section>
                 <div class="layout__container">
-                    <div class="layout__tab__content active--tab" data-tab="operations_record">
+                    <div class="layout__tab__content active--tab" data-tab="active-requests">
                         <div class="table-filters">
                             <div class="search__input">
                                 <svg width="15" height="13.9" viewBox="0 0 15 13.9">
                                     <path d="M14.8,12.7l-2.4-2.4c1.6-2.6,1.3-6-0.9-8.3C8.8-0.7,4.6-0.7,2,2C0.7,3.2,0,4.9,0,6.7s0.7,3.5,2,4.7 c1.3,1.3,2.9,2,4.7,2s3.5-0.7,4.7-2c0,0,0.1-0.1,0.1-0.1l2.3,2.3c0.1,0.1,0.3,0.2,0.5,0.2s0.4-0.1,0.5-0.2 C15.1,13.4,15.1,12.9,14.8,12.7z M6.7,12C5.3,12,4,11.4,3,10.4c-1-1-1.6-2.3-1.6-3.7S2,4,3,2.9c1-1,2.3-1.6,3.7-1.6s2.7,0.6,3.7,1.6 c2.1,2.1,2.1,5.4,0,7.5C9.4,11.4,8.1,12,6.7,12z"></path>
                                 </svg>
-                                <input type="search" name="search" placeholder="ابحث برقم الفاتورة أو نوع العملية">
+                                <input type="search" name="search" placeholder="ابحث برقم الفاتورة او اسم الجهاز/نوعه/العميل/رقمه">
                             </div>
-                            <select class="form-select">
-                                <option value="1" selected>كل الفروع</option>
-                                <option value="2">فرع الدقي</option>
-                                <option value="3">فرع الجيزة</option>
-                                <option value="4">فرع المنيل</option>
-                            </select>
-                            <select class="form-select">
-                                <option value="1" selected>كل الأجهـزة</option>
-                            </select>
-                            <select class="form-select">
-                                <option value="1" selected>كل العمليات</option>
-                            </select>
+                            <div href="#" class="filters-open">
+                                <svg width="22" height="18" viewBox="0 0 22 18">
+                                    <path d="M20,15v3h-2v-3h-2v-2h6v2H20z M4,15v3H2v-3H0v-2h6v2H4z M10,3V0h2v3h2v2H8V3H10z M10,7h2v11h-2V7z M2,11V0h2v11 H2z M18,11V0h2v11H18z"></path>
+                                </svg>
+                                <span>إظهار الفلاتر</span>
+                                <a href="#" class="filters-close">
+                                    <svg width="18" height="18" viewBox="0 0 18 18">
+                                        <path d="M9.7,9l8.3,8.3L17.3,18L9,9.7L0.7,18L0,17.3L8.3,9L0,0.7L0.7,0L9,8.3L17.3,0L18,0.7L9.7,9z"></path>
+                                    </svg>
+                                </a>
+                            </div>
                         </div>
-                        <div class="service-info">
-                            <div class="service-balance">
-                                <div class="service-icon">
-                                    <img src="images/services/bee.jpg" alt="">
+                        <div class="page-filters-container">
+                            <form action="">
+                                <div class="page-filters">
+                                    <select class="form-select">
+                                        <option selected disabled>الفرع</option>
+                                        <option value="1">كل الفروع</option>
+                                        <option value="2">فرع الدقي</option>
+                                        <option value="3">فرع الجيزة</option>
+                                        <option value="4">فرع المنيل</option>
+                                    </select>
+                                    <select class="form-select">
+                                        <option selected disabled>العلامة التجارية</option>
+                                        <option value="1">بيبسي</option>
+                                        <option value="2">شيبسي</option>
+                                    </select>
+                                    <select class="form-select">
+                                        <option selected disabled>فـئة</option>
+                                        <option value="1">كل الفئات</option>
+                                    </select>
+                                    <select class="form-select">
+                                        <option selected disabled>فئة فرعية</option>
+                                        <option value="1">كل الفئات</option>
+                                    </select>
                                 </div>
-                                <div class="balance-details">
-                                    <span class="balance-label">رصيد - كل الفروع</span>
-                                    <span class="balance-amount">00.00</span>
-                                    <span class="balance-currency">جـ</span>
-                                </div>
-                                <a href="#" class="btn btn-primary side-panel--btn" data-panel="credit-request">طلب رصيـد</a>
-                            </div>
-                            <div class="service-balance">
-                                <div class="balance-details">
-                                    <span class="balance-label">الربح - كل الفروع</span>
-                                    <span class="balance-amount profit">00.00</span>
-                                    <span class="balance-currency profit">جـ</span>
-                                </div>
-                            </div>
+                            </form>
                         </div>
                         <div class="scrollable-content">
                             <div class="table__container">
@@ -645,8 +653,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="layout__tab__content" data-tab="shifts_record"></div>
-                    <div class="layout__tab__content" data-tab="shipping_requests">
+                    <div class="layout__tab__content" data-tab="delivered-orders"></div>
+                    <div class="layout__tab__content" data-tab="reports">
                         <div class="table-filters">
                             <select class="form-select">
                                 <option value="1" selected>كل الطلبات</option>
@@ -1058,6 +1066,7 @@
     <script src="js/components/layout-tabs.module.js" type="module"></script>
     <script src="js/components/side-panel.module.js" type="module" defer></script>
     <script src="js/components/collapsible.module.js" type="module" defer></script>
+    <script src="js/components/filters.module.js" type="module"></script>
     <script src="js/main.js" defer></script>
 </body>
 

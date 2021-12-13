@@ -9395,3 +9395,36 @@ section .page-card:nth-last-child(-n+2) {
 .payments-page .received-amount {
   max-width: none;
 }
+
+@media (max-width: 768px) {
+  .maintenance-page {
+    overflow: auto;
+    scrollbar-color: #61a0f2 rgba(0, 0, 0, 0.08);
+    scrollbar-width: thin;
+  }
+  .maintenance-page::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  .maintenance-page::-webkit-scrollbar-thumb {
+    background-color: #61a0f2;
+  }
+  .maintenance-page::-webkit-scrollbar-track {
+    background-color: rgba(0, 0, 0, 0.08);
+  }
+  .maintenance-page::-webkit-scrollbar-corner {
+    background-color: transparent;
+  }
+}
+@media (max-width: 768px) {
+  .maintenance-page .single-column-layout {
+    height: auto;
+  }
+}
+.maintenance-page .single-column-layout header {
+  gap: 0 1.875rem;
+}
+.maintenance-page .layout__tabs {
+  -webkit-margin-start: auto;
+          margin-inline-start: auto;
+}
