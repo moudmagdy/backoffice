@@ -90,28 +90,6 @@
         .balance-currency
             font-size: rem(20px)
 
-    .order-status
-        display: inline-block
-        font-size: rem(12px)
-        color: #4D4D4D
-        border: rem(1px) solid #C6CFD9
-        border-radius: rem(16px)
-        padding: rem(6px) rem(12px)
-
-        [dir="rtl"] &
-            font-family: 'NotoSansArabic_Medium', sans-serif
-
-        [dir="ltr"] &
-            font-family: 'NotoSans_Medium', sans-serif
-
-        &.success
-            color: #2BAB5A
-            border-color: #2BAB5A
-
-        &.failed
-            color: #FF6B73
-            border-color: #FF6B73
-
     .statistics-panel
         display: flex
         align-items: center
@@ -193,3 +171,29 @@
 
     .received-amount
         max-width: none
+
+.order-status
+    display: inline-block
+    font-size: rem(12px)
+    color: #4D4D4D
+    border: rem(1px) solid #C6CFD9
+    border-radius: rem(16px)
+    padding: rem(6px) rem(12px)
+
+    [dir="rtl"] &
+        font-family: 'NotoSansArabic_Medium', sans-serif
+
+    [dir="ltr"] &
+        font-family: 'NotoSans_Medium', sans-serif
+
+    &.success
+        color: #2BAB5A
+        border-color: #2BAB5A
+
+    &.failed
+        color: #FF6B73
+        border-color: #FF6B73
+
+    &.in-progress
+        +var(color, color-brand)
+        +var(border-color, color-brand)
