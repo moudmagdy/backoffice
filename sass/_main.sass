@@ -26,6 +26,9 @@ body
 a
     cursor: pointer
 
+    &:hover
+        color: lighten($color-brand, 10%)
+
 ::selection
     +var(background-color, color-brand)
     color: #fff
@@ -304,6 +307,12 @@ a
     .form-select
         width: auto
         padding: 0.475rem 0.95rem
+
+        &:focus
+            box-shadow: none
+
+    .form-datepicker
+        padding-block: 0.475rem
 
         &:focus
             box-shadow: none

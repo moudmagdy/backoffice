@@ -9,6 +9,7 @@ table
 
     thead
         position: sticky
+        z-index: 1
 
     th
         font-size: rem(12px)
@@ -27,7 +28,13 @@ table
 
         a
             text-decoration: none
-            color: inherit
+            +var(color, color-brand)
+
+            [dir="rtl"] &
+                font-family: 'NotoSansArabic_SemiBold', sans-serif
+
+            [dir="ltr"] &
+                font-family: 'NotoSans_SemiBold', sans-serif
 
     &:not(.table--with-gaps)
         width: 100%
