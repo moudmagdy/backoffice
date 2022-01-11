@@ -3930,6 +3930,59 @@ table.table--with-gaps tbody tr.selected {
 .side-panel__close-btn svg {
   fill: #b3b3b3;
 }
+.side-panel__accordion {
+  padding: 0 1.25rem;
+}
+.side-panel__accordion:last-child {
+  margin-bottom: 0.9375rem;
+}
+.side-panel__accordion .accordion__header {
+  border-bottom: 1px solid #efefef;
+  padding: 0.3125rem 0;
+  margin-bottom: 0;
+}
+.side-panel__accordion .accordion__header .collapse__toggle {
+  padding: 0.65rem 0.975rem;
+  border-radius: 0.25rem;
+}
+.side-panel__accordion .form-label {
+  font-size: 0.75rem;
+  color: inherit;
+}
+.side-panel__accordion .accordion__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 2.5rem;
+  background-color: rgba(198, 207, 217, 0.3);
+  padding: 0.6rem 0.8rem;
+  margin-top: 0.3125rem;
+}
+.side-panel__accordion .accordion__item__title {
+  font-size: 0.75rem;
+  -ms-flex-preferred-size: 30%;
+      flex-basis: 30%;
+  margin-bottom: 0;
+}
+.side-panel__accordion .accordion__item__data {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  gap: 0.3125rem;
+  font-size: 0.875rem;
+}
+[dir=rtl] .side-panel__accordion .accordion__item__data {
+  font-family: "NotoSansArabic_Medium", sans-serif;
+}
+[dir=ltr] .side-panel__accordion .accordion__item__data {
+  font-family: "NotoSans_Medium", sans-serif;
+}
 .side-panel__body {
   overflow-y: auto;
   scrollbar-color: #61a0f2 rgba(0, 0, 0, 0.08);
