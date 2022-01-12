@@ -13,6 +13,17 @@
     .layout__tabs
         margin-inline-start: auto
 
+    .invoice__item__data
+        flex-basis: 40%
+
+    // [data-panel="delivered-request"]
+    //     .side-panel__header
+    //         color: #fff
+
+    //     .side-panel__header,
+    //     .side-panel__tabs
+    //         background-color: #2BAB5A
+
 .device-issues
     display: inline-flex
     font-size: rem(12px)
@@ -27,3 +38,31 @@
 
     [dir="ltr"] &
         font-family: 'NotoSans_Medium', sans-serif
+
+.total-parts
+    display: flex
+    flex-direction: column
+    border-top: 1px solid #efefef
+    margin-top: auto
+
+    li
+        display: flex
+        align-items: center
+        justify-content: space-between
+        height: rem(56px)
+        padding: rem(10px) rem(20px)
+
+        &:not(:last-child)
+            border-bottom: 1px solid #efefef
+
+        h5
+            font-size: rem(14px)
+
+        .total-parts__amount
+            font-size: rem(22px)
+
+            [dir="rtl"] &
+                font-family: 'NotoSansArabic_SemiBold', sans-serif
+
+            [dir="ltr"] &
+                font-family: 'NotoSans_SemiBold', sans-serif

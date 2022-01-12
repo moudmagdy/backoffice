@@ -81,9 +81,67 @@
         svg
             fill: #b3b3b3
 
+    &__tabs
+        flex: 0 0 auto
+        position: relative
+        display: flex
+        min-height: rem(40px)
+        overflow: hidden
+
+        background-color: #F5F5F5
+
+        nav
+            display: flex
+            width: 100%
+
+        a
+            +flex-center
+            flex: 1 1 100%
+            font-size: 14px
+            color: rgba(5, 5, 5, 0.5)
+            text-decoration: none
+            padding: 0.75rem 1rem
+            transition: color 0.3s ease-in-out
+
+            [dir="rtl"] &
+                font-family: 'NotoSansArabic_Medium', sans-serif
+
+            [dir="ltr"] &
+                font-family: 'NotoSans_Medium', sans-serif
+
+            &.selected--tab
+                +var(color, color-brand)
+
+        .selected__indicator
+            position: absolute
+            bottom: 0
+            height: rem(4px)
+            +var(background-color, color-brand)
+            transition: inset-inline-start 0.3s ease-in-out
+
+    .tabs__content
+        display: flex
+        flex-direction: column
+        height: 100%
+        overflow: hidden
+
+    &__tab-content
+        display: flex
+        flex-direction: column
+        min-height: 0
+        opacity: 0
+        overflow-y: clip
+        pointer-events: none
+
+        &.content--shown
+            min-height: 100%
+            opacity: 1
+            pointer-events: auto
+
     &__body
         display: flex
         flex-direction: column
+        height: 100%
         overflow-y: auto
         +scrollbar
         scroll-behavior: smooth
@@ -220,3 +278,52 @@
         pointer-events: auto
         background-color: rgba(6, 5, 5, 0.35)
         z-index: 1000
+
+.content__filters
+    +flex-center
+    gap: rem(15px)
+    width: 100%
+    min-height: rem(44px)
+    padding: 0 rem(24px)
+
+.content__filter__item
+    +flex-center
+    flex: 1 1 100%
+    gap: rem(5px)
+    font-size: rem(12px)
+    text-decoration: none
+    border: 1px solid #A3AAB2
+    border-radius: rem(16px)
+    padding: 0.375rem 0.5rem
+    transition: all 0.3s
+
+    &:hover
+        color: darken(#4D4D4D, 35%)
+
+.content__filter__item__title
+    color: #4D4D4D
+    transition: color 0.3s
+
+.content__filter__item__count
+    +flex-center
+    min-width: rem(18px)
+    min-height: rem(18px)
+    +var(color, color-text-primary)
+    background-color: #F5F5F5
+    border-radius: rem(9px)
+    padding: 0 rem(5px)
+    transition: all 0.3s
+
+.selected--filter
+    background-color: #F5F5F5
+    border-color: #F5F5F5
+
+    .content__filter__item__title
+        +var(color, color-text-primary)
+
+    .content__filter__item__count
+        background-color: $color-white
+
+.invoice__list
+    [data-filter]
+        display: none

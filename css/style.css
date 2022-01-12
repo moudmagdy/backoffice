@@ -3933,6 +3933,94 @@ table.table--with-gaps tbody tr.selected {
 .side-panel__close-btn svg {
   fill: #b3b3b3;
 }
+.side-panel__tabs {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  min-height: 2.5rem;
+  overflow: hidden;
+  background-color: #F5F5F5;
+}
+.side-panel__tabs nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+}
+.side-panel__tabs a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 100%;
+          flex: 1 1 100%;
+  font-size: 14px;
+  color: rgba(5, 5, 5, 0.5);
+  text-decoration: none;
+  padding: 0.75rem 1rem;
+  -webkit-transition: color 0.3s ease-in-out;
+  -o-transition: color 0.3s ease-in-out;
+  transition: color 0.3s ease-in-out;
+}
+[dir=rtl] .side-panel__tabs a {
+  font-family: "NotoSansArabic_Medium", sans-serif;
+}
+[dir=ltr] .side-panel__tabs a {
+  font-family: "NotoSans_Medium", sans-serif;
+}
+.side-panel__tabs a.selected--tab {
+  color: #1877F2;
+  color: var(--color-brand);
+}
+.side-panel__tabs .selected__indicator {
+  position: absolute;
+  bottom: 0;
+  height: 0.25rem;
+  background-color: #1877F2;
+  background-color: var(--color-brand);
+  -webkit-transition: inset-inline-start 0.3s ease-in-out;
+  -o-transition: inset-inline-start 0.3s ease-in-out;
+  transition: inset-inline-start 0.3s ease-in-out;
+}
+.side-panel .tabs__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+}
+.side-panel__tab-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  min-height: 0;
+  opacity: 0;
+  overflow-y: clip;
+  pointer-events: none;
+}
+.side-panel__tab-content.content--shown {
+  min-height: 100%;
+  opacity: 1;
+  pointer-events: auto;
+}
 .side-panel__body {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -3941,6 +4029,7 @@ table.table--with-gaps tbody tr.selected {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  height: 100%;
   overflow-y: auto;
   scrollbar-color: #61a0f2 rgba(0, 0, 0, 0.08);
   scrollbar-width: thin;
@@ -4129,6 +4218,94 @@ table.table--with-gaps tbody tr.selected {
   pointer-events: auto;
   background-color: rgba(6, 5, 5, 0.35);
   z-index: 1000;
+}
+
+.content__filters {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 0.9375rem;
+  width: 100%;
+  min-height: 2.75rem;
+  padding: 0 1.5rem;
+}
+
+.content__filter__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 100%;
+          flex: 1 1 100%;
+  gap: 0.3125rem;
+  font-size: 0.75rem;
+  text-decoration: none;
+  border: 1px solid #A3AAB2;
+  border-radius: 1rem;
+  padding: 0.375rem 0.5rem;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.content__filter__item:hover {
+  color: black;
+}
+
+.content__filter__item__title {
+  color: #4D4D4D;
+  -webkit-transition: color 0.3s;
+  -o-transition: color 0.3s;
+  transition: color 0.3s;
+}
+
+.content__filter__item__count {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-width: 1.125rem;
+  min-height: 1.125rem;
+  color: #050505;
+  color: var(--color-text-primary);
+  background-color: #F5F5F5;
+  border-radius: 0.5625rem;
+  padding: 0 0.3125rem;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.selected--filter {
+  background-color: #F5F5F5;
+  border-color: #F5F5F5;
+}
+.selected--filter .content__filter__item__title {
+  color: #050505;
+  color: var(--color-text-primary);
+}
+.selected--filter .content__filter__item__count {
+  background-color: #fff;
+}
+
+.invoice__list [data-filter] {
+  display: none;
 }
 
 .control-panel {
@@ -4917,6 +5094,9 @@ table.table--with-gaps tbody tr.selected {
 }
 [dir=ltr] .invoice__item__title h3 {
   font-family: "NotoSans_Medium", sans-serif;
+}
+.invoice__item__price {
+  font-size: 0.875rem;
 }
 .invoice__item__total-price {
   display: -webkit-box;
@@ -9523,6 +9703,10 @@ section .page-card:nth-last-child(-n+2) {
   -webkit-margin-start: auto;
           margin-inline-start: auto;
 }
+.maintenance-page .invoice__item__data {
+  -ms-flex-preferred-size: 40%;
+      flex-basis: 40%;
+}
 
 .device-issues {
   display: -webkit-inline-box;
@@ -9540,4 +9724,44 @@ section .page-card:nth-last-child(-n+2) {
 }
 [dir=ltr] .device-issues {
   font-family: "NotoSans_Medium", sans-serif;
+}
+
+.total-parts {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  border-top: 1px solid #efefef;
+  margin-top: auto;
+}
+.total-parts li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 3.5rem;
+  padding: 0.625rem 1.25rem;
+}
+.total-parts li:not(:last-child) {
+  border-bottom: 1px solid #efefef;
+}
+.total-parts li h5 {
+  font-size: 0.875rem;
+}
+.total-parts li .total-parts__amount {
+  font-size: 1.375rem;
+}
+[dir=rtl] .total-parts li .total-parts__amount {
+  font-family: "NotoSansArabic_SemiBold", sans-serif;
+}
+[dir=ltr] .total-parts li .total-parts__amount {
+  font-family: "NotoSans_SemiBold", sans-serif;
 }

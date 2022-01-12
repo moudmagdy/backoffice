@@ -23,3 +23,32 @@ if (dismissBtns) {
         });
     });
 }
+
+// Control panel filters
+const contentFilter = document.querySelectorAll('.content__filter__item');
+const invoiceList = document.querySelector('.invoice__list');
+function loadFilteredContent() {
+    let selectedFilterDataAttr = document.querySelector('.selected--filter').getAttribute('data-filter');
+
+    invoiceList.querySelectorAll('.invoice__item[data-filter="' + selectedFilterDataAttr + '"]').forEach(item => {
+        item.style.display = 'flex';
+    });
+}
+function filterContent(e) {
+    e.preventDefault();
+
+    let filterDataAttr = this.getAttribute('data-filter');
+
+    document.querySelector('.content__filter__item.selected--filter').classList.remove('selected--filter');
+    this.classList.add('selected--filter');
+
+    invoiceList.querySelectorAll('.invoice__item').forEach(item => {
+        item.removeAttribute('style');
+    });
+
+    invoiceList.querySelectorAll('.invoice__item[data-filter="' + filterDataAttr + '"]').forEach(item => {
+        item.style.display = 'flex';
+    });
+}
+window.addEventListener('load', loadFilteredContent);
+contentFilter.forEach(filter => filter.addEventListener('click', filterContent));
