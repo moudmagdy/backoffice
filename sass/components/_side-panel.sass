@@ -81,9 +81,43 @@
         svg
             fill: #b3b3b3
 
-    &__accordion
-        padding: 0 rem(20px)
+    &__body
+        display: flex
+        flex-direction: column
+        overflow-y: auto
+        +scrollbar
+        scroll-behavior: smooth
+        padding: rem(20px) rem(18px)
 
+        legend
+            span
+                font-size: rem(18px)
+                color: #A3AAB2
+
+                [dir="rtl"] &
+                    font-family: 'NotoSansArabic_SemiBold', sans-serif
+
+                [dir="ltr"] &
+                    font-family: 'NotoSans_SemiBold', sans-serif
+
+        .form-label
+            color: #060505
+
+        .form-control,
+        .form-select,
+        .form-tags-control
+            max-height: rem(44px)
+            padding: 0.663rem 0.75rem
+
+        .form-select--with-icon
+            max-height: rem(44px)
+            min-height: rem(44px)
+            border-radius: rem(12px)
+
+            .form-select
+                max-height: rem(40px)
+
+    &__accordion
         &:last-child
             margin-bottom: rem(15px)
 
@@ -124,40 +158,6 @@
 
                 [dir="ltr"] &
                     font-family: 'NotoSans_Medium', sans-serif
-
-    &__body
-        overflow-y: auto
-        +scrollbar
-        scroll-behavior: smooth
-        padding: rem(20px) rem(18px)
-
-        legend
-            span
-                font-size: rem(18px)
-                color: #A3AAB2
-
-                [dir="rtl"] &
-                    font-family: 'NotoSansArabic_SemiBold', sans-serif
-
-                [dir="ltr"] &
-                    font-family: 'NotoSans_SemiBold', sans-serif
-
-        .form-label
-            color: #060505
-
-        .form-control,
-        .form-select,
-        .form-tags-control
-            max-height: rem(44px)
-            padding: 0.663rem 0.75rem
-
-        .form-select--with-icon
-            max-height: rem(44px)
-            min-height: rem(44px)
-            border-radius: rem(12px)
-
-            .form-select
-                max-height: rem(40px)
 
     &__bottom-bar
         display: flex
