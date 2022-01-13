@@ -97,11 +97,14 @@
         a
             +flex-center
             flex: 1 1 100%
-            font-size: 14px
+            font-size: rem(14px)
             color: rgba(5, 5, 5, 0.5)
             text-decoration: none
             padding: 0.75rem 1rem
             transition: color 0.3s ease-in-out
+
+            @media (max-width: 400px)
+                font-size: rem(12px)
 
             [dir="rtl"] &
                 font-family: 'NotoSansArabic_Medium', sans-serif
@@ -117,7 +120,8 @@
             bottom: 0
             height: rem(4px)
             +var(background-color, color-brand)
-            transition: inset-inline-start 0.3s ease-in-out
+            pointer-events: none
+            transition: left 0.3s ease-in-out
 
     .tabs__content
         display: flex
@@ -290,40 +294,46 @@
     +flex-center
     flex: 1 1 100%
     gap: rem(5px)
-    font-size: rem(12px)
     text-decoration: none
-    border: 1px solid #A3AAB2
+    background-color: #F5F5F5
+    border: rem(1px) solid #F5F5F5
     border-radius: rem(16px)
     padding: 0.375rem 0.5rem
-    transition: all 0.3s
+    transition: all 0.3s ease-in-out
 
     &:hover
-        color: darken(#4D4D4D, 35%)
+        background-color: darken(#F5F5F5, 5%)
 
 .content__filter__item__title
+    font-size: rem(12px)
     color: #4D4D4D
-    transition: color 0.3s
+    transition: color 0.3s ease-in-out
 
 .content__filter__item__count
     +flex-center
     min-width: rem(18px)
     min-height: rem(18px)
+    font-size: rem(12px)
     +var(color, color-text-primary)
-    background-color: #F5F5F5
+    background-color: #fff
     border-radius: rem(9px)
     padding: 0 rem(5px)
-    transition: all 0.3s
+    transition: all 0.3s ease-in-out
 
-.selected--filter
-    background-color: #F5F5F5
-    border-color: #F5F5F5
+.content__filter__item
+    &.selected--filter
+        +var(background-color, color-brand)
+        +var(border-color, color-brand)
 
-    .content__filter__item__title
-        +var(color, color-text-primary)
+        .content__filter__item__title
+            color: #fff
 
-    .content__filter__item__count
-        background-color: $color-white
+        .content__filter__item__count
+            background-color: #fff
 
 .invoice__list
     [data-filter]
         display: none
+
+        &.item--shown
+            display: flex

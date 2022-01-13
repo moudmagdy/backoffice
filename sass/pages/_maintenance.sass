@@ -16,13 +16,29 @@
     .invoice__item__data
         flex-basis: 40%
 
-    // [data-panel="delivered-request"]
-    //     .side-panel__header
-    //         color: #fff
+    [data-panel="delivered-request"]
+        .side-panel__header
+            color: #fff
 
-    //     .side-panel__header,
-    //     .side-panel__tabs
-    //         background-color: #2BAB5A
+        .side-panel__header,
+        .side-panel__tabs
+            background-color: #2BAB5A
+
+        .side-panel__close-btn
+            background-color: rgba(255, 255, 255, 0.05)
+
+            svg
+                fill: #fff
+
+        .side-panel__tabs
+            a
+                color: rgba(255, 255, 255, 0.7)
+
+                &.selected--tab
+                    color: #fff
+
+            .selected__indicator
+                background-color: #fff
 
 .device-issues
     display: inline-flex

@@ -31,7 +31,7 @@ function loadFilteredContent() {
     let selectedFilterDataAttr = document.querySelector('.selected--filter').getAttribute('data-filter');
 
     invoiceList.querySelectorAll('.invoice__item[data-filter="' + selectedFilterDataAttr + '"]').forEach(item => {
-        item.style.display = 'flex';
+        item.classList.add('item--shown');
     });
 }
 function filterContent(e) {
@@ -43,11 +43,11 @@ function filterContent(e) {
     this.classList.add('selected--filter');
 
     invoiceList.querySelectorAll('.invoice__item').forEach(item => {
-        item.removeAttribute('style');
+        item.classList.remove('item--shown');
     });
 
     invoiceList.querySelectorAll('.invoice__item[data-filter="' + filterDataAttr + '"]').forEach(item => {
-        item.style.display = 'flex';
+        item.classList.add('item--shown');
     });
 }
 window.addEventListener('load', loadFilteredContent);

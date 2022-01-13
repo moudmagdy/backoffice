@@ -300,13 +300,23 @@ a
     gap: rem(15px)
     padding: rem(10px) rem(22px)
 
+    @media (min-width: 768px)
+        flex-wrap: nowrap
+
     .search__input,
     .form-select
         flex: 1 1 100%
 
+    .search__input
+        @media (min-width: 768px)
+            flex-basis: 25%
+
     .form-select
         width: auto
         padding: 0.475rem 0.95rem
+
+        @media (min-width: 768px)
+            flex: 0 0 15%
 
         &:focus
             box-shadow: none
@@ -316,16 +326,6 @@ a
 
         &:focus
             box-shadow: none
-
-    @media (min-width: 768px)
-        flex-wrap: nowrap
-
-        .search__input,
-        .form-select
-            flex: 0 0 15%
-
-        .search__input
-            flex-basis: 25%
 
 .alert
     display: flex
